@@ -1,7 +1,9 @@
-import React, { useEffect } from 'react'
+import React from 'react'
+import { Route } from 'react-router-dom'
 import { connect } from 'react-redux'
+import Contact from './Contact'
 
-//Example:
+// Example:
 // import { fetchFruits } from '../actions'
 
 function App (props) {
@@ -19,6 +21,8 @@ function App (props) {
           ))}
         </ul>
       </div> */}
+      <Route exact path="/contact" component={Contact}/>
+
     </>
   )
 }
