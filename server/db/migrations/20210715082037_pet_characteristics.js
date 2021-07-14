@@ -1,15 +1,14 @@
 exports.up = function (knex) {
-  return knex.schema.createTable('pet_medical_history', function (t) {
+  return knex.schema.createTable('pet_characteristics', function (t) {
     t.increments('id').primary()
-    t.string('food_type')
-    t.date('annual_vaccination')
-    t.string('flea')
-    t.string('worm')
-    t.string('additional_vaccination')
+    t.string('activity')
+    t.string('sleephours')
+    t.string('social_human')
+    t.string('social_animal')
     t.integer('pet_id')
   })
 }
 
 exports.down = function (knex) {
-  return knex.schema.dropTable('pet_medical_history')
+  return knex.schema.dropTable('pet_characteristics')
 }

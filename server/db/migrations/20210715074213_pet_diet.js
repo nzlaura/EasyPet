@@ -6,7 +6,7 @@ exports.up = function (knex) {
     t.string('medication')
     t.string('medication_frequency')
     t.string('flags')
-    t.integer('caloric_intake')
+    t.integer('daily_caloric_intake')
     t.integer('pet_id')
   })
 }
