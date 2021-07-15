@@ -1,12 +1,18 @@
-// Example: 
-// import { getFruits } from '../apis/fruits'
+// import { postUser } from "../apis/apiClient"
 
-// export const SET_FRUITS = 'SET_FRUITS'
-
-// export function setFruits (fruits) {
-//   return {
-//     type: SET_FRUITS,
-//     fruits
-//   }
+// export function addUser (user) {
+//     return { type: ADD_USER, user: user }
 // }
+
+// export function saveUser (user) {
+//     return dispatch => {
+//     postUser(user)
+//     .then((newUser) => dispatch(addUser(newUser)))
+//     .catch(err => dispatch(setError(err)))
+//     }
+// }
+
+// // export function addUser (user) {
+// //   return postUser(username, password)
+// //   .then(res =>)
 

@@ -19,7 +19,7 @@ server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({ extended: true }));
 server.use(
   cors({
-    origin: "http://localhost:3000/api/v1/",
+    origin: "http://localhost:3000",
     credentials: true,
   })
 );
@@ -38,3 +38,7 @@ require("./passportConfig")(passport);
 server.use('/api/v1/', authRoutes)
 
 module.exports = server
+
+// var path = require("path");
+// var Router = require('./modules/router/router');
+// var router = new Router(path.join(__dirname,'routes'));

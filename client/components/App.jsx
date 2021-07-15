@@ -1,19 +1,15 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { connect } from 'react-redux'
 import Axios from "axios"
 
-//Example:
-// import { fetchFruits } from '../actions'
-
 function App (props) {
-  // useEffect(() => {
-  //   props.dispatch(fetchFruits())
-  // }, [])
-  const [registerUsername, setRegisterUsername] = useState('')
-  const [registerPassword, setRegisterPassword] = useState('')
-  const [loginUsername, setLoginUsername] = useState('')
-  const [loginPassword, setLoginPassword] = useState('')
-  const [data, setData] = useState(null)
+
+    const [registerUsername, setRegisterUsername] = useState('')
+    const [registerPassword, setRegisterPassword] = useState('')
+    const [loginUsername, setLoginUsername] = useState('')
+    const [loginPassword, setLoginPassword] = useState('')
+    const [data, setData] = useState('')
+
   const register = () => {
     Axios({
       method: "POST",
@@ -22,7 +18,7 @@ function App (props) {
         password: registerPassword,
       },
       withCredentials: true,
-      url: "http://localhost:3000/api/v1/register",
+      url: "http://localhost:3000/server/routes/auth/register",
     }).then((res) => console.log(res))
   }
   const login = () => {
@@ -34,8 +30,8 @@ function App (props) {
       },
       withCredentials: true,
       url: "http://localhost:3000/api/v1/login",
-    }).then((res) => console.log(res));
-  };
+    }).then((res) => console.log(res))
+  }
   const getUser = () => {
     Axios({
       method: "GET",
@@ -44,8 +40,9 @@ function App (props) {
     }).then((res) => {
       setData(res.data);
       console.log(res.data);
-    });
-  };
+    })
+  }
+  
   return (
     <div className="App">
       <div>
@@ -73,19 +70,28 @@ function App (props) {
         />
         <button onClick={login}>Submit</button>
       </div>
-
       <div>
         <h1>Get User</h1>
         <button onClick={getUser}>Submit</button>
-        {data ? <h1>Welcome Back {data.username}</h1> : null}
+        {data.username ? <h1>Welcome Back {data.username}</h1> : null}
       </div>
     </div>
   )
 }
-// const mapStateToProps = (globalState) => {
-//   return {
-//     // fruits: globalState.fruits
-//   }
-// }
 
 export default connect()(App)
+
+
+
+  //   function handleSubmit (evt) {
+  //   evt.preventDefault()
+  //   const moreData = setDataRegister({username: registerUsername, password: registerPassword})
+  //   console.log(moreData)
+  //   props.dispatch(saveUser(moreData))
+  // }
+
+  // function handleLogin (evt) {
+  //   evt.preventDefault()
+  //   const moreData = setDataLogin({username: loginUsername, password: loginPassword})
+  //   props.dispatch(saveUser(moreData))
+  // }

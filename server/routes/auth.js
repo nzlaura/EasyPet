@@ -17,8 +17,9 @@ router.post('/login', (req, res, next) => {
     }
   })(req, res, next)
 })
+
 router.post('/register', (req, res) => {
-  User.userExists({ username: req.body.username }, async (err, doc) => {
+  User.insertNewUser({ username: req.body.username}, async (err, doc) => {
     if (err) throw err;
     if (doc) res.send("User Already Exists")
     if (!doc) {
@@ -33,6 +34,7 @@ router.post('/register', (req, res) => {
     }
   })
 })
+
 router.get('/user', (req, res) => {
   res.send(req.user)
 })

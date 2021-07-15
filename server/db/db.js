@@ -32,8 +32,20 @@ function getUserByName (username, db = connection) {
     .first()
 }
 
+function users (username, db = connection) {
+  return db('users').select()
+}
+
+function insertNewUser (userdata, db = connection) {
+  return db('users')
+    .insert({username: userdata.username, password: userdata.password})
+
+}
+
 module.exports = {
 userExists,
 getUserByName,
-userEmailExists
+userEmailExists,
+users,
+insertNewUser
 }
