@@ -1,10 +1,9 @@
-const express = require("express")
-const cors = require("cors")
-const passport = require("passport")
-const passportLocal = require("passport-local").Strategy
-const cookieParser = require("cookie-parser")
-const bcrypt = require("bcryptjs")
-const session = require("express-session")
+const express = require('express')
+const cors = require('cors')
+const passport = require('passport')
+const cookieParser = require('cookie-parser')
+const bcrypt = require('bcryptjs')
+const session = require('express-session')
 const user = require('../db/db')
 
 const router = express.Router()
@@ -14,49 +13,49 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(
   cors({
-    origin: "http://localhost:3000",
-    credentials: true,
+    origin: 'http://localhost:3000',
+    credentials: true
   })
-  )
-  app.use(
-    session({
-      secret: "secretcode",
-      resave: true,
-      saveUninitialized: true,
-    })
-    );
-    app.use(cookieParser("secretcode"))
-    app.use(passport.initialize())
-    app.use(passport.session())
-require("./passportConfig")(passport)
- 
+)
+app.use(
+  session({
+    secret: 'secretcode',
+    resave: true,
+    saveUninitialized: true
+  })
+)
+app.use(cookieParser('secretcode'))
+app.use(passport.initialize())
+app.use(passport.session())
+require('./passportConfig')(passport)
 
-router.post('/login', (req, res, next) => {
-  passport.authenticate("local", (err, user, info) => {
+router.post('/login', async (req, res, next) => {
+  await passport.authenticate('local', (err, user) => {
     if (err) throw err
-    if (!user) res.send("No User Exists")
+    if (!user) res.send('No User Exists')
     else {
       req.logIn(user, (err) => {
         if (err) throw err
-        res.send("Successfully Authenticated")
+        res.send('Successfully Authenticated')
+        console.log(req.user)
       })
     }
   })(req, res, next)
 })
 
 router.post('/register', (req, res) => {
-  user.userExists(req.body.username, async (err, result) => { 
-    if (err) throw err;
-    if (result) res.send("User Already Exists")
+  user.userExists(req.body.username, async (err, result) => {
+    if (err) throw err
+    if (result) res.send('User Already Exists')
     if (!result) {
-      const hashedPassword = await bcrypt.hash(req.body.password, 10) 
-     
+      const hashedPassword = await bcrypt.hash(req.body.password, 10)
+
       const newUser = {
         username: req.body.username,
-        password: hashedPassword,
+        password: hashedPassword
       }
-      await User.insertNewUser(newUser)
-      req.login = {username: newUser.username}
+      await user.insertNewUser(newUser)
+      req.login = { username: newUser.username }
       res.send('new user inserted')
     }
   })
