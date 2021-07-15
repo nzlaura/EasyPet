@@ -18,7 +18,7 @@ jest.mock('../sendgrid/contact', () => {
 })
 
 test('POST /sendgrid/contact', () => {
-  send.sendContactForm.mockImplementation(() => console.log('Email sent'))
+  send.sendContactForm.mockImplementation(() => Promise.resolve(console.log('Email sent')))
 
   return request(server)
     .post(baseURL)
@@ -32,7 +32,7 @@ test('POST /sendgrid/contact', () => {
 })
 
 test('Error happens', () => {
-  send.sendContactForm.mockImplementation(() => console.log('Email sent'))
+  send.sendContactForm.mockImplementation(() => Promise.reject(new Error('Could not send email')))
 
   return request(server)
     .post(baseURL)
@@ -40,7 +40,7 @@ test('Error happens', () => {
       contactForm: contactForm
     })
     .then(res => {
-      expect(res.status).toEqual(500)
+      expect(res.status).toBe(500)
       expect(res.text).toEqual('Could not send email')
       return null
     })
