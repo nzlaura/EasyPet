@@ -1,11 +1,11 @@
 const User = require('./db/db')
 const bcrypt = require("bcryptjs");
-const localStrategy = require("passport-local").Strategy; //use an uppercase 'L' for local
+const LocalStrategy = require("passport-local").Strategy; //use an uppercase 'L' for local
 
 module.exports = function (passport) {
   passport.use(
-    new localStrategy((username, password, done) => { //use and uppercase 'L' for local
-      User.getUserByName({ username: username }, (err, user) => { //just send down the username, instead of an object with the property username
+    new LocalStrategy((username, password, done) => { //use and uppercase 'L' for local
+      User.getUserByName(username , (err, user) => { //just send down the username, instead of an object with the property username
         // might be needed to switched to a .then but try it out before switching it and see if it works
         if (err) throw err;
         if (!user) return done(null, false);
