@@ -18,7 +18,7 @@ function App (props) {
         password: registerPassword,
       },
       withCredentials: true,
-      url: "http://localhost:3000/server/routes/auth/register",
+      url: "http://localhost:3000/server/routes/auth/reg",
     }).then((res) => console.log(res))
   }
   const login = () => {

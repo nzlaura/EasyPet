@@ -15,25 +15,25 @@ const server = express()
 
 server.use(express.json())
 server.use(express.static(path.join(__dirname, 'public')))
-server.use(bodyParser.json());
-server.use(bodyParser.urlencoded({ extended: true }));
+server.use(bodyParser.json())
+server.use(bodyParser.urlencoded({ extended: true }))
 server.use(
   cors({
     origin: "http://localhost:3000",
     credentials: true,
   })
-);
+)
 server.use(
   session({
     secret: "secretcode",
     resave: true,
     saveUninitialized: true,
   })
-);
-server.use(cookieParser("secretcode"));
-server.use(passport.initialize());
-server.use(passport.session());
-require("./passportConfig")(passport);
+)
+server.use(cookieParser("secretcode"))
+server.use(passport.initialize())
+server.use(passport.session())
+require("./passportConfig")(passport)
 
 server.use('/api/v1/', authRoutes)
 
