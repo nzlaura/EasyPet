@@ -22,9 +22,9 @@ function App (props) {
         password: registerPassword,
       },
       withCredentials: true,
-      url: "http://localhost:3000/api/v1/pets/register",
-    }).then((res) => console.log(res));
-  };
+      url: "http://localhost:3000/api/v1/register",
+    }).then((res) => console.log(res))
+  }
   const login = () => {
     Axios({
       method: "POST",
@@ -33,14 +33,14 @@ function App (props) {
         password: loginPassword,
       },
       withCredentials: true,
-      url: "http://localhost:3000/api/v1/pets/login",
+      url: "http://localhost:3000/api/v1/login",
     }).then((res) => console.log(res));
   };
   const getUser = () => {
     Axios({
       method: "GET",
       withCredentials: true,
-      url: "http://localhost:3000/api/v1/pets/user",
+      url: "http://localhost:3000/api/v1/user",
     }).then((res) => {
       setData(res.data);
       console.log(res.data);

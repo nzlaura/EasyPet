@@ -19,7 +19,7 @@ server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({ extended: true }));
 server.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: "http://localhost:3000/api/v1/",
     credentials: true,
   })
 );
@@ -35,6 +35,6 @@ server.use(passport.initialize());
 server.use(passport.session());
 require("./passportConfig")(passport);
 
-server.use('/api/v1/pets', authRoutes)
+server.use('/api/v1/', authRoutes)
 
 module.exports = server

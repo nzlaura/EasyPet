@@ -5,8 +5,7 @@ exports.up = function (knex) {
     t.integer('phone')
     t.string('full_name')
     t.string('email').unique()
-    t.binary('hash')
-    t.string('reset_password_token')
+    t.string('password').unique()
   })
 }
 
