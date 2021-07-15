@@ -1,14 +1,14 @@
-import React from 'react'
-import { render } from '@testing-library/react'
-import '@testing-library/jest-dom'
+// import React from 'react'
+// import { render } from '@testing-library/react'
+// import '@testing-library/jest-dom'
 
-import Contact from './Contact'
+// import Contact from './Contact'
 
-jest.mock('../apis/index', () => {
-  return {
-    getNewPassword: jest.fn()
-  }
-})
+// jest.mock('../apis/index', () => {
+//   return {
+//     getNewPassword: jest.fn()
+//   }
+// })
 
 // test('render 1 input component', () => {
 //   expect.assertions(1)
