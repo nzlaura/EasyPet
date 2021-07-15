@@ -5,7 +5,7 @@ exports.up = function (knex) {
     t.integer('phone')
     t.string('full_name')
     t.string('email').unique()
-    t.string('password').unique()
+    t.string('password').unique() //might need to be text or binary, since hashes are really long
   })
 }
 
