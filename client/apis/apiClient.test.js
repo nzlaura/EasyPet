@@ -12,7 +12,6 @@ describe('sendContactFormMessage is working', () => {
   const scope = nock('http://localhost:3000')
     .post('/api/v1/contact', contactForm)
     .reply(201)
-
   test('sendContactFormMessage is POSTING an email address to api/v1/contact', () => {
     expect.assertions(3)
 
