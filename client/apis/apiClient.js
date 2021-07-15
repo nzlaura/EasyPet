@@ -5,7 +5,7 @@ export function sendContactFormMessage (contactForm) {
   return request.post(contactUrl)
     .send(contactForm)
     .then(res => {
-      res.status(201)
       return null
     })
 }
+// add error handling
