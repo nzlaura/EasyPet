@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import Axios from "axios"
 
 function App (props) {
-
     const [registerUsername, setRegisterUsername] = useState('')
     const [registerPassword, setRegisterPassword] = useState('')
     const [loginUsername, setLoginUsername] = useState('')
@@ -18,7 +17,7 @@ function App (props) {
         password: registerPassword,
       },
       withCredentials: true,
-      url: "http://localhost:3000/server/routes/auth/reg",
+      url: "http://localhost:3000/api/v1/auth/register",
     }).then((res) => console.log(res))
   }
   const login = () => {
@@ -29,17 +28,18 @@ function App (props) {
         password: loginPassword,
       },
       withCredentials: true,
-      url: "http://localhost:3000/api/v1/login",
+      url: "http://localhost:3000/api/v1/auth/login",
     }).then((res) => console.log(res))
+    .catch(err => console.log(err.message))
   }
   const getUser = () => {
     Axios({
       method: "GET",
       withCredentials: true,
-      url: "http://localhost:3000/api/v1/user",
+      url: "http://localhost:3000/api/v1/auth/user",
     }).then((res) => {
-      setData(res.data);
-      console.log(res.data);
+      setData(res.data)
+      console.log(res.data)
     })
   }
   
@@ -80,18 +80,3 @@ function App (props) {
 }
 
 export default connect()(App)
-
-
-
-  //   function handleSubmit (evt) {
-  //   evt.preventDefault()
-  //   const moreData = setDataRegister({username: registerUsername, password: registerPassword})
-  //   console.log(moreData)
-  //   props.dispatch(saveUser(moreData))
-  // }
-
-  // function handleLogin (evt) {
-  //   evt.preventDefault()
-  //   const moreData = setDataLogin({username: loginUsername, password: loginPassword})
-  //   props.dispatch(saveUser(moreData))
-  // }

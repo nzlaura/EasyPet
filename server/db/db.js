@@ -26,7 +26,7 @@ function userEmailExists (email, db = connection) {
     })
 }
   
-function getUserByName (username, db = connection) {
+function getUserByUsername (username, db = connection) {
   return db('users').select()
     .where('username', username)
     .first()
@@ -39,12 +39,11 @@ function users (username, db = connection) {
 function insertNewUser (userdata, db = connection) {
   return db('users')
     .insert({username: userdata.username, password: userdata.password})
-
 }
 
 module.exports = {
 userExists,
-getUserByName,
+getUserByUsername,
 userEmailExists,
 users,
 insertNewUser
