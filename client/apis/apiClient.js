@@ -1,8 +1,11 @@
 import request from 'superagent'
+const contactUrl = '/api/v1/contact/'
 
-const rootUrl = '/api/v1'
-
-// export function insertUser () {
-//   return request.post(rootUrl + `/users`)
-// }
-
+export function sendContactFormMessage (contactForm) {
+  return request.post(contactUrl)
+    .send(contactForm)
+    .then(res => {
+      return null
+    })
+}
+// add error handling

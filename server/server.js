@@ -3,9 +3,9 @@ const express = require('express')
 const cors = require('cors')
 const passport = require('passport')
 const session = require('express-session')
-// require('../server/routes/passportConfig')(passport)
 
 const authRoutes = require('./routes/auth')
+const contactRoute = require('./routes/contact')
 
 const server = express()
 server.use(express.static(path.join(__dirname, 'public')))
@@ -32,5 +32,7 @@ server.use(
 )
 
 server.use('/', authRoutes)
+server.use('/api/v1/contact', contactRoute)
+
 
 module.exports = server
