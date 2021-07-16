@@ -19,6 +19,7 @@ function App (props) {
       withCredentials: true,
       url: 'http://localhost:3000/api/v1/auth/register'
     }).then((res) => console.log(res))
+      .catch(err => console.log(err.message))
   }
   const login = () => {
     Axios({
@@ -40,7 +41,9 @@ function App (props) {
     }).then((res) => {
       setData(res.data)
       console.log(res.data)
+      return null
     })
+      .catch(err => console.log(err.message))
   }
 
   return (
