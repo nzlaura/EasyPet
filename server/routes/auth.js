@@ -24,15 +24,15 @@ app.use(
       resave: true,
       saveUninitialized: true,
     })
-    );
+  )
     app.use(cookieParser("secretcode"))
     app.use(passport.initialize())
     app.use(passport.session())
 require("./passportConfig")(passport)
  
 
-router.post('/login', (req, res, next) => {
-  passport.authenticate("local", (err, user, info) => {
+router.post('/login', async (req, res, next) => {
+  await passport.authenticate("local", (err, user) => {
     if (err) throw err
     if (!user) res.send("No User Exists")
     else {
