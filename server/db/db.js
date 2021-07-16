@@ -1,4 +1,5 @@
 const connection = require('./connection')
+const bcrypt = require('bcryptjs')
 
 function userExists (username, db = connection) {
   return db('users').select()
@@ -36,9 +37,12 @@ function users (username, db = connection) {
   return db('users').select()
 }
 
-function insertNewUser (userdata, db = connection) {
-  return db('users')
-    .insert({ username: userdata.username, password: userdata.password })
+function insertNewUser (userName, password, db = connection) {
+  return bcrypt.hash(password, 10)
+    .then(hashedPassword => {
+      return db('users')
+        .insert({ username: userName, password: hashedPassword })
+    })
 }
 
 module.exports = {

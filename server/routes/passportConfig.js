@@ -7,7 +7,6 @@ function initialize (passport) {
     new LocalStrategy((username, password, done) => {
       user.getUserByUsername(username)
         .then((user, err) => {
-          console.log('getUserByName', user.username)
           if (err) throw err
           if (!user) return done(null, false)
           bcrypt.compare(password, user.password, (err, result) => {
