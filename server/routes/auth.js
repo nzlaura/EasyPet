@@ -20,22 +20,27 @@ router.post('/login', async (req, res, next) => {
   })(req, res, next)
 })
 
-router.post('/register', async (req, res) => {
-  await user.userExists(req.body.username, (err, result) => {
-    if (err) throw err
-    if (result) res.send('User Already Exists')
-    if (!result) {
-      const hashedPassword = bcrypt.hash(req.body.password, 10)
+router.post('/register', (req, res) => {
+  user.userExists(req.body.username)
+    .then(result => {
+      if (result) res.send('User Already Exists')
+      if (!result) {
+        const hashedPassword = bcrypt.hash(req.body.password, 10)
 
-      const newUser = {
-        username: req.body.username,
-        password: hashedPassword
+        const newUser = {
+          username: req.body.username,
+          password: hashedPassword
+        }
+        return user.insertNewUser(newUser)
       }
-      user.insertNewUser(newUser)
-      req.login = { username: newUser.username }
+      return null
+    })
+    .then(ids => {
+      req.login = { id: ids }
       res.send('new user inserted')
-    }
-  })
+      return null
+    })
+    .catch(err => console.log(err))
 })
 
 router.get('/user', (req, res) => {

@@ -8,7 +8,6 @@ function initialize (passport) {
       user.getUserByUsername(username)
         .then((user, err) => {
           console.log('getUserByName', user)
-          console.log('error', err)
           if (err) throw err
           if (!user) return done(null, false)
           bcrypt.compare(password, user.password, (err, result) => {
