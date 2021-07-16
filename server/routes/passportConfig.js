@@ -1,10 +1,10 @@
 const user = require('../db/db')
-const bcrypt = require("bcryptjs")
-const LocalStrategy = require("passport-local").Strategy
+const bcrypt = require('bcryptjs')
+const LocalStrategy = require('passport-local').Strategy
 
 function initialize (passport) {
   passport.use(
-    new LocalStrategy((username, password, done) => { 
+    new LocalStrategy((username, password, done) => {
       user.getUserByUsername(username)
         .then((user, err) => {
           console.log('getUserByName', user)
@@ -21,14 +21,9 @@ function initialize (passport) {
           })
           return null
         })
-        .catch(err => {
-          console.log(err.message)
-          return null
-        }) 
-      })
+        .catch(err => console.log(err))
+    })
   )
-
-
 
   passport.serializeUser((user, cb) => {
     cb(null, user.username)
@@ -36,16 +31,14 @@ function initialize (passport) {
 
   passport.deserializeUser((username, cb) => {
     user.getUserByUsername(username)
-    .then(user => {
-      const userInformation = {
-        username: user.username,
-      }
-      return cb(null, userInformation)
-    })
-    .catch(err => {
-      console.log(err.message)
-      return null
-    })
+      .then(user => {
+        const userInformation = {
+          username: user.username
+        }
+        return cb(null, userInformation)
+      })
+      .catch(err => console.log(err))
+    return null
   })
 }
 
