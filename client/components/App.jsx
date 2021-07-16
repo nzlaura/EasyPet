@@ -5,12 +5,9 @@ import Contact from './Contact'
 
 // Example:
 // import { fetchFruits } from '../actions'
+import MyMonthlyCalendar from './MyMonthlyCalendar'
 
 function App (props) {
-  // useEffect(() => {
-  //   props.dispatch(fetchFruits())
-  // }, [])
-
   return (
     <>
       {/* <div className='app'>
@@ -21,15 +18,18 @@ function App (props) {
           ))}
         </ul>
       </div> */}
-      <Route exact path="/contact" component={Contact}/>
+      {/* <Route exact path="/contact" component={Contact}/> */}
+      <MyMonthlyCalendar />
 
     </>
   )
 }
-const mapStateToProps = (globalState) => {
-  return {
-    // fruits: globalState.fruits
-  }
-}
+// const mapStateToProps = (globalState) => {
+//   return {
+//     // fruits: globalState.fruits
+//   }
+// }
 
-export default connect(mapStateToProps)(App)
+// export default connect(mapStateToProps)(App)
+
+export default App
