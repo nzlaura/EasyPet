@@ -31,13 +31,9 @@ router.post('/register', (req, res) => {
           username: req.body.username,
           password: hashedPassword
         }
-        return user.insertNewUser(newUser)
+        user.insertNewUser(newUser)
       }
-      return null
-    })
-    .then(ids => {
-      req.login = { id: ids }
-      res.send('new user inserted')
+      res.send('user created successfully')
       return null
     })
     .catch(err => console.log(err))
