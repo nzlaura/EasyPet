@@ -1,24 +1,26 @@
 import React, { useState } from 'react'
-import { baseApiUrl as baseUrl } from '../config'
+import Axios from 'axios'
 
 function Register (props) {
+  const [registerUsername, setRegisterUsername] = useState('')
+  const [registerPassword, setRegisterPassword] = useState('')
   const [error, setError] = useState('')
-  const [form, setForm] = useState({
-    email: '',
-    username: '',
-    password: ''
-  })
 
   const hideError = () => {
     setError('')
   }
 
-  function handleChange (e) {
-    const { name, value } = e.target
-    setForm({
-      ...form,
-      [name]: value
-    })
+  const register = () => {
+    Axios({
+      method: 'POST',
+      data: {
+        username: registerUsername,
+        password: registerPassword
+      },
+      withCredentials: true,
+      url: 'http://localhost:3000/register'
+    }).then((res) => console.log(res))
+      .catch(err => console.log(err.message))
   }
 
   function handleClick (e) {
@@ -41,41 +43,60 @@ function Register (props) {
       })
   }
 
+  function showPassword() {
+    var x = document.getElementById("passwordinput");
+    if (x.type === 'password') {
+      x.type = 'text';
+    } else {
+      x.type = 'password';
+    }
+  }
+
   return (
     <>
-      <h2>Register</h2>
-      <div data-testid='error' onClick={hideError}>
-        { error && `Error: ${error}` }
+      <div>
+        <h1>Register</h1>
+        <input placeholder="username" onChange={(e) => setRegisterUsername(e.target.value)}/>
+        <input type='password' id='passwordinput' placeholder="password" onChange={(e) => setRegisterPassword(e.target.value)}/>
+        <input type="checkbox" onClick={showPassword}/>Show Password
+        <button onClick={register}>Submit</button>
       </div>
-      <form data-testid='form' onSubmit={handleClick}>
-        <label htmlFor='email'>Email: </label>
-        <input type='text' required
-          id='email'
-          name='email'
-          placeholder='add new email'
-          value={form.email}
-          onChange={handleChange}
-        />
-        <label htmlFor='username'>Username: </label>
-        <input type='text' required
-          id='username'
-          name='username'
-          placeholder='add new username'
-          value={form.username}
-          onChange={handleChange} />
-        <label htmlFor='password'>Password: </label>
-        <input type='password' required
-          id='password'
-          name='password'
-          placeholder='create a password'
-          value={form.password}
-          onChange={handleChange}
-          // autocomplete='new-password'
-        />
-        <button type='submit' data-testid='register' onClick={handleClick}>Register</button>
-      </form>
     </>
   )
 }
 
 export default Register
+
+// <>
+//       <h2>Register</h2>
+//       <div data-testid='error' onClick={hideError}>
+//         { error && `Error: ${error}` }
+//       </div>
+//       <form data-testid='form' onSubmit={handleClick}>
+//         <label htmlFor='email'>Email: </label>
+//         <input type='text' required
+//           id='email'
+//           name='email'
+//           placeholder='add new email'
+//           value={form.email}
+//           onChange={handleChange}
+//         />
+//         <label htmlFor='username'>Username: </label>
+//         <input type='text' required
+//           id='username'
+//           name='username'
+//           placeholder='add new username'
+//           value={form.username}
+//           onChange={handleChange} />
+//         <label htmlFor='password'>Password: </label>
+//         <input type='password' required
+//           id='password'
+//           name='password'
+//           placeholder='create a password'
+//           value={form.password}
+//           onChange={handleChange}
+//           // autocomplete='new-password'
+//         />
+//         <button type='submit' data-testid='register' onClick={handleClick}>Register</button>
+//       </form>
+//     </>

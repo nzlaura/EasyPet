@@ -31,6 +31,6 @@ server.use(
   })
 )
 
-server.use('/api/v1/auth', authRoutes)
+server.use('/', authRoutes)
 
 module.exports = server
