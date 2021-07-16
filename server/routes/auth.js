@@ -1,6 +1,5 @@
 const express = require('express')
 const passport = require('passport')
-const bcrypt = require('bcryptjs')
 const user = require('../db/db')
 require('./passportConfig')(passport)
 
@@ -14,7 +13,6 @@ router.post('/login', async (req, res, next) => {
       req.logIn(user, (err) => {
         if (err) throw err
         res.send('Successfully Authenticated')
-        console.log(req.user)
       })
     }
   })(req, res, next)
@@ -25,19 +23,9 @@ router.post('/register', (req, res) => {
     .then(result => {
       if (result) res.send('User Already Exists')
       if (!result) {
-        const hashedPassword = bcrypt.hash(req.body.password, 10)
-
-        const newUser = {
-          username: req.body.username,
-          password: hashedPassword
-        }
-        return user.insertNewUser(newUser)
+        user.insertNewUser(req.body.username, req.body.password)
       }
-      return null
-    })
-    .then(ids => {
-      req.login = { id: ids }
-      res.send('new user inserted')
+      res.send('user created successfully')
       return null
     })
     .catch(err => console.log(err))
