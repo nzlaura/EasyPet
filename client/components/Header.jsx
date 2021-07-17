@@ -4,8 +4,10 @@ import Logo from '../styles/ImageAssets/Logo/Logo.png'
 function Header () {
   return (
     <>
-      <div className='flex items-center justify-center mb-4'>
-        <img src={Logo} width='400 px' height= 'auto'/>
+      <div className='flex items-left ml-4 -mt-12 mb-4'>
+        <a href="#/home">
+          <img src={Logo} width='350 px' height= 'auto'/>
+        </a>
       </div>
     </>
   )
