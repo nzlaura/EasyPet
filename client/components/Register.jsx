@@ -56,32 +56,31 @@ function Register (props) {
 
   return (
     <>
+
       <div className='bg-fixed bg-cover' style={{ backgroundImage: `url(${signInImage})` }}>
 
-        <div className='container mx-auto h-screen'>
+        <div className='container h-screen'>
 
-          <p className='text-4xl flex items-center justify-center mb-4'>Register</p>
+          <form className='flex items-center grid grid-cols-1 grid-rows-5 w-3/12 h-64' id='register-form'>
+            <p className='text-5xl flex items-left font-bold mb-4 mt-52 ml-20 mb-20 text-white'>Sign Up</p>
 
-          <form className='mx-auto flex items-center grid grid-cols-1 grid-rows-5 w-4/12 h-64' id='register-form'>
+            <input className='rounded-md shadow-sm col-1 mt-52 ml-20 mb-10 h-12' type='text' id='username' name='username' placeholder='  username' onChange={(e) => setRegisterUsername(e.target.value)}/>
 
-            <input className='rounded-md shadow-sm' type='text' id='username' name='username' placeholder='username' onChange={(e) => setRegisterUsername(e.target.value)}/>
-
-            <input className='rounded-md shadow-sm' type='password' id='passwordinput' name='passwordinput' placeholder="password" onChange={(e) => setRegisterPassword(e.target.value)}/>
+            <input className='rounded-md shadow-sm col-1 mt-52 ml-20 h-12' type='password' id='passwordinput' name='passwordinput' placeholder='  password' onChange={(e) => setRegisterPassword(e.target.value)}/>
 
             <label className='inline-flex items-center' htmlFor='showPassword'>
-              <input className='form-checkbox' type='checkbox' id='showPassword' onClick={showPassword}/>
-              <span className='ml-2'>Show password</span>
+              <input className='form-checkbox col-1 mt-52 ml-20' type='checkbox' id='showPassword' onClick={showPassword}/>
+              <span className='ml-2 col-1 mt-52 text-white'>Show password</span>
             </label>
 
-            <button className='bg-black hover:bg-gray-900 text-white font-bold py-2 px-4 rounded mx-auto flex items-center w-2/12 h-auto' type='submit' onClick={register}>Submit</button>
+            <button className='bg-black hover:bg-gray-900 text-white font-bold rounded-md flex items-center justify-center col-1 h-12 mt-52 ml-20' type='submit' onClick={register}>Submit</button>
+
           </form>
 
         </div>
+
       </div>
 
-      {/* <div className='bg-fixed' >
-        <img src={signInImage}/>
-      </div> */}
     </>
   )
 }

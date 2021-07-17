@@ -4,7 +4,7 @@ import FaqListItem from './FaqListItem'
 
 import { getFaqs } from '../apis/apiClient'
 
-import faqImage from '../styles/ImageAssets/AnimationOne/FAQVet.png'
+import faqImage from '../styles/ImageAssets/AnimationOne/HomeGroup.png'
 
 function FaqList () {
   const [faqState, setFaqState] = useState([])
@@ -24,7 +24,7 @@ function FaqList () {
       </div>
       <div className='container'>
 
-        <p className='text-8xl flex text-left mt-36 mb-4 ml-36'>Frequently Asked Questions</p>
+        <p className='text-8xl flex text-left font-bold mt-36 mb-4 ml-36'>Frequently Asked Questions</p>
 
         <div className='text-4xl flex text-left mb-36 ml-36'>
           <p>Everything you need to know about EasyPet</p>
