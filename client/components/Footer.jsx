@@ -1,4 +1,5 @@
 import React from 'react'
+import SearchBar from './SearchBar.jsx'
 
 function Footer () {
   return (
@@ -8,12 +9,7 @@ function Footer () {
           <div className="mx-auto container w-screen bg-black px-4 flex flex-wrap items-center justify-between">
             <div className="lg:flex flex-grow items-center">
 
-              <div className="relative">
-                <input type="text" className="h-8 w-96 pr-8 pl-5 rounded-md z-0 focus:shadow focus:outline-none text-sm" placeholder="Search..."/>
-                <div className="absolute top-4 right-3">
-                  <i className="fa fa-search text-gray-400 z-20 hover:text-gray-500"></i>
-                </div>
-              </div>
+              <SearchBar />
 
               <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
                 <li className="nav-item">

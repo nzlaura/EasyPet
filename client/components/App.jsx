@@ -11,6 +11,7 @@ import Header from './Header'
 import Footer from './Footer'
 import FaqList from './FaqList'
 import Navbar from './Nav'
+import SearchFAQ from './SearchFAQ'
 
 function App (props) {
   return (
@@ -22,6 +23,7 @@ function App (props) {
       <Route path = '/register' component={Register} />
       <Route path = '/login' component={SignIn} />
       <Route path = '/faq' component={FaqList} />
+      <Route exact path="/search/:searchString" component={SearchFAQ} />
       <Footer/>
     </>
   )
