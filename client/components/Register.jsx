@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import Axios from 'axios'
 
+import signInImage from '../styles/ImageAssets/AnimationOne/SignUpWalk.png'
+
 function Register (props) {
   const [registerUsername, setRegisterUsername] = useState('')
   const [registerPassword, setRegisterPassword] = useState('')
@@ -43,24 +45,43 @@ function Register (props) {
       })
   }
 
-  function showPassword() {
-    var x = document.getElementById("passwordinput");
+  function showPassword () {
+    var x = document.getElementById('passwordinput')
     if (x.type === 'password') {
-      x.type = 'text';
+      x.type = 'text'
     } else {
-      x.type = 'password';
+      x.type = 'password'
     }
   }
 
   return (
     <>
-      <div>
-        <h1>Register</h1>
-        <input placeholder="username" onChange={(e) => setRegisterUsername(e.target.value)}/>
-        <input type='password' id='passwordinput' placeholder="password" onChange={(e) => setRegisterPassword(e.target.value)}/>
-        <input type="checkbox" onClick={showPassword}/>Show Password
-        <button onClick={register}>Submit</button>
+      <div className='bg-fixed bg-cover' style={{ backgroundImage: `url(${signInImage})` }}>
+
+        <div className='container mx-auto h-screen'>
+
+          <p className='text-4xl flex items-center justify-center mb-4'>Register</p>
+
+          <form className='mx-auto flex items-center grid grid-cols-1 grid-rows-5 w-4/12 h-64' id='register-form'>
+
+            <input className='rounded-md shadow-sm' type='text' id='username' name='username' placeholder='username' onChange={(e) => setRegisterUsername(e.target.value)}/>
+
+            <input className='rounded-md shadow-sm' type='password' id='passwordinput' name='passwordinput' placeholder="password" onChange={(e) => setRegisterPassword(e.target.value)}/>
+
+            <label className='inline-flex items-center' htmlFor='showPassword'>
+              <input className='form-checkbox' type='checkbox' id='showPassword' onClick={showPassword}/>
+              <span className='ml-2'>Show password</span>
+            </label>
+
+            <button className='bg-black hover:bg-gray-900 text-white font-bold py-2 px-4 rounded mx-auto flex items-center w-2/12 h-auto' type='submit' onClick={register}>Submit</button>
+          </form>
+
+        </div>
       </div>
+
+      {/* <div className='bg-fixed' >
+        <img src={signInImage}/>
+      </div> */}
     </>
   )
 }
