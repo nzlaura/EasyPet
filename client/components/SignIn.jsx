@@ -43,7 +43,7 @@ function SignIn (props) {
 
   return (
     <>
-      <div className='bg-fixed bg-cover' style={{ backgroundImage: `url(${signInImage})` }}>
+      <div className='bg-scroll bg-cover' style={{ backgroundImage: `url(${signInImage})` }}>
         <div className='container h-screen'>
           <form className='flex items-center grid grid-cols-1 grid-rows-6 w-3/12 h-64' id='signin-form'>
             <p className='text-5xl flex items-left font-bold mb-4 mt-52 ml-20 mb-20 text-black'>Login</p>

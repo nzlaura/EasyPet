@@ -14,17 +14,16 @@ import Navbar from './Nav'
 
 function App (props) {
   return (
-
-    <div>
-      <Route path = '/' component={Navbar} />
+    <>
       <Header/>
+      <Route path = '/' component={Navbar} />
       <Route path = '/contact' component={Contact} />
       <Route path = '/calendar' component={MyMonthlyCalendar} />
       <Route path = '/register' component={Register} />
       <Route path = '/login' component={SignIn} />
       <Route path = '/faq' component={FaqList} />
       <Footer/>
-    </div>
+    </>
   )
 }
 
