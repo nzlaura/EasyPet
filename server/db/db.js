@@ -45,10 +45,15 @@ function insertNewUser (userName, password, db = connection) {
     })
 }
 
+function getFaqs (db = connection) {
+  return db('faq').select()
+}
+
 module.exports = {
   userExists,
   getUserByUsername,
   userEmailExists,
   users,
-  insertNewUser
+  insertNewUser,
+  getFaqs
 }

@@ -6,6 +6,7 @@ const session = require('express-session')
 
 const authRoutes = require('./routes/auth')
 const contactRoute = require('./routes/contact')
+const faqRoute = require('./routes/faq')
 
 const server = express()
 server.use(express.static(path.join(__dirname, 'public')))
@@ -33,6 +34,6 @@ server.use(
 
 server.use('/', authRoutes)
 server.use('/api/v1/contact', contactRoute)
-
+server.use('/api/v1/faq', faqRoute)
 
 module.exports = server

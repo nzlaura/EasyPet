@@ -9,7 +9,7 @@ import SignIn from './SignIn'
 import MyMonthlyCalendar from './MyMonthlyCalendar'
 import Header from './Header'
 import Footer from './Footer'
-import Faq from './FAQ'
+import FaqList from './FaqList'
 import Navbar from './Nav'
 
 function App (props) {
@@ -22,7 +22,7 @@ function App (props) {
       <Route path = '/calendar' component={MyMonthlyCalendar} />
       <Route path = '/register' component={Register} />
       <Route path = '/login' component={SignIn} />
-      <Route path = '/faq' component={Faq} />
+      <Route path = '/faq' component={FaqList} />
       {/* <Footer/> */}
     </div>
   )
