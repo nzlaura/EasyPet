@@ -4,6 +4,8 @@ import FaqListItem from './FaqListItem'
 
 import { getFaqs } from '../apis/apiClient'
 
+import faqImage from '../styles/ImageAssets/AnimationOne/FAQVet.png'
+
 function FaqList () {
   const [faqState, setFaqState] = useState([])
 
@@ -16,15 +18,25 @@ function FaqList () {
   }, [])
 
   return (
-    <div>
-      <h1>Frequently Asked Questions</h1>
-      <p>EasyPet assists pet owners in caring and managing their pets. Here are a few helpful</p>
-      {faqState.map(faq => {
-        return (
-          <FaqListItem key={faq.id} faq={faq} />
-        )
-      })}
-    </div>
+    <>
+      <div className='mx-auto flex items-center justify-center'>
+        <img src={faqImage}/>
+      </div>
+      <div className='container'>
+
+        <p className='text-8xl flex text-left mt-36 mb-4 ml-36'>Frequently Asked Questions</p>
+
+        <div className='text-4xl flex text-left mb-36 ml-36'>
+          <p>Everything you need to know about EasyPet</p>
+        </div>
+
+        {faqState.map(faq => {
+          return (
+            <FaqListItem key={faq.id} faq={faq} />
+          )
+        })}
+      </div>
+    </>
   )
 }
 
