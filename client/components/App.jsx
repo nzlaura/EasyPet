@@ -27,7 +27,7 @@ function App (props) {
       <Route path = '/login' component={SignIn} />
       <Route path = '/user' component={UserProfile} />
       <Route path = '/faq' component={FaqList} />
-      <Route exact path="/faq/search/:searchString" component={SearchFAQ} />
+      <Route exact path="/search/:searchString" component={SearchFAQ} />
       <Route path = '/about' component={About} />
       <Footer/>
     </>
