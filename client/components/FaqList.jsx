@@ -36,7 +36,7 @@ function FaqList () {
       })}
       <div className='container grid grid-cols-2'>
         <div><img className='h-80 mx-auto items-center' src={img1}/></div>
-        <div><img className='h-80 ml-80 mx-auto items-center' src={img2}/></div>
+        <div><img className='h-80 ml-36 mx-auto items-center' src={img2}/></div>
       </div>
     </>
   )

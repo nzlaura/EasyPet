@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { getFaqBySearchString } from '../apis/apiClient'
+import FaqListItem from './FaqListItem'
 
 function SearchFAQ (props) {
   const searchString = props.match.params.searchString
@@ -13,9 +14,11 @@ function SearchFAQ (props) {
   }, [searchString])
   return (
     <>
-      <div>
-        {/* {faqState.map(faq => <p key={faq.id} faq={faq}/>)} */}
-      </div>
+      {faqState.map(faq => {
+        return (
+          <FaqListItem key={faq.id} answer={faq.answer} question={faq.question} />
+        )
+      })}
     </>
   )
 }

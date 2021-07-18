@@ -49,11 +49,18 @@ function getFaqs (db = connection) {
   return db('faq').select()
 }
 
+function getFaqBySearchString (searchString, db = connection) {
+  return db('faq').select()
+    .where('question', 'LIKE', `%${searchString}%`)
+    .orWhere('answer', 'LIKE', `%${searchString}%`)
+}
+
 module.exports = {
   userExists,
   getUserByUsername,
   userEmailExists,
   users,
   insertNewUser,
-  getFaqs
+  getFaqs,
+  getFaqBySearchString
 }
