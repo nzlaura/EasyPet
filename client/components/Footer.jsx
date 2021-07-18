@@ -1,5 +1,6 @@
 import React from 'react'
 import SearchBar from './SearchBar.jsx'
+import { Route } from 'react-router-dom'
 
 function Footer () {
   return (
@@ -9,9 +10,15 @@ function Footer () {
           <div className="mx-auto container w-screen bg-black px-4 flex flex-wrap items-center justify-between">
             <div className="lg:flex flex-grow items-center">
 
-              <SearchBar />
+              <Route path="/" component={SearchBar} />
 
               <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
+                <li className="nav-item">
+                  <a className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
+                    href="#/home">
+                    <span className="ml-2">Home</span>
+                  </a>
+                </li>
                 <li className="nav-item">
                   <a className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
                     href="#/register">
@@ -36,6 +43,21 @@ function Footer () {
                     <span className="ml-2">Pet Profile</span>
                   </a>
                 </li>
+
+                <li className="nav-item">
+                  <a className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
+                    href="#/user">
+                    <span className="ml-2">User Profile</span>
+                  </a>
+                </li>
+
+                <li className="nav-item">
+                  <a className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
+                    href="#/about">
+                    <span className="ml-2">About</span>
+                  </a>
+                </li>
+
                 <li className="nav-item">
                   <a
                     className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
