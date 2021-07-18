@@ -15,6 +15,7 @@ function sendContactForm (contactForm) {
   sgMail
     .send(msg)
     .then(() => {
+      // either remove the console or supress the output in your test
       console.log('Email sent')
       return null
     })
