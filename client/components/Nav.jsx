@@ -19,7 +19,12 @@ function Navbar ({ fixed }) {
           <div className={'lg:flex flex-grow items-center' + (navbarOpen ? ' flex' : ' hidden')} id="example-navbar-danger">
 
             <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
-
+              <li className="nav-item">
+                <a className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-black hover:opacity-75"
+                  href="#/home">
+                  <span className="ml-2">Home</span>
+                </a>
+              </li>
               <li className="nav-item">
                 <a className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-black hover:opacity-75"
                   href="#/register">
@@ -48,11 +53,18 @@ function Navbar ({ fixed }) {
                 </a>
               </li>
 
-
               <li className="nav-item">
                 <a className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-black hover:opacity-75"
                   href="#/petprofile">
                   <span className="ml-2">Pet Profile</span>
+                </a>
+              </li>
+
+              <li className="nav-item">
+                <a
+                  className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-black hover:opacity-75"
+                  href="#/about">
+                  <span className="ml-2">About</span>
                 </a>
               </li>
 

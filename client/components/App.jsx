@@ -19,7 +19,7 @@ function App (props) {
   return (
     <>
       <Header/>
-      <Route path = '/' component={Navbar} />
+      <Navbar />
       <Route path = '/home' component={Home} />
       <Route path = '/contact' component={Contact} />
       <Route path = '/calendar' component={MyMonthlyCalendar} />
