@@ -45,25 +45,25 @@ class AddressFinder extends React.Component {
 
   render() {
     return (
-      <form className='formBox' method="get">
-        <div className='formTitle'>Address:</div>
+      <form className='formBox mb-10' method="get">
+        <div className='formTitle'>Enter Address:</div>
 
         <div className='formHeader'>Address Line 1</div>
-        <input type="search" id='address_line_1' className='formInput' placeholder="Search address here..." ref={this.address_line_1}></input>
+        <input type="search" id='address_line_1' className='formInput rounded-md shadow-sm col-1 h-12' placeholder="Search address here..." ref={this.address_line_1}></input>
 
         <div className='formHeader'>Address Line 2</div>
-        <input className='formInput' ref={this.address_line_2}></input>
+        <input className='formInput rounded-md shadow-sm col-1 h-12' ref={this.address_line_2}></input>
 
         <div className='formHeader'>Suburb</div>
-        <input className='formInput' ref={this.suburb}></input>
+        <input className='formInput rounded-md shadow-sm col-1 h-12' ref={this.suburb}></input>
 
         <div className='formHeader'>City</div>
-        <input className='formInput' ref={this.city}></input>
+        <input className='formInput rounded-md shadow-sm col-1 h-12' ref={this.city}></input>
 
         <div className='formHeader'>Postcode</div>
-        <input className='formInput' ref={this.postcode}></input>
+        <input className='formInput rounded-md shadow-sm col-1 h-12' ref={this.postcode}></input>
 
-        <input className='btn' type="submit" name="next"></input>
+        <input className='btn bg-black hover:bg-gray-900 text-white font-bold rounded-md items-center justify-center col-1 h-8 mt-4 w-20' type="submit" name="next"></input>
       </form>
     )
   }
