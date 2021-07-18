@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 import Contact from './Contact'
 import Register from './Register'
 import SignIn from './SignIn'
+import UserProfile from './UserProfile'
 import MyMonthlyCalendar from './MyMonthlyCalendar'
 import Header from './Header'
 import Footer from './Footer'
@@ -24,6 +25,7 @@ function App (props) {
       <Route path = '/calendar' component={MyMonthlyCalendar} />
       <Route path = '/register' component={Register} />
       <Route path = '/login' component={SignIn} />
+      <Route path = '/user' component={UserProfile} />
       <Route path = '/faq' component={FaqList} />
       <Route exact path="/search/:searchString" component={SearchFAQ} />
       <Route path = '/about' component={About} />

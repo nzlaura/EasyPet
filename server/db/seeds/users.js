@@ -7,7 +7,8 @@ exports.seed = function (knex) {
     ]))
     .then(function (crackerHash) {
       return knex('users').insert([
-        { id: 1, username: 'doggolover', phone: 221054478, full_name: 'Jack Craker', email: 'doggolover@gmail.com', password: crackerHash }
+        { id: 1, username: 'doggolover', phone: 221054478, first_name: 'Jack', last_name: 'Cracker',
+         dob: 10011991, email: 'doggolover@gmail.com', address: '42 Wallaby Way', city: 'Sydney', password: crackerHash }
       ])
     })
 }
