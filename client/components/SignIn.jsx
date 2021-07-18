@@ -7,6 +7,7 @@ function SignIn (props) {
   const [loginUsername, setLoginUsername] = useState('')
   const [loginPassword, setLoginPassword] = useState('')
   const [data, setData] = useState('')
+
   const login = () => {
     Axios({
       method: 'POST',
@@ -15,10 +16,11 @@ function SignIn (props) {
         password: loginPassword
       },
       withCredentials: true,
-      url: 'http://localhost:3000d/login'
+      url: 'http://localhost:3000/login'
     }).then((res) => console.log(res))
       .catch(err => console.log(err.message))
   }
+
   const getUser = () => {
     Axios({
       method: 'GET',

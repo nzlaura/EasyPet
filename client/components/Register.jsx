@@ -6,11 +6,11 @@ import signInImage from '../styles/ImageAssets/AnimationOne/SignUpWalk.png'
 function Register (props) {
   const [registerUsername, setRegisterUsername] = useState('')
   const [registerPassword, setRegisterPassword] = useState('')
-  const [error, setError] = useState('')
+  // const [error, setError] = useState('')
 
-  const hideError = () => {
-    setError('')
-  }
+  // const hideError = () => {
+  //   setError('')
+  // }
 
   const register = () => {
     Axios({
@@ -25,25 +25,25 @@ function Register (props) {
       .catch(err => console.log(err.message))
   }
 
-  function handleClick (e) {
-    e.preventDefault()
-    const { email, username, password } = form
-    return register({ email, username, password }, { baseUrl })
-      .then((token) => {
-        if (isAuthenticated()) {
-          props.history.push('/')
-        }
-        return null
-      })
-      .catch(err => {
-        if (err.message === 'USERNAME_UNAVAILABLE') {
-          setError('Username is not available')
-        }
-        if (err.message === 'EMAIL_UNAVAILABLE') {
-          setError('Email is not available')
-        }
-      })
-  }
+  // function handleClick (e) {
+  //   e.preventDefault()
+  //   const { email, username, password } = form
+  //   return register({ email, username, password }, { baseUrl })
+  //     .then((token) => {
+  //       if (isAuthenticated()) {
+  //         props.history.push('/')
+  //       }
+  //       return null
+  //     })
+  //     .catch(err => {
+  //       if (err.message === 'USERNAME_UNAVAILABLE') {
+  //         setError('Username is not available')
+  //       }
+  //       if (err.message === 'EMAIL_UNAVAILABLE') {
+  //         setError('Email is not available')
+  //       }
+  //     })
+  // }
 
   function showPassword () {
     var x = document.getElementById('passwordinput')
