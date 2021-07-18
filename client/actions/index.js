@@ -1,18 +1,8 @@
-// import { postUser } from "../apis/apiClient"
+import * as requests from '../apis/apiClient'
 
-// export function addUser (user) {
-//     return { type: ADD_USER, user: user }
-// }
-
-// export function saveUser (user) {
-//     return dispatch => {
-//     postUser(user)
-//     .then((newUser) => dispatch(addUser(newUser)))
-//     .catch(err => dispatch(setError(err)))
-//     }
-// }
-
-// // export function addUser (user) {
-// //   return postUser(username, password)
-// //   .then(res =>)
-
+export function sendUserUpdate (id, update) {
+  return (dispatch) => {
+    return requests.updateUserProfile(id, update)
+      .catch(err => dispatch(showError(err)))
+  }
+}

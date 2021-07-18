@@ -35,3 +35,10 @@ export function getUserDetails (user) {
    })
    .catch(e => console.log(e))
 }
+
+export function updateUserProfile (id, update) {
+  return request
+  .patch(`${rootUrl}/user/${id}`)
+  .send(update)
+  .then(response => response.body)
+} 
