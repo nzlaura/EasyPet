@@ -8,10 +8,15 @@ function SearchFAQ (props) {
   useEffect(() => {
     return getFaqBySearchString(searchString)
       .then(faqs => {
+        console.log(faqs)
         setFaqState(faqs)
         return null
       })
+      .catch(error => {
+        console.log(error.message)
+      })
   }, [searchString])
+  console.log(faqState, searchString)
   return (
     <>
       {faqState.map(faq => {

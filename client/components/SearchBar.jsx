@@ -14,7 +14,7 @@ function SearchBar (props) {
 
   function handleSubmit (e) {
     e.preventDefault()
-    props.history.push('/faq/search/' + search.searchString)
+    props.history.push('/search/' + search.searchString)
     setSearch({
       searchString: ''
     })
