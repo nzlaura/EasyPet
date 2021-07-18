@@ -30,8 +30,8 @@ export function getFaqBySearchString (search) {
 
 export function getUserDetails (user) {
   return request.get(rootUrl + '/user')
-   .then(res => {
-     return res.body
-   })
-   .catch(e => console.log(e))
+    .then(res => {
+      return res.body
+    })
+    .catch(e => console.log(e))
 }
