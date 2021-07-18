@@ -5,7 +5,9 @@ import AddressFinder from './AddressFinder'
 import profileImage from '../styles/ImageAssets/AnimationOne/TwoDogs.png'
 
 function UserProfile (props) {
-  const [data, setData] = useState('')
+  const initialState = {userName: '', email: '', phone: '', firstName: '', lastName: '', dob: '', address: '' }
+  const [data, setData] = useState(initialState)
+
 
   useEffect (() =>{
     Axios({
@@ -19,6 +21,7 @@ function UserProfile (props) {
       .catch(err => console.log(err.message))
   })
 
+  
   return (
     <>
     <div className='bg-scroll bg-cover' style={{ backgroundImage: `url(${profileImage})` }}>
