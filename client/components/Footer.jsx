@@ -1,74 +1,63 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import SearchBar from './SearchBar.jsx'
 
 function Footer () {
   return (
-    <div className="pt-12">
-      <footer id="footer" className="relative z-50 dark:bg-gray-900 pt-24">
+    <>
+      <div className="py-8 bg-black">
+        <footer id="footer" className="relative flex flex-wrap items-center justify-between px-2 py-3 mb-3 z-50 bg-black">
+          <div className="mx-auto container w-screen bg-black px-4 flex flex-wrap items-center justify-between">
+            <div className="lg:flex flex-grow items-center">
 
-        <div className=" border-t border-b border-gray-200 dark:border-gray-700 py-16">
+              <SearchBar />
 
-          <div className="mx-auto container px-4 xl:px-12 2xl:px-4">
-
-            <div className="lg:flex">
-
-              <div className="w-full lg:w-1/2 mb-16 lg:mb-0 flex">
-
-                <div className="w-full lg:w-1/2 px-6">
-                  <ul>
-                    <li className="mt-6">
-                      <p className="text-xs lg:text-sm leading-none hover:text-brand dark:hover:text-brand text-gray-800 dark:text-gray-50">© 2021 EasyPet | Your pets digital diary</p>
-                    </li>
-                  </ul>
-                </div>
-
-                <div className="w-full lg:w-1/2 px-6">
-                  <ul>
-                    <li>
-                      <Link href="javascript:void(0)">
-                        <a className="text-xs lg:text-sm leading-none hover:text-brand dark:hover:text-brand text-gray-800 dark:text-gray-50">About EasyPet</a>
-                      </Link>
-                    </li>
-
-                    <li className="mt-6">
-                      <Link href="javascript:void(0)">
-                        <a className="text-xs lg:text-sm leading-none hover:text-brand dark:hover:text-brand text-gray-800 dark:text-gray-50">Frequently Asked Questions</a>
-                      </Link>
-                    </li>
-                  </ul>
-                </div>
-
-              </div>
-
-              <div className="w-full lg:w-1/2 flex">
-
-                <div className="w-full lg:w-1/2 px-6">
-                  <ul>
-                    <li>
-                      <Link href="javascript:void(0)">
-                        <a className="text-xs lg:text-sm leading-none hover:text-brand dark:hover:text-brand text-gray-800 dark:text-gray-50">Privacy policy</a>
-                      </Link>
-                    </li>
-
-                    <li className="mt-6">
-                      <Link href="javascript:void(0)">
-                        <a className="text-xs lg:text-sm leading-none hover:text-brand dark:hover:text-brand text-gray-800 dark:text-gray-50">Terms of service</a>
-                      </Link>
-                    </li>
-                  </ul>
-
-                </div>
-
-              </div>
-
+              <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
+                <li className="nav-item">
+                  <a className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
+                    href="#/register">
+                    <span className="ml-2">Sign Up</span>
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
+                    href="#/login">
+                    <span className="ml-2">Login</span>
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
+                    href="#/calendar">
+                    <span className="ml-2">Calendar</span>
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
+                    href="#/petprofile">
+                    <span className="ml-2">Pet Profile</span>
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a
+                    className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
+                    href="#/contact">
+                    <span className="ml-2">Contact</span>
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
+                    href="#/faq">
+                    <span className="ml-2">FAQ</span>
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <p className="ml-2 px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75">© 2021 EasyPet • Your digital pet diary</p>
+                </li>
+              </ul>
             </div>
-
           </div>
-
-        </div>
-
-      </footer>
-    </div>
+        </footer>
+      </div>
+    </>
   )
 }
 export default Footer
