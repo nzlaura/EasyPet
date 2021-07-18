@@ -55,6 +55,21 @@ function getFaqBySearchString (searchString, db = connection) {
     .orWhere('answer', 'LIKE', `%${searchString}%`)
 }
 
+// functions for adding events to calendar
+
+function getAllEvents (db = connection) {
+  return db('events')
+    .select()
+}
+// TODO: make this function work and create a function that joins user db and events db
+function addNewEvent (id, db = connection) {
+  return db('events')
+    .then(id => {
+      return db('users')
+        .insert({ title: '', type: '', profile_id: '' })
+    })
+}
+
 module.exports = {
   userExists,
   getUserByUsername,
@@ -62,5 +77,7 @@ module.exports = {
   users,
   insertNewUser,
   getFaqs,
-  getFaqBySearchString
+  getFaqBySearchString,
+  getAllEvents,
+  addNewEvent
 }
