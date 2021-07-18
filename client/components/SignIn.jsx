@@ -7,7 +7,9 @@ function SignIn (props) {
   const [loginUsername, setLoginUsername] = useState('')
   const [loginPassword, setLoginPassword] = useState('')
   const [data, setData] = useState('')
+
   const login = () => {
+    //get the axios calls out of this component in to their own file
     Axios({
       method: 'POST',
       data: {
@@ -19,6 +21,7 @@ function SignIn (props) {
     }).then((res) => console.log(res))
       .catch(err => console.log(err.message))
   }
+  // this needs to listen for an event object and preventDefault
   const getUser = () => {
     Axios({
       method: 'GET',

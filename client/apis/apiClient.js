@@ -11,7 +11,7 @@ export function sendContactFormMessage (contactForm) {
       return null
     })
 }
-// add error handling
+// TODO: add error handling
 
 export function getFaqs () {
   return request.get(faqUrl)

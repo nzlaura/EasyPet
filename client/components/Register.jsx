@@ -11,8 +11,9 @@ function Register (props) {
   const hideError = () => {
     setError('')
   }
-
+  // needs to be passed an event and call preventDefault
   const register = () => {
+  // using axios is fine but move it into it's own apiClient file
     Axios({
       method: 'POST',
       data: {
@@ -24,7 +25,7 @@ function Register (props) {
     }).then((res) => console.log(res))
       .catch(err => console.log(err.message))
   }
-
+// if you aren't going to use this function delete it
   function handleClick (e) {
     e.preventDefault()
     const { email, username, password } = form
