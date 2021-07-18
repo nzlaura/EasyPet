@@ -2,6 +2,7 @@ import request from 'superagent'
 const contactUrl = '/api/v1/contact/'
 const faqUrl = '/api/v1/faq/'
 const faqSearchUrl = '/api/v1/faq/search/'
+const rootUrl = '/api/v1/'
 
 export function sendContactFormMessage (contactForm) {
   return request.post(contactUrl)
@@ -25,4 +26,12 @@ export function getFaqBySearchString (search) {
     .then(response => {
       return response.body
     })
+}
+
+export function getUserDetails (user) {
+  return request.get(rootUrl + '/user')
+   .then(res => {
+     return res.body
+   })
+   .catch(e => console.log(e))
 }
