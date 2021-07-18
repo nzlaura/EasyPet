@@ -9,17 +9,25 @@ function UserProfile (props) {
   const [data, setData] = useState(initialState)
 
 
-  useEffect (() =>{
-    Axios({
-      method: 'GET',
-      withCredentials: true,
-      url: 'http://localhost:3000/user'
-    }).then((res) => {
-      setData(res)
-      return null
+  // useEffect (() =>{
+  //   Axios({
+  //     method: 'GET',
+  //     withCredentials: true,
+  //     url: 'http://localhost:3000/user'
+  //   }).then((res) => {
+  //     setData(res)
+  //     return null
+  //   })
+  //     .catch(err => console.log(err.message))
+  // })
+
+  function handleChange (evt) {
+    const {name, value} = evt.target
+    setData({
+        ...data,
+        [name]: value
     })
-      .catch(err => console.log(err.message))
-  })
+  }
 
   
   return (
@@ -30,7 +38,7 @@ function UserProfile (props) {
         <p className='text-2xl items-left font-bold text-white ml-20'>Account Details:</p>
         <form className='flex items-center grid grid-cols-1 grid-rows-6 w-3/12 h-64' id='profile-form'>
           <label className='ml-20' for='username'>Username</label>
-          <input className='rounded-md shadow-sm col-1 h-12 ml-20 p-4' type='text' id='username' name='username' placeholder='Enter username' onChange={(e) => updateUserName(e.target.value)}/>
+          <input className='rounded-md shadow-sm col-1 h-12 ml-20 p-4' type='text' id='username' name='username' placeholder='Enter Username' onChange={(e) => handleChange(e.target.value)}/>
           <label className='ml-20'  for='email'>Email</label>
           <input className='rounded-md shadow-sm col-1 h-12 ml-20 p-4' type='text' id='email' name='email' placeholder='Enter Email Address' onChange={(e) => updateEmail(e.target.value)}/>      
           <label  className='ml-20' for='phone'>Phone Number</label>
