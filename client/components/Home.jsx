@@ -19,10 +19,10 @@ function Home () {
           <p className='text-4xl flex text-left ml-36 mb-60'>EasyPet assists pet owners in caring for and managing their pets.</p>
         </div>
         <div>
-          <button className='bg-black hover:bg-gray-900 text-white font-bold text-5xl rounded-md flex items-center justify-center mt-60 ml-60 h-32 w-96' type='submit'>
+          <button className='bg-black hover:bg-gray-900 text-white font-bold text-5xl rounded-md flex items-center justify-center mt-60 ml-20 h-32 w-96' type='submit'>
             <a href="#/login">Sign Up</a>
           </button>
-          <p className="ml-60 h-12 text-white text-sm">Have an account? <a href="#/login"> Log in</a></p>
+          <p className="ml-20 h-12 text-white text-sm">Have an account? <a href="#/login"> Log in</a></p>
         </div>
       </div>
 
@@ -31,7 +31,7 @@ function Home () {
           <img src={img1}/>
         </div>
         <div>
-          <p className='text-6xl flex text-left font-bold mt-36 mb-4 ml-36'>Never miss a vet appointment</p>
+          <p className='text-6xl flex text-left font-bold mt-36 mb-4 ml-30'>Never miss a vet appointment</p>
           <p className='text-3xl flex text-left mb-12 ml-36'>EasyPet assists pet owners in caring for and managing their pets</p>
           <button className='bg-black hover:bg-gray-900 text-white font-bold text-xl rounded-md flex items-center justify-center ml-36 h-20 w-60' type='submit'>
             <a href="#/faq">Learn More</a>
