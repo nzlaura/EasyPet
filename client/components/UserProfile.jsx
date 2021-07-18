@@ -9,9 +9,6 @@ function UserProfile (props) {
   const {firstName, updateFirstName} = useState('')
   const {lastName, updateLastName} = useState('')
   const {dob, updateDob} = useState('')
-
-  
-
   
   function showPassword () {
     var x = document.getElementById('passwordinput')
