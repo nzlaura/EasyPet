@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { sendContactFormMessage } from '../apis/apiClient'
+import contactImage from '../styles/ImageAssets/AnimationOne/GroupTwoContactPair.png'
 
 function Contact (props) {
   const [isSendingMessage, setIsSendingMessage] = useState(false)
@@ -28,31 +29,26 @@ function Contact (props) {
       message: ''
     })
     setIsSendingMessage(true)
-    // setTimeout(() => props.history.push('/'), 3000)
   }
 
   return (
     <>
-      <div>
-        <div>
-          <ul><h1>Contact</h1></ul>
-          <ul><form id="contact-form">
-            <input type='text' id='name' name='name' placeholder='Name'
+      <div className='bg-contain bg-center bg-no-repeat bg-scroll' style={{ backgroundImage: `url(${contactImage})` }}>
+        <div className='container mx-auto'>
+          <form className='mx-auto flex items-center justify-center grid grid-cols-1 grid-rows-7 w-5/12' id='contact-form'>
+            <p className='text-5xl flex justify-center items-center font-bold mt-12'>Contact Us</p>
+            <p className='mx-auto text-s flex justify-center items-center my-4 text-white text-bold'>Send us a message! We would love to hear from you.</p>
+            <input className='rounded-md shadow-sm col-1 mt-8 h-12' type='text' id='name' name='name' placeholder='  Name'
               value={contactForm.name} onChange={handleChange}/>
-            <br></br>
-            <input type='text' id='email' name='email' placeholder='Email'
+            <input className='rounded-md shadow-sm col-1 mt-8 h-12' type='text' id='email' name='email' placeholder='  Email'
               value={contactForm.email} onChange={handleChange}/>
-            <br></br>
-            <input type='text' id='subject' name='subject' placeholder='Subject'
+            <input className='rounded-md shadow-sm col-1 mt-8 h-12' type='text' id='subject' name='subject' placeholder='  Subject'
               value={contactForm.subject} onChange={handleChange}/>
-            <br></br>
-            <input type='text' id='message' name='message' placeholder='Leave a message'
-              rows='1' required value={contactForm.message} onChange={handleChange}/>
-            <br></br>
-            <button type='submit' className='submit-button' onClick={handleClick}>Submit</button>
+            <textarea className='rounded-md shadow-sm col-1 mt-8 h-12 resize-none' type='text' id='message' name='message' placeholder='  Message'
+              required value={contactForm.message} onChange={handleChange}/>
+            <button className='bg-black hover:bg-gray-900 text-white font-bold rounded-md flex items-center justify-center col-1 h-12 mt-8 mb-20' type='submit' onClick={handleClick}>Submit</button>
           </form>
-          {isSendingMessage && <p>Your message has been sent!</p>}
-          </ul>
+          {isSendingMessage && <p className='mx-auto text-s flex justify-center items-center -mt-12 mb-20 text-white text-bold'>Your message has been sent! We will be in touch shortly.</p>}
         </div>
       </div>
     </>

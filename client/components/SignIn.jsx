@@ -1,8 +1,9 @@
-
 import React, { useState } from 'react'
 import Axios from 'axios'
 
- function SignIn (props) {
+import signInImage from '../styles/ImageAssets/AnimationOne/FAQVet.png'
+
+function SignIn (props) {
   const [loginUsername, setLoginUsername] = useState('')
   const [loginPassword, setLoginPassword] = useState('')
   const [data, setData] = useState('')
@@ -31,8 +32,8 @@ import Axios from 'axios'
       .catch(err => console.log(err.message))
   }
 
-  function showPassword() {
-    var x = document.getElementById("passwordinput")
+  function showPassword () {
+    var x = document.getElementById('passwordinput')
     if (x.type === 'password') {
       x.type = 'text'
     } else {
@@ -41,23 +42,32 @@ import Axios from 'axios'
   }
 
   return (
-    <div className="App">
-      <div>
-        <h1>Login</h1>
-        <input
-          placeholder="username"
-          onChange={(e) => setLoginUsername(e.target.value)}
-        />
-        <input type='password' id='passwordinput' placeholder="password" onChange={(e) => setLoginPassword(e.target.value)}/>
-        <input type="checkbox" onClick={showPassword}/>Show Password
-        <button onClick={login}>Submit</button>
+    <>
+      <div className='bg-scroll bg-cover' style={{ backgroundImage: `url(${signInImage})` }}>
+        <div className='container h-screen'>
+          <form className='flex items-center grid grid-cols-1 grid-rows-6 w-3/12 h-64' id='signin-form'>
+            <p className='text-5xl flex items-left font-bold mb-4 mt-52 ml-20 mb-20 text-black'>Login</p>
+            <input className='rounded-md shadow-sm col-1 mt-52 ml-20 mb-10 h-12' type='text' id='username' name='username' placeholder='  Enter Username' onChange={(e) => setLoginUsername(e.target.value)}/>
+            <input className='rounded-md shadow-sm col-1 mt-52 ml-20 h-12' type='password' id='passwordinput' name='passwordinput' placeholder='  Enter Password' onChange={(e) => setLoginPassword(e.target.value)}/>
+            <label className='inline-flex items-center' htmlFor='showPassword'>
+              <input className='form-checkbox col-1 mt-52 ml-20' type='checkbox' id='showPassword' onClick={showPassword}/>
+              <span className='ml-2 col-1 mt-52 text-sm text-black'>Show password</span>
+            </label>
+            <button className='bg-black hover:bg-gray-900 text-white font-bold rounded-md flex items-center justify-center col-1 h-12 mt-52 ml-20' type='submit' onClick={login}>Submit</button>
+            <p className="col-1 mt-72 ml-20 mb-10 h-12 text-white text-sm">Need an account? <a href="#/register"> Sign up</a></p>
+          </form>
+        </div>
       </div>
-      <div>
-        <h1>Get User</h1>
-        <button onClick={getUser}>Submit</button>
+
+      {/* <p className="text-4xl flex items-center justify-center mb-4">Get User</p>
+
+      <button className='bg-black hover:bg-gray-900 text-white font-bold py-2 px-4 rounded mx-auto flex items-center w-2/12 h-auto' type='submit' onClick={getUser}>Submit</button>
+
+      <div className='text-s flex items-center justify-center mb-4'>
         {data.username ? <h1>Welcome Back {data.username}</h1> : null}
-      </div>
-    </div>
+      </div> */}
+
+    </>
   )
 }
 
