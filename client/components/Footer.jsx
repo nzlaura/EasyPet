@@ -2,6 +2,11 @@ import React from 'react'
 import SearchBar from './SearchBar.jsx'
 import { Route } from 'react-router-dom'
 
+function topFunction () {
+  document.body.scrollTop = 0
+  document.documentElement.scrollTop = 0
+}
+
 function Footer () {
   return (
     <>
@@ -16,45 +21,45 @@ function Footer () {
                 <li className="nav-item">
                   <a className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
                     href="#/home">
-                    <span className="ml-2">Home</span>
+                    <span onClick={topFunction} className="ml-2">Home</span>
                   </a>
                 </li>
                 <li className="nav-item">
                   <a className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
                     href="#/register">
-                    <span className="ml-2">Sign Up</span>
+                    <span onClick={topFunction} className="ml-2">Sign Up</span>
                   </a>
                 </li>
                 <li className="nav-item">
                   <a className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
                     href="#/login">
-                    <span className="ml-2">Login</span>
+                    <span onClick={topFunction} className="ml-2">Login</span>
                   </a>
                 </li>
                 <li className="nav-item">
                   <a className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
                     href="#/calendar">
-                    <span className="ml-2">Calendar</span>
+                    <span onClick={topFunction} className="ml-2">Calendar</span>
                   </a>
                 </li>
                 <li className="nav-item">
                   <a className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
                     href="#/petprofile">
-                    <span className="ml-2">Pet Profile</span>
+                    <span onClick={topFunction} className="ml-2">Pet Profile</span>
                   </a>
                 </li>
 
                 <li className="nav-item">
                   <a className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
                     href="#/user">
-                    <span className="ml-2">User Profile</span>
+                    <span onClick={topFunction} className="ml-2">User Profile</span>
                   </a>
                 </li>
 
                 <li className="nav-item">
                   <a className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
                     href="#/about">
-                    <span className="ml-2">About</span>
+                    <span onClick={topFunction} className="ml-2">About</span>
                   </a>
                 </li>
 
@@ -62,13 +67,13 @@ function Footer () {
                   <a
                     className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
                     href="#/contact">
-                    <span className="ml-2">Contact</span>
+                    <span onClick={topFunction} className="ml-2">Contact</span>
                   </a>
                 </li>
                 <li className="nav-item">
                   <a className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
                     href="#/faq">
-                    <span className="ml-2">FAQ</span>
+                    <span onClick={topFunction} className="ml-2">FAQ</span>
                   </a>
                 </li>
                 <li className="nav-item">
