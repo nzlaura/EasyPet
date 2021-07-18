@@ -50,7 +50,7 @@ function Footer () {
                   </a>
                 </li>
                 <li className="nav-item">
-                  <p className="ml-2 px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75">© 2021 EasyPet – Your digital pet diary</p>
+                  <p className="ml-2 px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75">© 2021 EasyPet • Your digital pet diary</p>
                 </li>
               </ul>
             </div>

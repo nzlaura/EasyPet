@@ -5,6 +5,8 @@ import FaqListItem from './FaqListItem'
 import { getFaqs } from '../apis/apiClient'
 
 import faqImage from '../styles/ImageAssets/AnimationOne/HomeGroup.png'
+import img1 from '../styles/ImageAssets/AnimationTwo/DogOne.png'
+import img2 from '../styles/ImageAssets/AnimationTwo/CatOne.png'
 
 function FaqList () {
   const [faqState, setFaqState] = useState([])
@@ -23,18 +25,18 @@ function FaqList () {
         <img src={faqImage}/>
       </div>
       <div className='container'>
-
         <p className='text-8xl flex text-left font-bold mt-36 mb-4 ml-36'>Frequently Asked Questions</p>
+        <p className='text-4xl flex text-left mb-36 ml-36'>Everything you need to know about EasyPet</p>
+      </div>
 
-        <div className='text-4xl flex text-left mb-36 ml-36'>
-          <p>Everything you need to know about EasyPet</p>
-        </div>
-
-        {faqState.map(faq => {
-          return (
-            <FaqListItem key={faq.id} faq={faq} />
-          )
-        })}
+      {faqState.map(faq => {
+        return (
+          <FaqListItem key={faq.id} faq={faq} />
+        )
+      })}
+      <div className='container grid grid-cols-2'>
+        <div><img className='h-80 mx-auto items-center' src={img1}/></div>
+        <div><img className='h-80 ml-80 mx-auto items-center' src={img2}/></div>
       </div>
     </>
   )

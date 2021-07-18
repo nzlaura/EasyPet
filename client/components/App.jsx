@@ -12,6 +12,7 @@ import FaqList from './FaqList'
 import Navbar from './Nav'
 import SearchFAQ from './SearchFAQ'
 import Home from './Home'
+import About from './About'
 
 function App (props) {
   return (
@@ -25,6 +26,7 @@ function App (props) {
       <Route path = '/login' component={SignIn} />
       <Route path = '/faq' component={FaqList} />
       <Route exact path="/search/:searchString" component={SearchFAQ} />
+      <Route path = '/about' component={About} />
       <Footer/>
     </>
   )
