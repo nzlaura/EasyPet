@@ -43,6 +43,14 @@ function Navbar ({ fixed }) {
 
               <li className="nav-item">
                 <a className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-black hover:opacity-75"
+                  href="#/user">
+                  <span className="ml-2">User Profile</span>
+                </a>
+              </li>
+
+
+              <li className="nav-item">
+                <a className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-black hover:opacity-75"
                   href="#/petprofile">
                   <span className="ml-2">Pet Profile</span>
                 </a>

@@ -3,8 +3,12 @@ exports.up = function (knex) {
     t.increments('id').primary()
     t.string('username').unique()
     t.integer('phone')
-    t.string('full_name')
+    t.string('first_name')
+    t.string('last_name')
+    t.date('dob')
     t.string('email').unique()
+    t.text('address')
+    t.string('city')
     t.text('password').unique() 
   })
 }
