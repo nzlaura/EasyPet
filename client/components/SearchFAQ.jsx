@@ -16,7 +16,7 @@ function SearchFAQ (props) {
     <>
       {faqState.map(faq => {
         return (
-          <FaqListItem key={faq.id} faq={faq} />
+          <FaqListItem key={faq.id} answer={faq.answer} question={faq.question} />
         )
       })}
     </>
