@@ -14,6 +14,7 @@ import Navbar from './Nav'
 import SearchFAQ from './SearchFAQ'
 import Home from './Home'
 import About from './About'
+import AddToCalendar from './AddToCalendar'
 
 function App (props) {
   return (
@@ -23,6 +24,7 @@ function App (props) {
       <Route path = '/home' component={Home} />
       <Route path = '/contact' component={Contact} />
       <Route path = '/calendar' component={MyMonthlyCalendar} />
+      <Route path = '/calendar' component={AddToCalendar} />
       <Route path = '/register' component={Register} />
       <Route path = '/login' component={SignIn} />
       <Route path = '/user' component={UserProfile} />
