@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { sendContactFormMessage } from '../apis/apiClient'
-import contactImage from '../styles/ImageAssets/AnimationOne/GroupTwoContactPair.png'
+import contactImage from '../../server/public/ImageAssets/AnimationOne/GroupTwoContactPair.png'
 
 function Contact (props) {
   const [isSendingMessage, setIsSendingMessage] = useState(false)
