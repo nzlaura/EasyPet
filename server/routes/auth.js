@@ -1,6 +1,8 @@
 const express = require('express')
 const passport = require('passport')
 const user = require('../db/db')
+const logout = require('express-passport-logout')
+// const checkAuthentication = require('../lib/lib')
 require('./passportConfig')(passport)
 
 const router = express.Router()
@@ -13,7 +15,8 @@ router.post('/login', async (req, res, next) => {
     else {
       req.logIn(user, (err) => {
         if (err) throw err
-        res.send('Successfully Authenticated')
+        // res.cookie('session', req.user.username, { secure: true, signed: true, expires: new Date(Date.now() + 3600) });
+        res.send('Successfully Authenticated User:' + req.user.username)
       })
     }
   })(req, res, next)
@@ -38,7 +41,10 @@ router.get('/user', (req, res) => {
 
 router.get('/logout', (req, res) => {
   req.logout()
-  res.redirect('/login')
+  res.send('logged out')
+  return null
 })
+
+
 
 module.exports = router
