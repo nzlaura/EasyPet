@@ -4,8 +4,6 @@ const router = express.Router()
 
 const { getAllEvents, addNewEvent } = require('../db/db')
 
-// TODO: write get events function
-
 router.get('/', (req, res) => {
   getAllEvents()
     .then(results => {
@@ -17,8 +15,6 @@ router.get('/', (req, res) => {
       res.status(500).json({ message: 'Oops, something went wrong' })
     })
 })
-
-// TODO: add save event function also
 
 router.post('/', (req, res) => {
   const event = req.body
