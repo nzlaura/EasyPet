@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { getFaqBySearchString } from '../apis/apiClient'
 import FaqListItem from './FaqListItem'
 
-import faqImage from '../../server/public/ImageAssets/AnimationOne/HomeGroup.png'
 import img1 from '../../server/public/ImageAssets/AnimationTwo/DogOne.png'
 import img2 from '../../server/public/ImageAssets/AnimationTwo/CatOne.png'
 
@@ -43,7 +42,6 @@ function SearchFAQ (props) {
         <div><img className='h-80 ml-36 mx-auto items-center' src={img2}/></div>
       </div>
     </>
-
   )
 }
 export default SearchFAQ
