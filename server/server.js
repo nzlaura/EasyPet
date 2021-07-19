@@ -34,7 +34,7 @@ server.use(
   })
 )
 
-server.use('/', authRoutes)
+server.use('/api/v1/auth', authRoutes)
 server.use('/api/v1/contact', contactRoute)
 server.use('/api/v1/faq', faqRoute)
 server.use('/api/v1/events', eventsRoute)

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
-import Axios from 'axios'
 
+
+import { register } from '../apis/apiPassport'
 import signInImage from '../../server/public/ImageAssets/AnimationOne/SignUpWalk.png'
 
 function Register (props) {
@@ -13,34 +14,9 @@ function Register (props) {
   //   setError('')
   // }
 
-  // using axios is fine but move it into it's own apiClient file
-
-  const register = () => {
-    Axios({
-      method: 'POST',
-      data: {
-        username: registerUsername,
-        password: registerPassword
-      },
-      withCredentials: true,
-      url: 'http://localhost:3000/register'
-    }).then((res) => {
-      console.log(res)
-      return null
-    })
-      .catch(err => {
-        console.log(err.message)
-        if (err.message === 'USERNAME_UNAVAILABLE') {
-          setError('Username is not available')
-        }
-        if (err.message === 'EMAIL_UNAVAILABLE') {
-          setError('Email is not available')
-        }
-      })
-  }
   function handleClick (e) {
     e.preventDefault()
-    return register({ registerUsername, registerPassword })
+    return register(registerUsername, registerPassword)
   }
 
   function showPassword () {
