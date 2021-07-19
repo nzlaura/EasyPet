@@ -6,7 +6,7 @@ function userExists (username, db = connection) {
     .where('username', username)
     .first()
     .then(result => {
-       // this could just be return (result === undefined)
+      // this could just be return (result === undefined)
       if (result === undefined) {
         return false
       } else {
@@ -20,7 +20,7 @@ function userEmailExists (email, db = connection) {
     .where('email', email)
     .first()
     .then(result => {
-       // this could just be return (result === undefined)
+      // this could just be return (result === undefined)
       if (result === undefined) {
         return false
       } else {
@@ -56,8 +56,6 @@ function getFaqBySearchString (searchString, db = connection) {
     .where('question', 'LIKE', `%${searchString}%`)
     .orWhere('answer', 'LIKE', `%${searchString}%`)
 }
-
-// functions for adding events to calendar
 
 function getAllEvents (db = connection) {
   return db('events')
