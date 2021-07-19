@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import SignOff from './SignOff'
 // import { IfAuthenticated, IfNotAuthenticated } from './authenticated'
 
 function Navbar ({ fixed }) {
@@ -83,6 +84,10 @@ function Navbar ({ fixed }) {
                   href="#/faq">
                   <span className="ml-2">FAQ</span>
                 </a>
+              </li>
+
+              <li className="nav-item">
+                <SignOff/>
               </li>
 
             </ul>
