@@ -1,43 +1,48 @@
 import React, { useState } from 'react'
 import { saveEvent } from '../actions'
 import { subHours } from 'date-fns'
-export default function AddToCalendar (props) {
-  const [eventItems, setEventItems] = useState([
+import { connect } from 'react-redux'
+
+function AddToCalendar (props) {
+  const [eventItems, setEventItems] = useState(
     {
       title: '',
+      type: '',
       date: subHours(new Date(), 1)
     }
-  ])
+  )
 
   function handleChange (e) {
-    const { title, date } = e.target
+    const { name, value } = e.target
     setEventItems({
       ...eventItems,
-      [title]: '',
-      [date]: ''
+      [name]: value
     })
   }
-
   function handleSubmit (e) {
     e.preventDefault()
-    props.dispatch(saveEvent(e))
-    setEventItems({
-      title: '',
-      date: subHours(new Date())
-    })
+    console.log('test:', eventItems)
+    props.dispatch(saveEvent(eventItems))
+    // setEventItems({
+    //   title: '',
+    //   type: '',
+    //   date: subHours(new Date(), 1)
+    // })
   }
 
   // TODO: Name placeholders more appropriately
   return (
     <div>
 
-      <form>
-        <input onChange={handleChange} type='text' id='title' placeholder="Appointment info" />
-        {/* <input onChange={handleChange} type='text' id='type' placeholder='Type?' /> */}
-        <input onChange={handleChange} type='text' id='date' placeholder='Date'/>
-        <button onSubmit={handleSubmit}>Submit</button>
+      <form onSubmit={handleSubmit}>
+        <input onChange={handleChange} type='text' id='title' name='title' value={eventItems.title} placeholder="Appointment info" />
+        <input onChange={handleChange} type='text' id='type' name='type' value={eventItems.type} placeholder='Type?' />
+        <input onChange={handleChange} type='text' id='date' name='date' value={eventItems.date} placeholder='Date'/>
+        <button type='submit'>Submit</button>
       </form>
     </div>
 
   )
 }
+
+export default connect()(AddToCalendar)
