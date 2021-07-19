@@ -1,11 +1,14 @@
 import React, { useState } from 'react'
 
 function SearchBar (props) {
+  // I think this would be cleaner if the state was just a string, not an object with a key of searchString
+  // e.g. const [search, setSearch] = useState('')
   const [search, setSearch] = useState({
     searchString: ''
   })
 
   function handleChange (e) {
+    // then this could just be setSearch(e.target.value) etc.
     setSearch({
       ...search,
       [e.target.name]: e.target.value
@@ -14,7 +17,7 @@ function SearchBar (props) {
 
   function handleSubmit (e) {
     e.preventDefault()
-    props.history.push('/faq/search/' + search.searchString)
+    props.history.push('/search/' + search.searchString)
     setSearch({
       searchString: ''
     })

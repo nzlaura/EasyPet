@@ -1,7 +1,7 @@
 import React from 'react'
 
 function FaqListItem (props) {
-  const { question, answer } = props.faq
+  const { question, answer } = props
 
   return (
     <div className='container grid grid-cols-2'>

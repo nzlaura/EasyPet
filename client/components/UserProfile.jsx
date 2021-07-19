@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Axios from 'axios'
 import { connect } from 'react-redux'
 import AddressFinder from './AddressFinder'
-import profileImage from '../styles/ImageAssets/AnimationOne/TwoDogs.png'
+import profileImage from '../../server/public/ImageAssets/AnimationOne/TwoDogs.png'
 
 function UserProfile (props) {
   const initialState = {userName: '', email: '', phone: '', firstName: '', lastName: '', dob: '', address: '' }

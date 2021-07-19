@@ -15,7 +15,7 @@ server.use(cookieParser('secretcode'))
 server.use(express.urlencoded({ extended: true }))
 server.use(
   session({
-    secret: 'secretcode',
+    secret: 'secretcode',  // this should be in a .env file
     resave: true,
     saveUninitialized: true
   })
@@ -25,6 +25,7 @@ server.use(passport.session())
 
 server.use(express.json())
 
+// are the cors headers necessary?
 server.use(
   cors({
     origin: 'http://localhost:3000',

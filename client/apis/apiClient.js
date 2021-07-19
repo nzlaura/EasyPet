@@ -11,7 +11,7 @@ export function sendContactFormMessage (contactForm) {
       return null
     })
 }
-// add error handling
+// TODO: add error handling
 
 export function getFaqs () {
   return request.get(faqUrl)
@@ -30,10 +30,43 @@ export function getFaqBySearchString (search) {
 
 export function getUserDetails (user) {
   return request.get(rootUrl + '/user')
-   .then(res => {
-     return res.body
-   })
-   .catch(e => console.log(e))
+    .then(res => {
+      return res.body
+    })
+    .catch(e => console.log(e))
+}
+
+export function getEvents () {
+  return request.get(rootUrl + '/calendar')
+    .then(res => {
+      return res.body
+    })
+    .catch(logError)
+}
+
+export function createEvent (event) {
+  return request
+    .post(rootUrl + 'events')
+    .send({ event })
+    .then(res => {
+      return res.body
+    })
+    .catch(logError)
+}
+
+// error function
+
+function logError (err) {
+  if (err.message === 'Forbidden') {
+    throw new Error('You cannot do that')
+  } else {
+    // eslint-disable-next-line no-console
+    console.error(
+      'Error consuming the API (in apis/apiClient.js):',
+      err.message
+    )
+    throw err
+  }
 }
 
 export function updateUserProfile (id, update) {
