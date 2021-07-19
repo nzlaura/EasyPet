@@ -52,6 +52,7 @@
     "express-passport-logout": "^0.1.0",
     "express-session": "^1.17.2",
     "intl-tel-input": "^17.0.13",
+    "js-cookie": "^2.2.1",
     "knex": "^0.21.12",
     "nock": "^13.1.1",
     "passport": "^0.4.1",
