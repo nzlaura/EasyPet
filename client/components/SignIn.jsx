@@ -17,7 +17,7 @@ function SignIn (props) {
         password: loginPassword
       },
       withCredentials: true,
-      url: 'http://localhost:3000d/login'
+      url: 'http://localhost:3000/login'
     }).then((res) => console.log(res))
       .catch(err => console.log(err.message))
   }
