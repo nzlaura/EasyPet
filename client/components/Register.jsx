@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Axios from 'axios'
 
-import signInImage from '../styles/ImageAssets/AnimationOne/SignUpWalk.png'
+import signInImage from '../../server/public/ImageAssets/AnimationOne/SignUpWalk.png'
 
 function Register (props) {
   const [registerUsername, setRegisterUsername] = useState('')
@@ -25,7 +25,7 @@ function Register (props) {
     }).then((res) => console.log(res))
       .catch(err => console.log(err.message))
   }
-// if you aren't going to use this function delete it
+  // if you aren't going to use this function delete it
   function handleClick (e) {
     e.preventDefault()
     const { email, username, password } = form

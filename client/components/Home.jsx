@@ -1,10 +1,10 @@
 import React from 'react'
 
-import faqImage from '../styles/ImageAssets/AnimationOne/HomeGroup.png'
-import img1 from '../styles/ImageAssets/AnimationOne/Vet.png'
-import img2 from '../styles/ImageAssets/AnimationOne/Cat.png'
-import img3 from '../styles/ImageAssets/AnimationOne/DogWalker.png'
-import img4 from '../styles/ImageAssets/AnimationOne/TwoDogs.png'
+import faqImage from '../../server/public/ImageAssets/AnimationOne/HomeGroup.png'
+import img1 from '../../server/public/ImageAssets/AnimationOne/Vet.png'
+import img2 from '../../server/public/ImageAssets/AnimationOne/Cat.png'
+import img3 from '../../server/public/ImageAssets/AnimationOne/DogWalker.png'
+import img4 from '../../server/public/ImageAssets/AnimationOne/TwoDogs.png'
 
 function Home () {
   return (

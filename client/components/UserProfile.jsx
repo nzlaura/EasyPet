@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
 import AddressFinder from './AddressFinder'
-import profileImage from '../styles/ImageAssets/AnimationOne/TwoDogs.png'
+import profileImage from '../../server/public/ImageAssets/AnimationOne/TwoDogs.png'
 
 function UserProfile (props) {
   const { userName, updateUserName } = useState('')
