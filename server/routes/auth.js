@@ -8,6 +8,7 @@ require('./passportConfig')(passport)
 const router = express.Router()
 
 router.post('/login', async (req, res, next) => {
+    // it is better to treat this like a regular promise instead of async await since if there is an error you want to catch it and send back the appropriate status code - like you are in the register route
   await passport.authenticate('local', (err, user) => {
     if (err) throw err
     if (!user) res.send('No User Exists')

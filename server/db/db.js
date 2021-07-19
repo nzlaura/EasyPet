@@ -6,6 +6,7 @@ function userExists (username, db = connection) {
     .where('username', username)
     .first()
     .then(result => {
+       // this could just be return (result === undefined)
       if (result === undefined) {
         return false
       } else {
@@ -19,6 +20,7 @@ function userEmailExists (email, db = connection) {
     .where('email', email)
     .first()
     .then(result => {
+       // this could just be return (result === undefined)
       if (result === undefined) {
         return false
       } else {
@@ -55,6 +57,23 @@ function getFaqBySearchString (searchString, db = connection) {
     .orWhere('answer', 'LIKE', `%${searchString}%`)
 }
 
+// functions for adding events to calendar
+
+function getAllEvents (db = connection) {
+  return db('events')
+    .select()
+}
+// TODO: make this function work and create a function that joins user db and events db
+function addNewEvent (id, db = connection) {
+  return db('events')
+    .then(id => {
+      return db('users')
+        .insert({ title: '', type: '', profile_id: '' })
+    })
+}
+
+// function updateUserProfile {username, db = connection}
+
 module.exports = {
   userExists,
   getUserByUsername,
@@ -62,5 +81,7 @@ module.exports = {
   users,
   insertNewUser,
   getFaqs,
-  getFaqBySearchString
+  getFaqBySearchString,
+  getAllEvents,
+  addNewEvent
 }

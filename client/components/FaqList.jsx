@@ -4,9 +4,9 @@ import FaqListItem from './FaqListItem'
 
 import { getFaqs } from '../apis/apiClient'
 
-import faqImage from '../styles/ImageAssets/AnimationOne/HomeGroup.png'
-import img1 from '../styles/ImageAssets/AnimationTwo/DogOne.png'
-import img2 from '../styles/ImageAssets/AnimationTwo/CatOne.png'
+import faqImage from '../../server/public/ImageAssets/AnimationOne/HomeGroup.png'
+import img1 from '../../server/public/ImageAssets/AnimationTwo/DogOne.png'
+import img2 from '../../server/public/ImageAssets/AnimationTwo/CatOne.png'
 
 function FaqList () {
   const [faqState, setFaqState] = useState([])
@@ -31,7 +31,7 @@ function FaqList () {
 
       {faqState.map(faq => {
         return (
-          <FaqListItem key={faq.id} faq={faq} />
+          <FaqListItem key={faq.id} answer={faq.answer} question={faq.question} />
         )
       })}
       <div className='container grid grid-cols-2'>

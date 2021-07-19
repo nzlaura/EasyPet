@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Axios from 'axios'
 
-import signInImage from '../styles/ImageAssets/AnimationOne/SignUpWalk.png'
+import signInImage from '../../server/public/ImageAssets/AnimationOne/SignUpWalk.png'
 
 function Register (props) {
   const [registerUsername, setRegisterUsername] = useState('')
@@ -11,8 +11,9 @@ function Register (props) {
   const hideError = () => {
     setError('')
   }
-
+  // needs to be passed an event and call preventDefault
   const register = () => {
+  // using axios is fine but move it into it's own apiClient file
     Axios({
       method: 'POST',
       data: {
@@ -38,7 +39,7 @@ function Register (props) {
           }
     })
   }
-
+  // if you aren't going to use this function delete it
   function handleClick (e) {
     e.preventDefault()
     // const { email, username, password } = form
