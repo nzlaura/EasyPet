@@ -26,9 +26,9 @@ export function sendUserUpdates (id, updates) {
 }
 
 export function saveEvent (event) {
+  console.log(event)
   return (dispatch) => {
     createEvent(event)
-
       .then((id) => {
         dispatch(addEvent(event, id))
         return null

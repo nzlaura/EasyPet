@@ -65,8 +65,8 @@ function getAllEvents (db = connection) {
 function addNewEvent (id, db = connection) {
   return db('events')
     .then(id => {
-      return db('users')
-        .insert({ title: '', type: '', profile_id: '' })
+      return db('events')
+        .insert({ title: '', type: '', date: '' })
     })
 }
 

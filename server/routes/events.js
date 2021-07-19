@@ -2,7 +2,7 @@ const express = require('express')
 
 const router = express.Router()
 
-const { getAllEvents, saveEvent } = require('../db/db')
+const { getAllEvents, addNewEvent } = require('../db/db')
 
 // TODO: write get events function
 
@@ -21,7 +21,7 @@ router.get('/', (req, res) => {
 // TODO: add save event function also
 
 router.post('/', (req, res) => {
-  saveEvent(req.body.event)
+  addNewEvent(req.body.event)
     .then(ids => {
       res.status(201).json(ids[0])
       return null
@@ -31,3 +31,5 @@ router.post('/', (req, res) => {
       res.status(500).json({ message: 'Oops, something went wrong' })
     })
 })
+
+module.exports = router

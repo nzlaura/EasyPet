@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { saveEvent } from '../actions'
-// import { subHours } from 'date-fns'
+import { subHours } from 'date-fns'
 import { connect } from 'react-redux'
 
 function AddToCalendar (props) {
@@ -8,7 +8,7 @@ function AddToCalendar (props) {
     {
       title: '',
       type: '',
-      date: ''
+      date: subHours(new Date(), 1)
     }
   )
 
@@ -18,7 +18,6 @@ function AddToCalendar (props) {
       ...eventItems,
       [name]: value
     })
-    console.log('handleChange: ', eventItems)
   }
   function handleSubmit (e) {
     e.preventDefault()

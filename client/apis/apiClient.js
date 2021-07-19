@@ -37,7 +37,7 @@ export function getUserDetails (user) {
 }
 
 export function getEvents () {
-  return request.get(rootUrl + 'calendar')
+  return request.get(rootUrl + 'events')
     .then(res => {
       return res.body
     })
@@ -45,9 +45,10 @@ export function getEvents () {
 }
 
 export function createEvent (event) {
+  console.log(event)
   return request
-    .post(rootUrl + 'calendar')
-    .send({ event })
+    .post(rootUrl + 'events')
+    .send(event)
     .then(res => {
       return res.body
     })
