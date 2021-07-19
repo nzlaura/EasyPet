@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Axios from 'axios'
 
-import signInImage from '../styles/ImageAssets/AnimationOne/FAQVet.png'
+import signInImage from '../../server/public/ImageAssets/AnimationOne/FAQVet.png'
 
 function SignIn (props) {
   const [loginUsername, setLoginUsername] = useState('')
@@ -9,7 +9,7 @@ function SignIn (props) {
   const [data, setData] = useState('')
 
   const login = () => {
-    //get the axios calls out of this component in to their own file
+    // get the axios calls out of this component in to their own file
     Axios({
       method: 'POST',
       data: {
