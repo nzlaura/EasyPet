@@ -1,8 +1,8 @@
 import * as requests from '../apis/apiClient'
 
-export function sendUserUpdate (id, update) {
+export function sendUserUpdates (id, updates) {
   return (dispatch) => {
-    return requests.updateUserProfile(id, update)
+    return requests.updateUserProfile(id, updates)
       .catch(err => dispatch(showError(err)))
   }
 }

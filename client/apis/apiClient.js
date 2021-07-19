@@ -69,9 +69,9 @@ function logError (err) {
   }
 }
 
-export function updateUserProfile (id, update) {
+export function updateUserProfile (username, update) {
   return request
-  .patch(`${rootUrl}/user/${id}`)
+  .patch(`${rootUrl}/user/${username}`)
   .send(update)
   .then(response => response.body)
 } 
