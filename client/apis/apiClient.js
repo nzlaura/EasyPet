@@ -68,3 +68,10 @@ function logError (err) {
     throw err
   }
 }
+
+export function updateUserProfile (username, update) {
+  return request
+  .patch(`${rootUrl}/user/${username}`)
+  .send(update)
+  .then(response => response.body)
+} 

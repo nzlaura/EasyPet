@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { getFaqBySearchString } from '../apis/apiClient'
 import FaqListItem from './FaqListItem'
 
-import faqImage from '../../server/public/ImageAssets/AnimationOne/HomeGroup.png'
 import img1 from '../../server/public/ImageAssets/AnimationTwo/DogOne.png'
 import img2 from '../../server/public/ImageAssets/AnimationTwo/CatOne.png'
 
@@ -25,7 +24,7 @@ function SearchFAQ (props) {
     <>
       <div className='container'>
         <p className='text-8xl flex text-left font-bold mt-36 mb-4 ml-36'>Search</p>
-        <p className='text-4xl flex text-left mb-36 ml-36'>You searched for {searchString}. Here is a FAQ related to {searchString}.</p>
+        <p className='text-4xl flex text-left mb-36 ml-36'>You searched for '{searchString}'. Here is a FAQ related to '{searchString}'.</p>
       </div>
 
       {faqState.map(faq => {
@@ -35,7 +34,7 @@ function SearchFAQ (props) {
       })}
 
       <button className='bg-black hover:bg-gray-900 text-white font-bold text-xl rounded-md flex items-center justify-center ml-36 my-12 h-12 w-96' type='submit'>
-        <a href="#/login">See All FAQ's</a>
+        <a href="#/faq">See All FAQ's</a>
       </button>
 
       <div className='container grid grid-cols-2'>
@@ -43,7 +42,6 @@ function SearchFAQ (props) {
         <div><img className='h-80 ml-36 mx-auto items-center' src={img2}/></div>
       </div>
     </>
-
   )
 }
 export default SearchFAQ

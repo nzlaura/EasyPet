@@ -70,6 +70,8 @@ function addNewEvent (id, db = connection) {
     })
 }
 
+// function updateUserProfile {username, db = connection}
+
 module.exports = {
   userExists,
   getUserByUsername,

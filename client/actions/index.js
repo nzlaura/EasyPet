@@ -1,3 +1,11 @@
+import * as requests from '../apis/apiClient'
+
+export function sendUserUpdates (id, updates) {
+  return (dispatch) => {
+    return requests.updateUserProfile(id, updates)
+      .catch(err => dispatch(showError(err)))
+  }
+}
 // import { postUser } from "../apis/apiClient"
 
 // export function addUser (user) {
