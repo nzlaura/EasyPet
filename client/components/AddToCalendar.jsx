@@ -23,11 +23,6 @@ function AddToCalendar (props) {
     e.preventDefault()
     console.log('test:', eventItems)
     props.dispatch(saveEvent(eventItems))
-    // setEventItems({
-    //   title: '',
-    //   type: '',
-    //   date: subHours(new Date(), 1)
-    // })
   }
 
   // TODO: Name placeholders more appropriately

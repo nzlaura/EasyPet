@@ -34,6 +34,7 @@ class AddressFinder extends React.Component {
       'NZ'
     )
     this.widget.on('result:select', (fullAddress, metaData) => {
+      // might need deleting this line?
       const selected = new window.AddressFinder.NZSelectedAddress(fullAddress, metaData)
       this.address_line_1.current.value = metaData.address_line_1
       this.address_line_2.current.value = metaData.address_line_2 || ''

@@ -1,8 +1,6 @@
 exports.seed = function (knex) {
-  // Deletes ALL existing entries
   return knex('events').del()
     .then(function () {
-      // Inserts seed entries
       return knex('events').insert([
         { id: 1, title: 'Vaccination', type: 'Treatment', date: '12:30', pet_id: '' },
         { id: 2, title: 'Flea Treatment', type: 'Treatment', date: '9:00', pet_id: '' },

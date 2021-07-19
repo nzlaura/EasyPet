@@ -21,24 +21,19 @@ function SignIn (props) {
     }).then((res) => console.log(res))
       .catch(err => console.log(err.message))
   }
-<<<<<<< HEAD
-
-||||||| a075200
-=======
   // this needs to listen for an event object and preventDefault
->>>>>>> 350d8ee5b46df1d440b70277cbb170128e199a99
-  const getUser = () => {
-    Axios({
-      method: 'GET',
-      withCredentials: true,
-      url: 'http://localhost:3000/user'
-    }).then((res) => {
-      setData(res.data)
-      console.log(res.data)
-      return null
-    })
-      .catch(err => console.log(err.message))
-  }
+  // const getUser = () => {
+  //   Axios({
+  //     method: 'GET',
+  //     withCredentials: true,
+  //     url: 'http://localhost:3000/user'
+  //   }).then((res) => {
+  //     setData(res.data)
+  //     console.log(res.data)
+  //     return null
+  //   })
+  //     .catch(err => console.log(err.message))
+  // }
 
   function showPassword () {
     var x = document.getElementById('passwordinput')

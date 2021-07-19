@@ -2,14 +2,14 @@ const express = require('express')
 const passport = require('passport')
 const user = require('../db/db')
 const logout = require('express-passport-logout')
-// const checkAuthentication = require('../lib/lib')
 require('./passportConfig')(passport)
 
 const router = express.Router()
 
-router.post('/login', async (req, res, next) => {
-    // it is better to treat this like a regular promise instead of async await since if there is an error you want to catch it and send back the appropriate status code - like you are in the register route
-  await passport.authenticate('local', (err, user) => {
+// might need tweaking so its regular like register
+
+router.post('/login', (req, res, next) => {
+  passport.authenticate('local', (err, user) => {
     if (err) throw err
     if (!user) res.send('No User Exists')
     else {
@@ -44,7 +44,5 @@ router.get('/logout', (req, res) => {
   res.send('logged out')
   return null
 })
-
-
 
 module.exports = router

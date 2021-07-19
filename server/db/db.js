@@ -20,12 +20,7 @@ function userEmailExists (email, db = connection) {
     .where('email', email)
     .first()
     .then(result => {
-      // this could just be return (result === undefined)
-      if (result === undefined) {
-        return false
-      } else {
-        return true
-      }
+      return result === undefined
     })
 }
 
@@ -61,7 +56,8 @@ function getAllEvents (db = connection) {
   return db('events')
     .select()
 }
-// TODO: make this function work and create a function that joins user db and events db
+
+// TODO: join user db with events to display events by individual user
 function addNewEvent (event, db = connection) {
   console.log('from db function:', event)
   return db('events')

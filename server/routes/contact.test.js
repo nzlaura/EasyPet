@@ -18,7 +18,7 @@ jest.mock('../sendgrid/contact', () => {
 })
 
 test('POST /sendgrid/contact', () => {
-   // remove the console.log from tests - it just produces noise in the test output
+  // remove the console.log from tests - it just produces noise in the test output
   send.sendContactForm.mockImplementation(() => Promise.resolve(console.log('Email sent')))
 
   return request(server)

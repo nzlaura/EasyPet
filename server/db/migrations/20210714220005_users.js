@@ -9,7 +9,7 @@ exports.up = function (knex) {
     t.string('email').unique()
     t.text('address')
     t.string('city')
-    t.text('password').unique() 
+    t.text('password').unique()
   })
 }
 

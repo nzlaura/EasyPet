@@ -6,14 +6,16 @@ import signInImage from '../../server/public/ImageAssets/AnimationOne/SignUpWalk
 function Register (props) {
   const [registerUsername, setRegisterUsername] = useState('')
   const [registerPassword, setRegisterPassword] = useState('')
-  // const [error, setError] = useState('')
+  const [error, setError] = useState('')
 
-  const hideError = () => {
-    setError('')
-  }
-  // needs to be passed an event and call preventDefault
-  const register = () => {
+  // TODO add error to the auth
+  // const hideError = () => {
+  //   setError('')
+  // }
+
   // using axios is fine but move it into it's own apiClient file
+
+  const register = () => {
     Axios({
       method: 'POST',
       data: {
@@ -24,40 +26,21 @@ function Register (props) {
       url: 'http://localhost:3000/register'
     }).then((res) => {
       console.log(res)
-      if (isAuthenticated()) {
-        props.history.push('/')
-      }
       return null
     })
-    .catch(err => {
-      console.log(err.message)
-      if (err.message === 'USERNAME_UNAVAILABLE') {
-            setError('Username is not available')
-          }
-          if (err.message === 'EMAIL_UNAVAILABLE') {
-            setError('Email is not available')
-          }
-    })
+      .catch(err => {
+        console.log(err.message)
+        if (err.message === 'USERNAME_UNAVAILABLE') {
+          setError('Username is not available')
+        }
+        if (err.message === 'EMAIL_UNAVAILABLE') {
+          setError('Email is not available')
+        }
+      })
   }
-  // if you aren't going to use this function delete it
   function handleClick (e) {
     e.preventDefault()
-    // const { email, username, password } = form
     return register({ registerUsername, registerPassword })
-      // .then((token) => {
-      //   if (isAuthenticated()) {
-      //     props.history.push('/')
-      //   }
-      //   return null
-      // })
-      // .catch(err => {
-      //   if (err.message === 'USERNAME_UNAVAILABLE') {
-      //     setError('Username is not available')
-      //   }
-      //   if (err.message === 'EMAIL_UNAVAILABLE') {
-      //     setError('Email is not available')
-      //   }
-      // })
   }
 
   function showPassword () {
@@ -68,11 +51,6 @@ function Register (props) {
       x.type = 'password'
     }
   }
-
-  // function handleSubmit (event) {
-  //   event.preventDefault()
-  //   return register
-  // }
 
   return (
     <>
@@ -93,37 +71,3 @@ function Register (props) {
 }
 
 export default Register
-
-// <>
-//       <h2>Register</h2>
-//       <div data-testid='error' onClick={hideError}>
-//         { error && `Error: ${error}` }
-//       </div>
-//       <form data-testid='form' onSubmit={handleClick}>
-//         <label htmlFor='email'>Email: </label>
-//         <input type='text' required
-//           id='email'
-//           name='email'
-//           placeholder='add new email'
-//           value={form.email}
-//           onChange={handleChange}
-//         />
-//         <label htmlFor='username'>Username: </label>
-//         <input type='text' required
-//           id='username'
-//           name='username'
-//           placeholder='add new username'
-//           value={form.username}
-//           onChange={handleChange} />
-//         <label htmlFor='password'>Password: </label>
-//         <input type='password' required
-//           id='password'
-//           name='password'
-//           placeholder='create a password'
-//           value={form.password}
-//           onChange={handleChange}
-//           // autocomplete='new-password'
-//         />
-//         <button type='submit' data-testid='register' onClick={handleClick}>Register</button>
-//       </form>
-//     </>
