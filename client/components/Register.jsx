@@ -77,7 +77,7 @@ function Register (props) {
     <>
       <div className='bg-scroll bg-cover' style={{ backgroundImage: `url(${signInImage})` }}>
         <div className='container h-screen'>
-          <form onSubmit={handleClick}className='flex items-center grid grid-cols-1 grid-rows-6 w-3/12 h-64' id='register-form'>
+          <form onSubmit={handleClick} className='flex items-center grid grid-cols-1 grid-rows-6 w-3/12 h-64' id='register-form'>
             <p className='text-5xl flex items-left font-bold mb-4 mt-44 ml-20 mb-20 text-black'>Sign Up</p>
             <input className='rounded-md shadow-sm col-1 mt-52 ml-20 mb-10 h-12 w-60 p-4' type='text' id='username' name='username' placeholder='Create Username' onChange={(e) => setRegisterUsername(e.target.value)}/>
             <input className='rounded-md shadow-sm col-1 mt-56 ml-20 h-12 w-60 p-4' type='password' id='passwordinput' name='passwordinput' placeholder='Create Password' onChange={(e) => setRegisterPassword(e.target.value)}/>
