@@ -29,7 +29,7 @@ router.post('/register', (req, res) => {
       if (!result) {
         user.insertNewUser(req.body.username, req.body.password)
       }
-      res.send('user created successfully')
+      res.send('user created successfully' + req.body.username)
       return null
     })
     .catch(err => console.log(err))
