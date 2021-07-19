@@ -62,12 +62,13 @@ function getAllEvents (db = connection) {
     .select()
 }
 // TODO: make this function work and create a function that joins user db and events db
-function addNewEvent (id, db = connection) {
+function addNewEvent (event, db = connection) {
+  console.log('from db function:', event)
   return db('events')
-    .then(id => {
-      return db('events')
-        .insert({ title: '', type: '', date: '' })
-    })
+    .insert({ title: event.title, type: event.type, date: event.date })
+    // .then(id => {
+    //   return db('events')
+    // })
 }
 
 // function updateUserProfile {username, db = connection}

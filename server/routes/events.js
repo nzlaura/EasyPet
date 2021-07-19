@@ -21,7 +21,9 @@ router.get('/', (req, res) => {
 // TODO: add save event function also
 
 router.post('/', (req, res) => {
-  addNewEvent(req.body.event)
+  const event = req.body
+  console.log('event route', event)
+  addNewEvent(event)
     .then(ids => {
       res.status(201).json(ids[0])
       return null
