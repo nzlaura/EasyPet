@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Axios from 'axios'
 
-import signInImage from '../styles/ImageAssets/AnimationOne/FAQVet.png'
+import signInImage from '../../server/public/ImageAssets/AnimationOne/FAQVet.png'
 
 function SignIn (props) {
   const [loginUsername, setLoginUsername] = useState('')
@@ -9,6 +9,7 @@ function SignIn (props) {
   const [data, setData] = useState('')
 
   const login = () => {
+    // get the axios calls out of this component in to their own file
     Axios({
       method: 'POST',
       data: {
@@ -20,7 +21,12 @@ function SignIn (props) {
     }).then((res) => console.log(res))
       .catch(err => console.log(err.message))
   }
+<<<<<<< HEAD
 
+||||||| a075200
+=======
+  // this needs to listen for an event object and preventDefault
+>>>>>>> 350d8ee5b46df1d440b70277cbb170128e199a99
   const getUser = () => {
     Axios({
       method: 'GET',

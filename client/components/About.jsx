@@ -1,11 +1,11 @@
 import React from 'react'
 
-import aboutImage from '../styles/ImageAssets/AnimationOne/FAQVet.png'
-import img1 from '../styles/ImageAssets/AnimationTwo/CatTwo.png'
-import img2 from '../styles/ImageAssets/AnimationTwo/DogOne.png'
-import img3 from '../styles/ImageAssets/AnimationTwo/CatOne.png'
-import img4 from '../styles/ImageAssets/AnimationTwo/DogThree.png'
-import img5 from '../styles/ImageAssets/AnimationTwo/DogTwo.png'
+import aboutImage from '../../server/public/ImageAssets/AnimationOne/FAQVet.png'
+import img1 from '../../server/public/ImageAssets/AnimationTwo/CatTwo.png'
+import img2 from '../../server/public/ImageAssets/AnimationTwo/DogOne.png'
+import img3 from '../../server/public/ImageAssets/AnimationTwo/CatOne.png'
+import img4 from '../../server/public/ImageAssets/AnimationTwo/DogThree.png'
+import img5 from '../../server/public/ImageAssets/AnimationTwo/DogTwo.png'
 
 function About () {
   return (

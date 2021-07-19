@@ -1,18 +1,19 @@
 import React, { useState } from 'react'
 import Axios from 'axios'
 
-import signInImage from '../styles/ImageAssets/AnimationOne/SignUpWalk.png'
+import signInImage from '../../server/public/ImageAssets/AnimationOne/SignUpWalk.png'
 
 function Register (props) {
   const [registerUsername, setRegisterUsername] = useState('')
   const [registerPassword, setRegisterPassword] = useState('')
   // const [error, setError] = useState('')
 
-  // const hideError = () => {
-  //   setError('')
-  // }
-
+  const hideError = () => {
+    setError('')
+  }
+  // needs to be passed an event and call preventDefault
   const register = () => {
+  // using axios is fine but move it into it's own apiClient file
     Axios({
       method: 'POST',
       data: {
@@ -24,26 +25,26 @@ function Register (props) {
     }).then((res) => console.log(res))
       .catch(err => console.log(err.message))
   }
-
-  // function handleClick (e) {
-  //   e.preventDefault()
-  //   const { email, username, password } = form
-  //   return register({ email, username, password }, { baseUrl })
-  //     .then((token) => {
-  //       if (isAuthenticated()) {
-  //         props.history.push('/')
-  //       }
-  //       return null
-  //     })
-  //     .catch(err => {
-  //       if (err.message === 'USERNAME_UNAVAILABLE') {
-  //         setError('Username is not available')
-  //       }
-  //       if (err.message === 'EMAIL_UNAVAILABLE') {
-  //         setError('Email is not available')
-  //       }
-  //     })
-  // }
+  // if you aren't going to use this function delete it
+  function handleClick (e) {
+    e.preventDefault()
+    const { email, username, password } = form
+    return register({ email, username, password }, { baseUrl })
+      .then((token) => {
+        if (isAuthenticated()) {
+          props.history.push('/')
+        }
+        return null
+      })
+      .catch(err => {
+        if (err.message === 'USERNAME_UNAVAILABLE') {
+          setError('Username is not available')
+        }
+        if (err.message === 'EMAIL_UNAVAILABLE') {
+          setError('Email is not available')
+        }
+      })
+  }
 
   function showPassword () {
     var x = document.getElementById('passwordinput')
