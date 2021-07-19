@@ -27,28 +27,6 @@ export default function MyMonthlyCalendar () {
   //   }
   // ])
 
-  // onlick that takes in the date thats clicked, create event handler
-  // New state, newEventItem, setNewEventItem
-
-  // function handleChange (e) {
-  //   const { name, value } = e.target
-  //   setContactForm({
-  //     ...contactForm,
-  //     [name]: value
-  //   })
-  // }
-
-  // function handleClick (e) {
-  //   e.preventDefault()
-  //   sendContactFormMessage(contactForm)
-  //   setContactForm({
-  //     name: '',
-  //     email: '',
-  //     subject: '',
-  //     message: ''
-  //   })
-  //   // }
-
   return (
     <>
       <MonthlyCalendar
