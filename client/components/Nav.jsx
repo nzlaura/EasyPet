@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+// import { IfAuthenticated, IfNotAuthenticated } from './authenticated'
 
 function Navbar ({ fixed }) {
   const [navbarOpen, setNavbarOpen] = useState(false)
@@ -25,6 +26,7 @@ function Navbar ({ fixed }) {
                   <span className="ml-2">Home</span>
                 </a>
               </li>
+              {/* <IfNotAuthenticated> */}
               <li className="nav-item">
                 <a className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-black hover:opacity-75"
                   href="#/register">
@@ -38,7 +40,7 @@ function Navbar ({ fixed }) {
                   <span className="ml-2">Login</span>
                 </a>
               </li>
-
+              {/* </IfNotAuthenticated> */}
               <li className="nav-item">
                 <a className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-black hover:opacity-75"
                   href="#/calendar">

@@ -1,18 +1,10 @@
 const express = require('express')
 const passport = require('passport')
 const user = require('../db/db')
+// const checkAuthentication = require('../lib/lib')
 require('./passportConfig')(passport)
 
 const router = express.Router()
-
-function checkAuthentication(req,res,next){
-    if(req.isAuthenticated({})){
-        //req.isAuthenticated() will return true if user is logged in
-        next();
-    } else{
-        // res.redirect("/login");
-    }
-}
 
 router.post('/login', async (req, res, next) => {
   await passport.authenticate('local', (err, user) => {
@@ -27,7 +19,7 @@ router.post('/login', async (req, res, next) => {
   })(req, res, next)
 })
 
-router.post('/register', checkAuthentication, (req, res) => {
+router.post('/register', (req, res) => {
   user.userExists(req.body.username)
     .then(result => {
       if (result) res.send('User Already Exists')
