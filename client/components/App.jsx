@@ -1,5 +1,5 @@
 import React from 'react'
-import { Route } from 'react-router-dom'
+import { Route, Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
 
 import Contact from './Contact'
@@ -21,6 +21,9 @@ function App (props) {
     <>
       <Header/>
       <Navbar />
+      <Route exact path="/">
+        <Redirect to="/home" />
+      </Route>
       <Route path = '/home' component={Home} />
       <Route path = '/contact' component={Contact} />
       <Route path = '/calendar' component={MyMonthlyCalendar} />

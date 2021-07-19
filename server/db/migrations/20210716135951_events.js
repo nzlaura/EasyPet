@@ -5,6 +5,7 @@ exports.up = function (knex) {
     t.string('type')
     t.integer('date')
     t.integer('pet_id')
+    t.integer('user_id')
   })
 }
 
