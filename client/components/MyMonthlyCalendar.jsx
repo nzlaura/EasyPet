@@ -51,30 +51,28 @@ export default function MyMonthlyCalendar () {
 
   return (
     <>
-      <div>
-        <MonthlyCalendar
-          currentMonth={currentMonth}
-          onCurrentMonthChange={date => setCurrentMonth(date)}
+      <MonthlyCalendar
+        currentMonth={currentMonth}
+        onCurrentMonthChange={date => setCurrentMonth(date)}
+      >
+        <MonthlyNav />
+        <MonthlyBody
+          events={eventItems}
         >
-          <MonthlyNav />
-          <MonthlyBody
-            events={eventItems}
-          >
-            <MonthlyDay
-              renderDay={data =>
-                data.map((item, index) => {
-                  return <DefaultMonthlyEventItem
-                    key={index}
-                    title={item.title}
-                    // Format the date here to be in the format you prefer
-                    date={format(item.date, 'k:mm')}
-                  />
-                })
-              }
-            />
-          </MonthlyBody>
-        </MonthlyCalendar>
-      </div>
+          <MonthlyDay
+            renderDay={data =>
+              data.map((item, index) => {
+                return <DefaultMonthlyEventItem
+                  key={index}
+                  title={item.title}
+                  // Format the date here to be in the format you prefer
+                  date={format(item.date, 'k:mm')}
+                />
+              })
+            }
+          />
+        </MonthlyBody>
+      </MonthlyCalendar>
     </>
   )
 }
