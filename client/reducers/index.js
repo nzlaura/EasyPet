@@ -5,4 +5,3 @@ import calendar from './calendar'
 export default combineReducers({
   calendar
 })
-

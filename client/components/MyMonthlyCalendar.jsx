@@ -16,9 +16,9 @@ export default function MyMonthlyCalendar () {
   )
 
   const eventItems = [
-    { title: 'Call John', date: subHours(new Date(), 2) },
-    { title: 'Call John', date: subHours(new Date(), 1) },
-    { title: 'Meeting with Bob', date: new Date() }
+    { title: 'Flea Treatment', date: subHours(new Date(), 2) },
+    { title: 'Meet new groomer', date: subHours(new Date(), 1) },
+    { title: 'Vet', date: new Date() }
   ]
   // const [eventItems, setEventItems] = useState([
   //   {
