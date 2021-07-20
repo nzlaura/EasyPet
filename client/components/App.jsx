@@ -27,13 +27,13 @@ function App (props) {
       <Header/>
       <Navbar />
       <Route exact path = '/home' component={Home} />
-      <Route path = '/contact' component={Contact} />
-      <Route path = '/calendar' component={MyMonthlyCalendar} />
-      <Route path = '/calendar' component={AddToCalendar} />
-      <Route path = '/register' component={Register} />
-      <Route path = '/login' component={SignIn} />
-      <Route path = '/user' component={UserProfile} />
-      <Route path = '/faq' component={FaqList} />
+      <Route exact path = '/contact' component={Contact} />
+      <Route exact path = '/calendar' component={MyMonthlyCalendar} />
+      <Route exact path = '/calendar' component={AddToCalendar} />
+      <Route exact path = '/register' component={Register} />
+      <Route exact path = '/login' component={SignIn} />
+      <Route exact path = '/user' component={UserProfile} />
+      <Route exact path = '/faq' component={FaqList} />
       <Route exact path="/search/:searchString" component={SearchFAQ} />
       <Route path = '/about' component={About} />
       <Route path = '/privacypolicy' component={PrivacyPolicy} />
