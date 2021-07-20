@@ -1,11 +1,10 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { signOff } from '../apis/apiPassport'
 
 function SignOff (props) {
   function handleClick (e) {
     e.preventDefault()
-    // const { email, username, password } = form
-    return signOff()
+    signOff()
   }
 
   return (

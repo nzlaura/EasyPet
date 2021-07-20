@@ -16,10 +16,17 @@ function SignIn (props) {
       x.type = 'password'
     }
   }
-  
+
   function handleClick (e) {
     e.preventDefault()
-    return login(loginUsername, loginPassword)
+    login(loginUsername, loginPassword)
+      .then(() => {
+        props.history.push('home')
+        return null
+      })
+      .catch(err => {
+        console.log(new Error(err))
+      })
   }
 
   return (
