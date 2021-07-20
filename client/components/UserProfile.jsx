@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react'
-// import Axios from 'axios'
 import { connect } from 'react-redux'
 import AddressFinder from './AddressFinder'
 import profileImage from '../../server/public/ImageAssets/AnimationOne/TwoDogs.png'
 import { sendUserUpdates } from '../actions/index'
 
 function UserProfile (props) {
-  const initialState = { userName: '', email: '', phone: '', firstName: '', lastName: '', dob: '', address: '' }
+  const initialState = { username: '', email: '', phone: '', firstname: '', lastname: '', dob: '', address: '' }
   const [data, setData] = useState(initialState)
 
   function handleChange (evt) {
+    console.log(evt)
     const { name, value } = evt.target
     setData({
       ...data,
@@ -17,8 +17,10 @@ function UserProfile (props) {
     })
   }
 
-  function handleSubmit (evt) {
-    dispatch(sendUserUpdates(data.userName, data))
+  function handleSubmit (e) {
+    e.preventDefault()
+    const userData = {data}
+    dispatch(sendUserUpdates(data))
   }
 
   return (
@@ -46,6 +48,7 @@ function UserProfile (props) {
           </form>
           <AddressFinder/>
         </div>
+        <button className='btn bg-black hover:bg-gray-900 text-white font-bold rounded-md items-center justify-center h-16 w-40 ml-20 mb-10' onClick={handleSubmit} name="submit">Update Details</button>
       </div>
     </>
   )

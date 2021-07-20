@@ -18,11 +18,12 @@ import { parseISO } from 'date-fns'
 // // export function addUser (user) {
 // //   return postUser(username, password)
 // //   .then(res =>)
+
 import { createEvent } from '../apis/apiClient'
 
-export function sendUserUpdates (id, updates) {
+export function sendUserUpdates (username, updates) {
   return (dispatch) => {
-    return requests.updateUserProfile(id, updates)
+    return requests.updateUserProfile(username, updates)
       .catch(err => dispatch(showError(err)))
   }
 }
