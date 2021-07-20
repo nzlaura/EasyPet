@@ -15,11 +15,12 @@ import SearchFAQ from './SearchFAQ'
 import Home from './Home'
 import About from './About'
 import AddToCalendar from './AddToCalendar'
+import PrivacyPolicy from './PrivacyPolicy'
+import TermsOfService from './TermsOfService'
 
 function App (props) {
   return (
     <>
-
       <Route exact path="/">
         <Redirect to="/home" />
       </Route>
@@ -34,9 +35,10 @@ function App (props) {
       <Route exact path = '/user' component={UserProfile} />
       <Route exact path = '/faq' component={FaqList} />
       <Route exact path="/search/:searchString" component={SearchFAQ} />
-      <Route exact path = '/about' component={About} />
+      <Route path = '/about' component={About} />
+      <Route path = '/privacypolicy' component={PrivacyPolicy} />
+      <Route path = '/termsofservice' component={TermsOfService} />
       <Footer/>
-
     </>
   )
 }

@@ -21,12 +21,12 @@ function FaqList () {
 
   return (
     <>
-      <div className='mx-auto flex items-center justify-center'>
-        <img src={faqImage}/>
-      </div>
-      <div className='container'>
-        <p className='text-8xl flex text-left font-bold mt-36 mb-4 ml-36'>Frequently Asked Questions</p>
-        <p className='text-4xl flex text-left mb-36 ml-36'>Everything you need to know about EasyPet</p>
+      <p className='text-8xl flex text-left font-bold mt-36 mb-4 ml-36'>Frequently Asked Questions</p>
+
+      <div className='container divide-solid divide-y-4 divide-black'>
+        <p className='text-4xl flex text-left mb-12 ml-36'>Everything you need to know about EasyPet</p>
+        <p className='text-4xl flex text-left mb-36 ml-36'></p>
+
       </div>
 
       {faqState.map(faq => {
