@@ -38,19 +38,19 @@ describe('GET api/v1/faq', () => {
 })
 
 // TODO: get help with this test
-// describe('GET /search/:searchString', () => {
-//   test('get faq by search string working', () => {
-//     const testFaq = [1, 'How much does easy pet cost', 'nothing']
-//     getFaqsBySearchString.mockImplementation(() => {
-//       return Promise.resolve(testFaq)
-//     })
-//     return request(server)
-//       .get('/search/:searchString')
-//       .expect(200)
-//       .then(res => {
-//         expect(res.status).toEqual(200)
-//         expect(res.text).toContain('cost')
-//         return null
-//       })
-//   })
-// })
+describe('GET /search/:searchString', () => {
+  test('get faq by search string working', () => {
+    const testFaq = [1, 'How much does easy pet cost', 'nothing']
+    getFaqsBySearchString.mockImplementation(() => {
+      return Promise.resolve(testFaq)
+    })
+    return request(server)
+      .get('/api/v1/faq/search/:searchString')
+      .expect(200)
+      .then(res => {
+        expect(res.status).toEqual(200)
+        expect(res.text).toContain('cost')
+        return null
+      })
+  })
+})
