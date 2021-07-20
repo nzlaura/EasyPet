@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import Axios from 'axios'
+// import Axios from 'axios'
 import { connect } from 'react-redux'
 import AddressFinder from './AddressFinder'
 import profileImage from '../../server/public/ImageAssets/AnimationOne/TwoDogs.png'
@@ -8,7 +8,6 @@ import { sendUserUpdates } from '../actions/index'
 function UserProfile (props) {
   const initialState = { userName: '', email: '', phone: '', firstName: '', lastName: '', dob: '', address: '' }
   const [data, setData] = useState(initialState)
-
 
   function handleChange (evt) {
     const { name, value } = evt.target

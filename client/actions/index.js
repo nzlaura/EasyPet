@@ -1,4 +1,6 @@
 import * as requests from '../apis/apiClient'
+import { parseISO } from 'date-fns'
+
 // import { postUser } from "../apis/apiClient"
 
 // export function addUser (user) {
@@ -45,4 +47,19 @@ export function addEvent (event, id) {
     id,
     event
   }
+}
+
+export function setEvents (events, id) {
+  console.log(events)
+  const newEvent = parseDate(events[0])
+  console.log(newEvent)
+  return {
+    type: 'SET_EVENTS',
+    id,
+    events: events.map(parseDate)
+  }
+}
+
+export function parseDate (event) {
+  return { ...event, date: parseISO(event.date) }
 }

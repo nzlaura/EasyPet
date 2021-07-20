@@ -1,6 +1,12 @@
-import React, { useState } from 'react'
-import { format, subHours, startOfMonth } from 'date-fns'
+import React, { useState, useEffect } from 'react'
+import { connect } from 'react-redux'
+import { format, startOfMonth } from 'date-fns'
 import '@zach.codes/react-calendar/dist/calendar-tailwind.css'
+
+import { getEvents } from '../apis/apiClient'
+import { setEvents } from '../actions/index.js'
+
+// import EventItem from '../components/EventItem'
 
 import {
   MonthlyBody,
@@ -10,44 +16,18 @@ import {
   DefaultMonthlyEventItem
 } from '@zach.codes/react-calendar'
 
-export default function MyMonthlyCalendar () {
+function MyMonthlyCalendar (props) {
   const [currentMonth, setCurrentMonth] = useState(
     startOfMonth(new Date())
   )
 
-  const eventItems = [
-    { title: 'Flea Treatment', date: subHours(new Date(), 2) },
-    { title: 'Meet new groomer', date: subHours(new Date(), 1) },
-    { title: 'Vet', date: new Date() }
-  ]
-  // const [eventItems, setEventItems] = useState([
-  //   {
-  //     title: '',
-  //     date: subHours(new Date())
-  //   }
-  // ])
-
-  // onlick that takes in the date thats clicked, create event handler
-  // New state, newEventItem, setNewEventItem
-
-  // function handleChange (e) {
-  //   const { name, value } = e.target
-  //   setContactForm({
-  //     ...contactForm,
-  //     [name]: value
-  //   })
-  // }
-
-  // function handleClick (e) {
-  //   e.preventDefault()
-  //   sendContactFormMessage(contactForm)
-  //   setContactForm({
-  //     name: '',
-  //     email: '',
-  //     subject: '',
-  //     message: ''
-  //   })
-  //   // }
+  useEffect(() => {
+    return getEvents()
+      .then(events => {
+        props.dispatch(setEvents(events))
+        return null
+      })
+  }, [])
 
   return (
     <>
@@ -57,7 +37,7 @@ export default function MyMonthlyCalendar () {
       >
         <MonthlyNav />
         <MonthlyBody
-          events={eventItems}
+          events={props.events}
         >
           <MonthlyDay
             renderDay={data =>
@@ -65,6 +45,7 @@ export default function MyMonthlyCalendar () {
                 return <DefaultMonthlyEventItem
                   key={index}
                   title={item.title}
+                  type={item.type}
                   // Format the date here to be in the format you prefer
                   date={format(item.date, 'k:mm')}
                 />
@@ -76,3 +57,10 @@ export default function MyMonthlyCalendar () {
     </>
   )
 }
+
+function mapStateToProps (state) {
+  console.log(state)
+  return { events: state.events }
+}
+
+export default connect(mapStateToProps)(MyMonthlyCalendar)
