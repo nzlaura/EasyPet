@@ -10,6 +10,7 @@ export function login (username, password) {
       password: password
     })
     .then(res => res.body)
+    .catch(err => console.log(new Error(err)))
 }
 
 export function register (username, password) {
@@ -20,16 +21,19 @@ export function register (username, password) {
       password: password
     })
     .then(res => res.body)
+    .catch(err => console.log(new Error(err)))
 }
 
 export function signOff () {
   return request
     .delete(`${rootUrl}/logout`)
     .then(res => res.body)
+    .catch(err => console.log(new Error(err)))
 }
 
 export function getUser () {
   return request
     .get(`${rootUrl}/user`)
     .then(res => res.body)
+    .catch(err => console.log(new Error(err)))
 }

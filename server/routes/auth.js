@@ -39,6 +39,7 @@ router.get('/user', (req, res) => {
 router.get('/logout', (req, res) => {
   req.logout()
   res.send('logged out')
+  res.redirect('/')
   return null
 })
 
