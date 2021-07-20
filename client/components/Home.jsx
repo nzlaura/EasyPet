@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { IfAuthenticated, IfNotAuthenticated } from './authenticated'
+
 import faqImage from '../../server/public/ImageAssets/AnimationOne/HomeGroup.png'
 import img1 from '../../server/public/ImageAssets/AnimationOne/Vet.png'
 import img2 from '../../server/public/ImageAssets/AnimationOne/Cat.png'
@@ -18,14 +20,15 @@ function Home () {
           <p className='text-8xl cols-span-2 flex text-left font-bold mt-36 mb-10 ml-36'>A Digital Diary For Your Pet</p>
           <p className='text-4xl flex text-left ml-36 mb-60'>EasyPet assists pet owners in caring for and managing their pets.</p>
         </div>
-        <div>
-          <button className='bg-black hover:bg-gray-900 text-white font-bold text-5xl rounded-md flex items-center justify-center mt-60 ml-20 h-32 w-96' type='submit'>
-            <a href="#/login">Sign Up</a>
-          </button>
-          <p className="ml-20 h-12 text-white text-sm">Have an account? <a href="#/login"> Log in</a></p>
-        </div>
+        <IfNotAuthenticated>
+          <div>
+            <button className='bg-black hover:bg-gray-900 text-white font-bold text-5xl rounded-md flex items-center justify-center mt-60 ml-20 h-32 w-96' type='submit'>
+              <a href="#/login">Sign Up</a>
+            </button>
+            <p className="ml-20 h-12 text-white text-sm">Have an account? <a href="#/login"> Log in</a></p>
+          </div>
+        </IfNotAuthenticated>
       </div>
-
       <div className='container grid grid-cols-2 mb-12 divide-solid divide-y-2 divide-black'>
         <div>
           <img src={img1}/>

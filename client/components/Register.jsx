@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 
-
 import { register } from '../apis/apiPassport'
 import signInImage from '../../server/public/ImageAssets/AnimationOne/SignUpWalk.png'
 
@@ -16,7 +15,7 @@ function Register (props) {
 
   function handleClick (e) {
     e.preventDefault()
-    return register(registerUsername, registerPassword)
+    return register(registerUsername, registerPassword) && props.history.push('login')
   }
 
   function showPassword () {
