@@ -1,10 +1,15 @@
 import React, { useState } from 'react'
 
 function SearchBar (props) {
-  const [search, setSearch] = useState('')
+  const [search, setSearch] = useState({
+    searchString: ''
+  })
 
   function handleChange (e) {
-    setSearch(e.target.value)
+    setSearch({
+      ...search,
+      [e.target.name]: e.target.value
+    })
   }
 
   function handleSubmit (e) {
