@@ -8,6 +8,8 @@ import { setEvents } from '../actions/index.js'
 
 import AddToCalendar from './AddToCalendar'
 
+import img1 from '../../server/public/ImageAssets/AnimationTwo/DogThree.png'
+
 import {
   MonthlyBody,
   MonthlyDay,
@@ -31,7 +33,12 @@ function MyMonthlyCalendar (props) {
 
   return (
     <>
-      <div className="container ml-20 w-3/6 h-auto">
+      <p className='text-5xl items-left font-bold mt-20 ml-32 -mb-96 text-black z-50'>Pet Diary</p>
+      <div className="container ml-32 grid grid-cols-2 z-50">
+        <div></div>
+        <AddToCalendar></AddToCalendar>
+      </div>
+      <div className="container ml-20 mb-20 -mt-96 w-3/6 h-auto">
         <MonthlyCalendar
           currentMonth={currentMonth}
           onCurrentMonthChange={date => setCurrentMonth(date)}
@@ -57,10 +64,10 @@ function MyMonthlyCalendar (props) {
           </MonthlyBody>
         </MonthlyCalendar>
       </div>
-      <div className="container ml-32 grid grid-cols-2">
+      {/* <div className="container mx-auto -mt-96 grid grid-cols-2">
         <div></div>
-        <AddToCalendar></AddToCalendar>
-      </div>
+        <div className="ml-12"><img src={img1}/></div>
+      </div> */}
     </>
   )
 }
