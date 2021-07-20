@@ -6,7 +6,7 @@ import '@zach.codes/react-calendar/dist/calendar-tailwind.css'
 import { getEvents } from '../apis/apiClient'
 import { setEvents } from '../actions/index.js'
 
-// import EventItem from '../components/EventItem'
+import AddToCalendar from './AddToCalendar'
 
 import {
   MonthlyBody,
@@ -31,29 +31,36 @@ function MyMonthlyCalendar (props) {
 
   return (
     <>
-      <MonthlyCalendar
-        currentMonth={currentMonth}
-        onCurrentMonthChange={date => setCurrentMonth(date)}
-      >
-        <MonthlyNav />
-        <MonthlyBody
-          events={props.events}
+      <div className="container ml-20 w-3/6 h-auto">
+        <MonthlyCalendar
+          currentMonth={currentMonth}
+          onCurrentMonthChange={date => setCurrentMonth(date)}
         >
-          <MonthlyDay
-            renderDay={data =>
-              data.map((item, index) => {
-                return <DefaultMonthlyEventItem
-                  key={index}
-                  title={item.title}
-                  type={item.type}
-                  // Format the date here to be in the format you prefer
-                  date={format(item.date, 'k:mm')}
-                />
-              })
-            }
-          />
-        </MonthlyBody>
-      </MonthlyCalendar>
+          <MonthlyNav />
+
+          <MonthlyBody
+            events={props.events}
+          >
+            <MonthlyDay
+              renderDay={data =>
+                data.map((item, index) => {
+                  return <DefaultMonthlyEventItem
+                    key={index}
+                    title={item.title}
+                    type={item.type}
+                    // Format the date here to be in the format you prefer
+                    date={format(item.date, 'k:mm')}
+                  />
+                })
+              }
+            />
+          </MonthlyBody>
+        </MonthlyCalendar>
+      </div>
+      <div className="container ml-32 grid grid-cols-2">
+        <div></div>
+        <AddToCalendar></AddToCalendar>
+      </div>
     </>
   )
 }

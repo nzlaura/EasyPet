@@ -14,7 +14,7 @@ import Navbar from './Nav'
 import SearchFAQ from './SearchFAQ'
 import Home from './Home'
 import About from './About'
-import AddToCalendar from './AddToCalendar'
+// import AddToCalendar from './AddToCalendar'
 import PrivacyPolicy from './PrivacyPolicy'
 import TermsOfService from './TermsOfService'
 
@@ -29,7 +29,7 @@ function App (props) {
       <Route exact path = '/home' component={Home} />
       <Route exact path = '/contact' component={Contact} />
       <Route exact path = '/calendar' component={MyMonthlyCalendar} />
-      <Route exact path = '/calendar' component={AddToCalendar} />
+      {/* <Route exact path = '/calendar' component={AddToCalendar} /> */}
       <Route exact path = '/register' component={Register} />
       <Route exact path = '/login' component={SignIn} />
       <Route exact path = '/user' component={UserProfile} />
