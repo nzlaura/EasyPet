@@ -6,12 +6,6 @@ import signInImage from '../../server/public/ImageAssets/AnimationOne/SignUpWalk
 function Register (props) {
   const [registerUsername, setRegisterUsername] = useState('')
   const [registerPassword, setRegisterPassword] = useState('')
-  const [error, setError] = useState('')
-
-  // TODO add error to the auth
-  // const hideError = () => {
-  //   setError('')
-  // }
 
   function handleClick (e) {
     e.preventDefault()

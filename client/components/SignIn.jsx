@@ -6,7 +6,6 @@ import signInImage from '../../server/public/ImageAssets/AnimationOne/FAQVet.png
 function SignIn (props) {
   const [loginUsername, setLoginUsername] = useState('')
   const [loginPassword, setLoginPassword] = useState('')
-  const [data, setData] = useState('')
 
   function showPassword () {
     var x = document.getElementById('passwordinput')
@@ -22,7 +21,6 @@ function SignIn (props) {
     login(loginUsername, loginPassword)
       .then(() => {
         window.location.reload()
-        // TODO needs to send to user profile but refreshers after back to loging (JV PLS HINT)
         props.history.push('user')
         return null
       })
@@ -45,15 +43,6 @@ function SignIn (props) {
           </div>
         </div>
       </div>
-
-      {/* <p className="text-4xl flex items-center justify-center mb-4">Get User</p>
-
-      <button className='bg-black hover:bg-gray-900 text-white font-bold py-2 px-4 rounded mx-auto flex items-center w-2/12 h-auto' type='submit' onClick={getUser}>Submit</button>
-
-      <div className='text-s flex items-center justify-center mb-4'>
-        {data.username ? <h1>Welcome Back {data.username}</h1> : null}
-      </div> */}
-
     </>
   )
 }

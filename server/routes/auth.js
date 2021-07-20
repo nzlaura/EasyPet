@@ -1,7 +1,6 @@
 const express = require('express')
 const passport = require('passport')
 const user = require('../db/db')
-const logout = require('express-passport-logout')
 require('./passportConfig')(passport)
 
 const router = express.Router()
