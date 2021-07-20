@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1626820685159" clover="3.2.0">
-  <project timestamp="1626820685159" name="All files">
-    <metrics statements="153" coveredstatements="85" conditionals="33" coveredconditionals="2" methods="47" coveredmethods="6" elements="233" coveredelements="93" complexity="0" loc="153" ncloc="153" packages="4" files="10" classes="10"/>
+<coverage generated="1626823239005" clover="3.2.0">
+  <project timestamp="1626823239005" name="All files">
+    <metrics statements="153" coveredstatements="80" conditionals="33" coveredconditionals="2" methods="47" coveredmethods="4" elements="233" coveredelements="86" complexity="0" loc="153" ncloc="153" packages="4" files="10" classes="10"/>
     <package name="server">
       <metrics statements="26" coveredstatements="26" conditionals="2" coveredconditionals="1" methods="0" coveredmethods="0"/>
       <file name="server.js" path="/Users/laura/workspace/EasyPet/server/server.js">
@@ -71,7 +71,7 @@
       </file>
     </package>
     <package name="server.routes">
-      <metrics statements="93" coveredstatements="44" conditionals="18" coveredconditionals="0" methods="32" coveredmethods="6"/>
+      <metrics statements="93" coveredstatements="39" conditionals="18" coveredconditionals="0" methods="32" coveredmethods="4"/>
       <file name="auth.js" path="/Users/laura/workspace/EasyPet/server/routes/auth.js">
         <metrics statements="25" coveredstatements="10" conditionals="10" coveredconditionals="0" methods="8" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
@@ -115,28 +115,7 @@
         <line num="18" count="1" type="stmt"/>
       </file>
       <file name="events.js" path="/Users/laura/workspace/EasyPet/server/routes/events.js">
-        <metrics statements="18" coveredstatements="16" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="5"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="3" count="1" type="stmt"/>
-        <line num="5" count="1" type="stmt"/>
-        <line num="7" count="1" type="stmt"/>
-        <line num="8" count="3" type="stmt"/>
-        <line num="10" count="1" type="stmt"/>
-        <line num="11" count="1" type="stmt"/>
-        <line num="14" count="2" type="stmt"/>
-        <line num="15" count="2" type="stmt"/>
-        <line num="19" count="1" type="stmt"/>
-        <line num="20" count="1" type="stmt"/>
-        <line num="21" count="1" type="stmt"/>
-        <line num="22" count="1" type="stmt"/>
-        <line num="24" count="1" type="stmt"/>
-        <line num="25" count="1" type="stmt"/>
-        <line num="28" count="0" type="stmt"/>
-        <line num="29" count="0" type="stmt"/>
-        <line num="33" count="1" type="stmt"/>
-      </file>
-      <file name="faq.js" path="/Users/laura/workspace/EasyPet/server/routes/faq.js">
-        <metrics statements="16" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="0"/>
+        <metrics statements="18" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
         <line num="5" count="1" type="stmt"/>
@@ -146,6 +125,27 @@
         <line num="11" count="0" type="stmt"/>
         <line num="14" count="0" type="stmt"/>
         <line num="15" count="0" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="33" count="1" type="stmt"/>
+      </file>
+      <file name="faq.js" path="/Users/laura/workspace/EasyPet/server/routes/faq.js">
+        <metrics statements="16" coveredstatements="11" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="3"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="2" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
         <line num="19" count="1" type="stmt"/>
         <line num="20" count="0" type="stmt"/>
         <line num="22" count="0" type="stmt"/>
