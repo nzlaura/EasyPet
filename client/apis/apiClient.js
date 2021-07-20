@@ -45,7 +45,6 @@ export function getEvents () {
 }
 
 export function createEvent (event) {
-  console.log(event)
   return request
     .post(rootUrl + 'events')
     .send(event)

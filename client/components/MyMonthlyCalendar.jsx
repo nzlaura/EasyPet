@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux'
-import { format, subHours, startOfMonth, parseISO } from 'date-fns'
+import { format, startOfMonth } from 'date-fns'
 import '@zach.codes/react-calendar/dist/calendar-tailwind.css'
 
 import { getEvents } from '../apis/apiClient'
