@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 
 function FaqListItem (props) {
   const { question, answer } = props
