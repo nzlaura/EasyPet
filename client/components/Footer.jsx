@@ -2,6 +2,8 @@ import React from 'react'
 import SearchBar from './SearchBar.jsx'
 import { Route } from 'react-router-dom'
 
+import { IsAuthenticated, NotAuthenticated } from './authenticated'
+
 function topFunction () {
   document.body.scrollTop = 0
   document.documentElement.scrollTop = 0
@@ -24,18 +26,20 @@ function Footer () {
                     <span onClick={topFunction} className="ml-2">Home</span>
                   </a>
                 </li>
-                <li className="nav-item">
-                  <a className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
-                    href="#/register">
-                    <span onClick={topFunction} className="ml-2">Sign Up</span>
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
-                    href="#/login">
-                    <span onClick={topFunction} className="ml-2">Login</span>
-                  </a>
-                </li>
+                <IsAuthenticated>
+                  <li className="nav-item">
+                    <a className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
+                      href="#/register">
+                      <span onClick={topFunction} className="ml-2">Sign Up</span>
+                    </a>
+                  </li>
+                  <li className="nav-item">
+                    <a className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
+                      href="#/login">
+                      <span onClick={topFunction} className="ml-2">Login</span>
+                    </a>
+                  </li>
+                </IsAuthenticated>
                 <li className="nav-item">
                   <a className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
                     href="#/calendar">
@@ -55,7 +59,6 @@ function Footer () {
                     <span onClick={topFunction} className="ml-2">User Profile</span>
                   </a>
                 </li>
-
                 <li className="nav-item">
                   <a className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
                     href="#/about">

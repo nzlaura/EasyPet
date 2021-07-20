@@ -6,8 +6,6 @@ require('./passportConfig')(passport)
 
 const router = express.Router()
 
-// might need tweaking so its regular like register
-
 router.post('/login', (req, res, next) => {
   passport.authenticate('local', (err, user) => {
     if (err) throw err
@@ -45,31 +43,3 @@ router.get('/logout', (req, res) => {
 })
 
 module.exports = router
-
-
-// example 
-function addUserAndLogIn (newUser, req, res) {
-  return users.addUser(newUser)
-    .then(user => {
-      const userDetails = {
-        id: user.id,
-        username: user.username,
-        first_name: user.first_name,
-        last_name: user.last_name
-      }
-      return userDetails
-    })
-    .then((user) => {
-      return req.logIn(user, err => {
-        if (err) throw err
-      })
-    })
-    .then(() => {
-      res.json('User Created')
-      return null
-    })
-    .catch(err => {
-      console.log(err.message)
-      return null
-    })
-}
