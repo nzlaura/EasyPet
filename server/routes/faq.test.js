@@ -35,18 +35,22 @@ describe('GET api/v1/faq', () => {
         return null
       })
   })
+})
+
+// TODO: get help with this test
+// describe('GET /search/:searchString', () => {
 //   test('get faq by search string working', () => {
 //     const testFaq = [1, 'How much does easy pet cost', 'nothing']
 //     getFaqsBySearchString.mockImplementation(() => {
 //       return Promise.resolve(testFaq)
 //     })
 //     return request(server)
-//       .get('/api/v1/faq')
+//       .get('/search/:searchString')
 //       .expect(200)
 //       .then(res => {
 //         expect(res.status).toEqual(200)
 //         expect(res.text).toContain('cost')
 //         return null
 //       })
-  })
-})
+//   })
+// })
