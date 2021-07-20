@@ -1,5 +1,5 @@
 import React from 'react'
-import { Route, Redirect } from 'react-router-dom'
+import { Route, Redirect, Switch } from 'react-router-dom'
 import { connect } from 'react-redux'
 
 import Contact from './Contact'
@@ -19,12 +19,13 @@ import AddToCalendar from './AddToCalendar'
 function App (props) {
   return (
     <>
-      <Header/>
-      <Navbar />
+
       <Route exact path="/">
         <Redirect to="/home" />
       </Route>
-      <Route path = '/home' component={Home} />
+      <Header/>
+      <Navbar />
+      <Route exact path = '/home' component={Home} />
       <Route path = '/contact' component={Contact} />
       <Route path = '/calendar' component={MyMonthlyCalendar} />
       <Route path = '/calendar' component={AddToCalendar} />
@@ -35,6 +36,7 @@ function App (props) {
       <Route exact path="/search/:searchString" component={SearchFAQ} />
       <Route path = '/about' component={About} />
       <Footer/>
+
     </>
   )
 }

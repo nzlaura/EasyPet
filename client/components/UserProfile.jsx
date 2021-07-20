@@ -9,17 +9,6 @@ function UserProfile (props) {
   const initialState = { userName: '', email: '', phone: '', firstName: '', lastName: '', dob: '', address: '' }
   const [data, setData] = useState(initialState)
 
-  // useEffect (() =>{
-  //   Axios({
-  //     method: 'GET',
-  //     withCredentials: true,
-  //     url: 'http://localhost:3000/user'
-  //   }).then((res) => {
-  //     setData(res)
-  //     return null
-  //   })
-  //     .catch(err => console.log(err.message))
-  // })
 
   function handleChange (evt) {
     const { name, value } = evt.target

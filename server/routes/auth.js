@@ -1,21 +1,18 @@
 const express = require('express')
 const passport = require('passport')
 const user = require('../db/db')
-const logout = require('express-passport-logout')
+// const logout = require('express-passport-logout')
 require('./passportConfig')(passport)
 
 const router = express.Router()
 
-// might need tweaking so its regular like register
-
-router.post('/login', (req, res, next) => {
-  passport.authenticate('local', (err, user) => {
+router.post('/login', async (req, res, next) => {
+  await passport.authenticate('local', (err, user) => {
     if (err) throw err
-    if (!user) res.send('No User Exists')
+    if (!user) res.send('Username or Password is incorrect')
     else {
       req.logIn(user, (err) => {
         if (err) throw err
-        // res.cookie('session', req.user.username, { secure: true, signed: true, expires: new Date(Date.now() + 3600) });
         res.send('Successfully Authenticated User:' + req.user.username)
       })
     }
@@ -25,11 +22,11 @@ router.post('/login', (req, res, next) => {
 router.post('/register', (req, res) => {
   user.userExists(req.body.username)
     .then(result => {
-      if (result) res.send('User Already Exists')
+      if (result) res.send('User already taken')
       if (!result) {
         user.insertNewUser(req.body.username, req.body.password)
+        res.send('user created successfully' + req.body.username)
       }
-      res.send('user created successfully' + req.body.username)
       return null
     })
     .catch(err => console.log(err))
