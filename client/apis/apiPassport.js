@@ -3,7 +3,7 @@ import request from 'superagent'
 const rootUrl = 'api/v1/auth'
 
 export function login (username, password) {
-    return request
+  return request
     .post(`${rootUrl}/login`)
     .send({
       username: username,
@@ -13,7 +13,7 @@ export function login (username, password) {
 }
 
 export function register (username, password) {
-    return request
+  return request
     .post(`${rootUrl}/register`)
     .send({
       username: username,
@@ -23,13 +23,13 @@ export function register (username, password) {
 }
 
 export function signOff () {
-    return request
-      .delete(`${rootUrl}/logout`)
-      .then(res => res.body)
+  return request
+    .delete(`${rootUrl}/logout`)
+    .then(res => res.body)
 }
 
 export function getUser () {
-    return request
-        .get(`${rootUrl}/user`)
-        .then(res => res.body)
+  return request
+    .get(`${rootUrl}/user`)
+    .then(res => res.body)
 }
