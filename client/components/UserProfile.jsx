@@ -19,7 +19,7 @@ function UserProfile (props) {
       .then(result => {
         let username = result.username
         setCurrentUser(username)
-        getUserData(currentUser)
+        getUserData()
         .then(data => {
           setData(data)
           console.log(data)

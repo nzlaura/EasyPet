@@ -28,8 +28,19 @@ export function getFaqBySearchString (search) {
     })
 }
 
+export function updateUserProfile (username, updates) {
+  return request
+    .patch(rootUrl + `user/${username}`)
+    .send(updates)
+    .then(res => {
+      return res.body
+    })
+    .catch(e => console.log(e))
+  }
+
 export function getUserData (username) {
-  return request.get(rootUrl + `user/${username}`)
+  return request
+    .get(rootUrl + `user/${username}`)
     .then(res => {
       return res.body
     })
@@ -67,11 +78,4 @@ function logError (err) {
     )
     throw err
   }
-}
-
-export function updateUserProfile (username, updates) {
-  return request
-    .patch(rootUrl + `user/${username}`)
-    .send(updates)
-    .then(res => res.body)
 }

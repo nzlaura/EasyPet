@@ -26,7 +26,7 @@ function userEmailExists (email, db = connection) {
 
 function getUserByUsername (username, db = connection) {
   return db('users').select()
-    .where({ username: username})
+    .where('username', username)
     .first()
 }
 
