@@ -42,6 +42,11 @@ function insertNewUser (userName, password, db = connection) {
     })
 }
 
+function updateUserProfile (username, updates, db = connection) {
+  return db('users').where({ username: username}).update(updates)
+    .then(() => getUserByUsername(username, db))
+}
+
 function getFaqs (db = connection) {
   return db('faq').select()
 }
@@ -66,11 +71,10 @@ function addNewEvent (event, db = connection) {
     // })
 }
 
-// function updateUserProfile {username, db = connection}
-
 module.exports = {
   userExists,
   getUserByUsername,
+  updateUserProfile,
   userEmailExists,
   users,
   insertNewUser,

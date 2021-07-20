@@ -6,6 +6,8 @@ import Contact from './Contact'
 import Register from './Register'
 import SignIn from './SignIn'
 import UserProfile from './UserProfile'
+import PetProfile from './PetProfile'
+import AddPet from './AddPet'
 import MyMonthlyCalendar from './MyMonthlyCalendar'
 import Header from './Header'
 import Footer from './Footer'
@@ -33,6 +35,8 @@ function App (props) {
       <Route exact path = '/register' component={Register} />
       <Route exact path = '/login' component={SignIn} />
       <Route exact path = '/user' component={UserProfile} />
+      <Route exact path = '/user/pets' component={PetProfile} />
+      <Route exact path = '/user/pets/addpet' component={AddPet} />
       <Route exact path = '/faq' component={FaqList} />
       <Route exact path="/search/:searchString" component={SearchFAQ} />
       <Route path = '/about' component={About} />
