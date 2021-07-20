@@ -23,7 +23,7 @@ function Home () {
         <IfNotAuthenticated>
           <div>
             <button className='bg-black hover:bg-gray-900 text-white font-bold text-5xl rounded-md flex items-center justify-center mt-60 ml-20 h-32 w-96' type='submit'>
-              <a href="#/login">Sign Up</a>
+              <a href="#/register">Sign Up</a>
             </button>
             <p className="ml-20 h-12 text-white text-sm">Have an account? <a href="#/login"> Log in</a></p>
           </div>

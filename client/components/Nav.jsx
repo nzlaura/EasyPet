@@ -7,8 +7,8 @@ function Navbar ({ fixed }) {
 
   return (
     <>
-      <nav className="relative flex flex-wrap items-center justify-between px-2 py-3 bg-emerald-500 mb-3">
-        <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
+      <nav className="relative flex flex-wrap items-center justify-between px-2 py-3 bg-emerald-500 mb-3 ml-96 w-4/6">
+        <div className="container px-4 mx-auto flex flex-wrap items-center justify-between ml-96 w-4/6">
 
           <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
             <button
