@@ -59,7 +59,6 @@ function getAllEvents (db = connection) {
 
 // TODO: join user db with events to display events by individual user
 function addNewEvent (event, db = connection) {
-  console.log('from db function:', event)
   return db('events')
     .insert({ title: event.title, type: event.type, date: event.date })
     // .then(id => {

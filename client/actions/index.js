@@ -1,4 +1,6 @@
 import * as requests from '../apis/apiClient'
+import { createDate } from '../apis/apiClient'
+
 // import { postUser } from "../apis/apiClient"
 
 // export function addUser (user) {
@@ -44,5 +46,38 @@ export function addEvent (event, id) {
     type: 'ADD_EVENT',
     id,
     event
+  }
+}
+
+export function setEvents (events, id) {
+  // console.log(events)
+  return {
+    type: 'SET_EVENTS',
+    id,
+    events
+  }
+}
+
+// dateparsedevents
+
+export function createParsedDate (iso) {
+  return (dispatch) => {
+    createDate(iso)
+      .then((id) => {
+        dispatch(setParsedDate(iso, id))
+        return null
+      })
+      .catch(() => {
+        console.log('error: could not create new event')
+      })
+  }
+}
+
+export function setParsedDate (date, id) {
+  console.log(date)
+  return {
+    type: 'SET_PARSED_DATE',
+    id,
+    date
   }
 }
