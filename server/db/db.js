@@ -26,7 +26,7 @@ function userEmailExists (email, db = connection) {
 
 function getUserByUsername (username, db = connection) {
   return db('users').select()
-    .where('username', username)
+    .where({ username: username})
     .first()
 }
 
@@ -40,6 +40,11 @@ function insertNewUser (userName, password, db = connection) {
       return db('users')
         .insert({ username: userName, password: hashedPassword })
     })
+}
+
+function updateUserProfile (username, updates, db = connection) {
+  return db('users').where({ username: username}).update(updates)
+    .then(() => getUserByUsername(username, db))
 }
 
 function getFaqs (db = connection) {
@@ -66,11 +71,10 @@ function addNewEvent (event, db = connection) {
     // })
 }
 
-// function updateUserProfile {username, db = connection}
-
 module.exports = {
   userExists,
   getUserByUsername,
+  updateUserProfile,
   userEmailExists,
   users,
   insertNewUser,

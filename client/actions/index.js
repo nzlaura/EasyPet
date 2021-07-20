@@ -1,37 +1,30 @@
 import * as requests from '../apis/apiClient'
 import { parseISO } from 'date-fns'
 
-// import { postUser } from "../apis/apiClient"
-
-// export function addUser (user) {
-//     return { type: ADD_USER, user: user }
-// }
-
-// export function saveUser (user) {
-//     return dispatch => {
-//     postUser(user)
-//     .then((newUser) => dispatch(addUser(newUser)))
-//     .catch(err => dispatch(setError(err)))
-//     }
-// }
-
-// // export function addUser (user) {
-// //   return postUser(username, password)
-// //   .then(res =>)
-
-import { createEvent } from '../apis/apiClient'
+export function setUserData (userData) {
+  return {
+    type: 'SET_USER_DATA',
+    userData
+  }
+}
 
 export function sendUserUpdates (username, updates) {
   return (dispatch) => {
-    return requests.updateUserProfile(username, updates)
-      .catch(err => dispatch(showError(err)))
+    requests.updateUserProfile(username, updates)
+      .then((userData) => {
+        dispatch(setUserData(userData))
+        return null
+    })
+    .catch(() => {
+    console.log('error: User Profile Update Failed')
+    })
   }
 }
 
 export function saveEvent (event) {
   console.log(event)
   return (dispatch) => {
-    createEvent(event)
+    requests.createEvent(event)
       .then((id) => {
         dispatch(addEvent(event, id))
         return null

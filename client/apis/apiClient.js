@@ -28,8 +28,8 @@ export function getFaqBySearchString (search) {
     })
 }
 
-export function getUserDetails (user) {
-  return request.get(rootUrl + '/user')
+export function getUserData (username) {
+  return request.get(rootUrl + `user/${username}`)
     .then(res => {
       return res.body
     })
@@ -69,9 +69,9 @@ function logError (err) {
   }
 }
 
-export function updateUserProfile (username, update) {
+export function updateUserProfile (username, updates) {
   return request
-    .patch(`${rootUrl}/user/${username}`)
-    .send(update)
-    .then(response => response.body)
+    .patch(rootUrl + `user/${username}`)
+    .send(updates)
+    .then(res => res.body)
 }
