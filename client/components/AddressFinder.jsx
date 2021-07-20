@@ -53,7 +53,6 @@ class AddressFinder extends React.Component {
         <input className='formInput rounded-md shadow-sm col-1 h-12 p-4 mb-4' placeholder="Suburb" ref={this.suburb}></input>
         <input className='formInput rounded-md shadow-sm col-1 h-12 p-4 mb-4' placeholder="City" ref={this.city}></input>
         <input className='formInput rounded-md shadow-sm col-1 h-12  p-4 mb-4' placeholder="PostCode" ref={this.postcode}></input>
-        <input className='btn bg-black hover:bg-gray-900 text-white font-bold rounded-md items-center justify-center col-1 h-12 mb-32 mt-4' type="submit" name="next"></input>
       </form>
     )
   }
