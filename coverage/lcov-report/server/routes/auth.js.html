@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">33.33% </span>
+                <span class="strong">34.48% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>10/30</span>
+                <span class='fraction'>10/29</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">38.46% </span>
+                <span class="strong">40% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>10/26</span>
+                <span class='fraction'>10/25</span>
             </div>
         
             
@@ -103,42 +103,42 @@
 <a name='L44'></a><a href='#L44'>44</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -146,6 +146,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const express = require('express')
 const passport = require('passport')
 const user = require('../db/db')
+// const logout = require('express-passport-logout')
 require('./passportConfig')(passport)
 &nbsp;
 const router = express.Router()
@@ -153,11 +154,11 @@ const router = express.Router()
 router.post('/login', <span class="fstat-no" title="function not covered" >as</span>ync (req, res, next) =&gt; {
 <span class="cstat-no" title="statement not covered" >  await passport.authenticate('local', <span class="fstat-no" title="function not covered" >(e</span>rr, user) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >    if (err) <span class="cstat-no" title="statement not covered" >throw err</span></span>
-<span class="cstat-no" title="statement not covered" >    if (!user) <span class="cstat-no" title="statement not covered" >res.send('No User Exists')</span></span>
+<span class="cstat-no" title="statement not covered" >    if (!user) <span class="cstat-no" title="statement not covered" >res.send('Username or Password is incorrect')</span></span>
     else {
 <span class="cstat-no" title="statement not covered" >      req.logIn(user, <span class="fstat-no" title="function not covered" >(e</span>rr) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        if (err) <span class="cstat-no" title="statement not covered" >throw err</span></span>
-<span class="cstat-no" title="statement not covered" >        res.send('Successfully Authenticated')</span>
+<span class="cstat-no" title="statement not covered" >        res.send('Successfully Authenticated User:' + req.user.username)</span>
       })
     }
   })(req, res, next)
@@ -166,11 +167,11 @@ router.post('/login', <span class="fstat-no" title="function not covered" >as</s
 router.post('/register', <span class="fstat-no" title="function not covered" >(r</span>eq, res) =&gt; {
 <span class="cstat-no" title="statement not covered" >  user.userExists(req.body.username)</span>
     .then(<span class="fstat-no" title="function not covered" >re</span>sult =&gt; {
-<span class="cstat-no" title="statement not covered" >      if (result) <span class="cstat-no" title="statement not covered" >res.send('User Already Exists')</span></span>
+<span class="cstat-no" title="statement not covered" >      if (result) <span class="cstat-no" title="statement not covered" >res.send('User already taken')</span></span>
 <span class="cstat-no" title="statement not covered" >      if (!result) {</span>
 <span class="cstat-no" title="statement not covered" >        user.insertNewUser(req.body.username, req.body.password)</span>
+<span class="cstat-no" title="statement not covered" >        res.send('user created successfully' + req.body.username)</span>
       }
-<span class="cstat-no" title="statement not covered" >      res.send('user created successfully')</span>
 <span class="cstat-no" title="statement not covered" >      return null</span>
     })
     .catch(<span class="fstat-no" title="function not covered" >er</span>r =&gt; <span class="cstat-no" title="statement not covered" >console.log(err))</span>
@@ -182,7 +183,6 @@ router.get('/user', <span class="fstat-no" title="function not covered" >(r</spa
 &nbsp;
 router.get('/logout', <span class="fstat-no" title="function not covered" >(r</span>eq, res) =&gt; {
 <span class="cstat-no" title="statement not covered" >  req.logout()</span>
-<span class="cstat-no" title="statement not covered" >  res.redirect('/login')</span>
 })
 &nbsp;
 module.exports = router
@@ -193,7 +193,7 @@ module.exports = router
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Sun Jul 18 2021 16:01:38 GMT+1200 (New Zealand Standard Time)
+                at Tue Jul 20 2021 19:15:18 GMT+1200 (New Zealand Standard Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>
