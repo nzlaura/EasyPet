@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { getUser } from '../apis/apiPassport'
 
-export function IsAuthenticated ({ children }) {
+export function IfAuthenticated ({ children }) {
   const [user, setUser] = useState(false)
 
   useEffect(() => {
@@ -18,7 +18,7 @@ export function IsAuthenticated ({ children }) {
 
   return user ? children : null
 }
-export function NotAuthenticated ({ children }) {
+export function IfNotAuthenticated ({ children }) {
   const [user, setUser] = useState(false)
 
   useEffect(() => {
