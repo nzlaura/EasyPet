@@ -21,7 +21,7 @@ function SignIn (props) {
     e.preventDefault()
     login(loginUsername, loginPassword)
       .then(() => {
-        props.history.push('home')
+        window.location.reload()
         return null
       })
       .catch(err => {

@@ -26,7 +26,7 @@ export function register (username, password) {
 
 export function signOff () {
   return request
-    .delete(`${rootUrl}/logout`)
+    .get(`${rootUrl}/logout`)
     .then(res => res.body)
     .catch(err => console.log(new Error(err)))
 }
