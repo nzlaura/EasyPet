@@ -22,6 +22,8 @@ function SignIn (props) {
     login(loginUsername, loginPassword)
       .then(() => {
         window.location.reload()
+        // TODO needs to send to user profile but refreshers after back to loging (JV PLS HINT)
+        props.history.push('user')
         return null
       })
       .catch(err => {

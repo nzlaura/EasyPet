@@ -4,6 +4,8 @@ import { signOff } from '../apis/apiPassport'
 function SignOff (props) {
   function handleClick (e) {
     e.preventDefault()
+    // TODO needs to direct to the main page again (JV hint pls)
+    props.history.push('home')
     signOff()
   }
 
