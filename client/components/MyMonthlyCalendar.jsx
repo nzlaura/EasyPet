@@ -21,14 +21,6 @@ function MyMonthlyCalendar (props) {
     startOfMonth(new Date())
   )
 
-  // const eventItems = [
-  //   { title: 'Flea Treatment', date: subHours(new Date(), 2) },
-  //   { title: 'Meet new groomer', date: subHours(new Date(), 1) },
-  //   { title: 'Vet', date: new Date() }
-  // ]
-
-  // console.log(eventItems)
-
   useEffect(() => {
     return getEvents()
       .then(events => {

@@ -55,15 +55,6 @@ export function createEvent (event) {
     .catch(logError)
 }
 
-export function createDate (iso) {
-  console.log(iso)
-  return request.get(rootUrl + 'events')
-    .then(res => {
-      return res.body
-    })
-    .catch(logError)
-}
-
 // error function
 
 function logError (err) {

@@ -1,5 +1,6 @@
 import * as requests from '../apis/apiClient'
 import { createDate } from '../apis/apiClient'
+import { parseISO } from 'date-fns'
 
 // import { postUser } from "../apis/apiClient"
 
@@ -50,34 +51,16 @@ export function addEvent (event, id) {
 }
 
 export function setEvents (events, id) {
-  // console.log(events)
+  console.log(events)
+  const newEvent = parseDate(events[0])
+  console.log(newEvent)
   return {
     type: 'SET_EVENTS',
     id,
-    events
+    events: events.map(parseDate)
   }
 }
 
-// dateparsedevents
-
-export function createParsedDate (iso) {
-  return (dispatch) => {
-    createDate(iso)
-      .then((id) => {
-        dispatch(setParsedDate(iso, id))
-        return null
-      })
-      .catch(() => {
-        console.log('error: could not create new event')
-      })
-  }
-}
-
-export function setParsedDate (date, id) {
-  console.log(date)
-  return {
-    type: 'SET_PARSED_DATE',
-    id,
-    date
-  }
+export function parseDate (event) {
+  return { ...event, date: parseISO(event.date) }
 }
