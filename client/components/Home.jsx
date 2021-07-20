@@ -29,7 +29,7 @@ function Home () {
           </div>
         </IfNotAuthenticated>
       </div>
-      <div className='container grid grid-cols-2 mb-12 divide-solid divide-y-2 divide-black'>
+      <div className='container grid grid-cols-2 mb-12 divide-solid divide-y-4 divide-black'>
         <div>
           <img src={img1}/>
         </div>
@@ -42,7 +42,7 @@ function Home () {
         </div>
       </div>
 
-      <div className='container grid grid-cols-2 mb-12 divide-solid divide-y-2 divide-black'>
+      <div className='container grid grid-cols-2 mb-12 divide-solid divide-y-4 divide-black'>
         <div>
           <p className='text-6xl flex text-left font-bold mt-36 mb-4 ml-36'>More quality time with your furry friends</p>
           <p className='text-3xl col-2 flex text-left ml-36 mb-12'>Less admin, more downtime</p>
@@ -55,7 +55,7 @@ function Home () {
         </div>
       </div>
 
-      <div className='container grid grid-cols-2 mb-12 divide-solid divide-y-2 divide-black'>
+      <div className='container grid grid-cols-2 mb-12 divide-solid divide-y-4 divide-black'>
         <div>
           <img src={img3}/>
         </div>
@@ -68,7 +68,7 @@ function Home () {
         </div>
       </div>
 
-      <div className='container grid grid-cols-2 mb-12 divide-solid divide-y-2 divide-black'>
+      <div className='container grid grid-cols-2 mb-12 divide-solid divide-y-4 divide-black'>
         <div>
           <p className='text-6xl flex text-left font-bold mt-36 mb-4 ml-36'>"I love using EasyPet, it has changed my life"</p>
           <p className='text-3xl col-2 flex text-left ml-36 mb-12'>Adam, Wellington, New Zealand</p>
@@ -81,18 +81,6 @@ function Home () {
           <img src={img4}/>
         </div>
       </div>
-
-      {/* <div className='container grid grid-cols-3 mb-12'>
-        <div>
-        </div>
-
-        <div>
-        </div>
-
-        <div>
-        </div>
-
-      </div> */}
     </>
   )
 }
