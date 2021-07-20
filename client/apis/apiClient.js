@@ -79,3 +79,14 @@ function logError (err) {
     throw err
   }
 }
+
+// pets data
+
+export function getPetsData (username) {
+  return request
+    .get(rootUrl + `user/${username}/pets`)
+    .then(res => {
+      return res.body
+    })
+    .catch(e => console.log(e))
+}
