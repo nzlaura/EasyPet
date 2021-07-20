@@ -1,39 +1,12 @@
 import React, { useState } from 'react'
-import Axios from 'axios'
 
+import { login } from '../apis/apiPassport'
 import signInImage from '../../server/public/ImageAssets/AnimationOne/FAQVet.png'
 
 function SignIn (props) {
   const [loginUsername, setLoginUsername] = useState('')
   const [loginPassword, setLoginPassword] = useState('')
   const [data, setData] = useState('')
-
-  const login = () => {
-    // get the axios calls out of this component in to their own file
-    Axios({
-      method: 'POST',
-      data: {
-        username: loginUsername,
-        password: loginPassword
-      },
-      withCredentials: true,
-      url: 'http://localhost:3000/login'
-    }).then((res) => console.log(res))
-      .catch(err => console.log(err.message))
-  }
-  // this needs to listen for an event object and preventDefault
-  // const getUser = () => {
-  //   Axios({
-  //     method: 'GET',
-  //     withCredentials: true,
-  //     url: 'http://localhost:3000/user'
-  //   }).then((res) => {
-  //     setData(res.data)
-  //     console.log(res.data)
-  //     return null
-  //   })
-  //     .catch(err => console.log(err.message))
-  // }
 
   function showPassword () {
     var x = document.getElementById('passwordinput')
@@ -42,6 +15,11 @@ function SignIn (props) {
     } else {
       x.type = 'password'
     }
+  }
+  
+  function handleClick (e) {
+    e.preventDefault()
+    return login(loginUsername, loginPassword)
   }
 
   return (
@@ -53,7 +31,7 @@ function SignIn (props) {
             <input className='rounded-md shadow-sm col-1 mt-52 ml-20 mb-10 h-12 p-4' type='text' id='username' name='username' placeholder='Username' onChange={(e) => setLoginUsername(e.target.value)}/>
             <input className='rounded-md shadow-sm col-1 mt-56 ml-20 h-12 p-4' type='password' id='passwordinput' name='passwordinput' placeholder='Password' onChange={(e) => setLoginPassword(e.target.value)}/>
             <label className='col-1 mt-60 ml-20 text-white font-bold' htmlFor ='showPassword'><input className='form-checkbox' type='checkbox' id='showPassword' onClick={showPassword}/> Show Password</label>
-            <button className='bg-black hover:bg-gray-900 text-white font-bold rounded-md flex items-center justify-center col-1 h-12 mt-64 w-40 ml-20' type='submit' onClick={login}>Submit</button>
+            <button className='bg-black hover:bg-gray-900 text-white font-bold rounded-md flex items-center justify-center col-1 h-12 mt-64 w-40 ml-20' type='submit' onClick={handleClick}>Submit</button>
             <p className="col-1 mt-80 ml-20 mb-10 h-12 text-white text-sm font-bold">Need an account? <a href="#/register"> Sign up</a></p>
           </div>
         </div>
