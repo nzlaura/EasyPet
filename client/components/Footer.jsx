@@ -81,6 +81,18 @@ function Footer () {
                     <span onClick={topFunction} className="ml-2">FAQ</span>
                   </a>
                 </li>
+                 <li className="nav-item">
+                  <a className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
+                    href="#/privacypolicy">
+                    <span onClick={topFunction} className="ml-2">Privacy Policy</span>
+                  </a>
+                </li>
+                 <li className="nav-item">
+                  <a className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
+                    href="#/termsofservice">
+                    <span onClick={topFunction} className="ml-2">Terms of Service</span>
+                  </a>
+                </li>
                 <li className="nav-item">
                   <p className="ml-2 px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75">© 2021 EasyPet • Your digital pet diary</p>
                 </li>
