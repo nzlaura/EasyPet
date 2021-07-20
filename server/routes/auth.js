@@ -38,8 +38,6 @@ router.get('/user', (req, res) => {
 
 router.get('/logout', (req, res) => {
   req.logout()
-  res.send('logged out')
-  return null
 })
 
 module.exports = router
