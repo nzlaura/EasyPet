@@ -46,6 +46,7 @@ class AddressFinder extends React.Component {
 
   render () {
     return (
+<<<<<<< HEAD
       <form className='formBox mb-10 ml-20' method="get">
         <div className='formTitle'>Address Finder:</div>
         <input type="search" id='address_line_1' className='formInput rounded-md shadow-sm col-1 h-12 mr-4 w-60 p-4' placeholder="Search address here..." ref={this.address_line_1}></input>
@@ -53,6 +54,16 @@ class AddressFinder extends React.Component {
         <input className='formInput rounded-md shadow-sm col-1 h-12 mr-4 p-4' placeholder="Suburb" ref={this.suburb}></input>
         <input className='formInput rounded-md shadow-sm col-1 h-12 mr-4 p-4' placeholder="City" ref={this.city}></input>
         <input className='formInput rounded-md shadow-sm col-1 h-12 mr-4 p-4' placeholder="PostCode" ref={this.postcode}></input>
+=======
+      <form className='flex items-center grid grid-cols-1 grid-rows-6 w-4/12 ml-20' method="get">
+        <div className='formTitle'>Address Finder</div>
+        <input type="search" id='address_line_1' className='formInput rounded-md shadow-sm col-1 h-12 p-4 mb-4' placeholder="Search address here..." ref={this.address_line_1}></input>
+        <input className='formInput rounded-md shadow-sm col-1 h-12 p-4 mb-4' placeholder="Address Line 2" ref={this.address_line_2}></input>
+        <input className='formInput rounded-md shadow-sm col-1 h-12 p-4 mb-4' placeholder="Suburb" ref={this.suburb}></input>
+        <input className='formInput rounded-md shadow-sm col-1 h-12 p-4 mb-4' placeholder="City" ref={this.city}></input>
+        <input className='formInput rounded-md shadow-sm col-1 h-12  p-4 mb-4' placeholder="PostCode" ref={this.postcode}></input>
+        <input className='btn bg-black hover:bg-gray-900 text-white font-bold rounded-md items-center justify-center col-1 h-12 mb-32 mt-4' type="submit" name="next"></input>
+>>>>>>> 7ddf3f9f8e8956af2d5009fdd20975aeb24dc4b9
       </form>
     )
   }
