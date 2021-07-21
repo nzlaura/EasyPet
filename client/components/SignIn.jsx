@@ -23,7 +23,7 @@ function SignIn (props) {
       .then((res) => {
         console.log('res', res)
         if (res === `Successfully Authenticated User:${loginUsername}`) {
-          props.history.push('user')
+          props.history.push('calendar')
           window.location.reload()
         } else setWrongAuth(true)
         return null
@@ -42,7 +42,7 @@ function SignIn (props) {
             <input className='rounded-md shadow-sm col-1 mt-52 ml-20 mb-10 h-12 p-4' type='text' id='username' name='username' placeholder='Username' onChange={(e) => setLoginUsername(e.target.value)}/>
             <input className='rounded-md shadow-sm col-1 mt-56 ml-20 h-12 p-4' type='password' id='passwordinput' name='passwordinput' placeholder='Password' onChange={(e) => setLoginPassword(e.target.value)}/>
             <label className='col-1 mt-60 ml-20 text-white font-bold' htmlFor ='showPassword'><input className='form-checkbox' type='checkbox' id='showPassword' onClick={showPassword}/> Show Password</label>
-            <button className='bg-black hover:bg-gray-900 text-white font-bold rounded-md flex items-center justify-center col-1 h-12 mt-64 w-40 ml-20' type='submit' onClick={handleClick}>Submit</button>
+            <button className='bg-black hover:bg-gray-900 text-white font-bold rounded-md flex items-center justify-center col-1 h-12 mt-64 w-40 ml-20 transform hover:scale-110 hover:text-green-500' type='submit' onClick={handleClick}>Submit</button>
             <p className="col-1 mt-80 ml-20 mb-10 h-12 text-white text-sm font-bold">Need an account? <a href="#/register"> Sign up</a></p>
           </div>
           {wrongAuth && <p className='mx-auto text-m flex justify-center items-center -mt-12 mb-20 text-black text-bold bg-green-400 max-w-sm rounded-lg'>Wrong password or username! Please try again.</p>}

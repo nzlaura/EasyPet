@@ -9,6 +9,7 @@ function PetProfile (props) {
   const initialState = [{ name: '', dob: '', type: '', breed: '', gender: '', user_name: '' }]
   const [data, setData] = useState(initialState)
   const petId = props.match.params.id
+  const [isSendingMessage, setIsSendingMessage] = useState(false)
 
   useEffect(() => {
     return getPetData(petId)
@@ -16,12 +17,11 @@ function PetProfile (props) {
         setData(pet)
         return null
       })
-    .catch(err => {
-      console.log(err.message)
-      return null
+      .catch(err => {
+        console.log(err.message)
+        return null
       })
   }, [petId])
-
 
   function handleChange (evt) {
     const { name, value } = evt.target
@@ -36,6 +36,7 @@ function PetProfile (props) {
     const petdata = data
     const updatedPetId = petId
     updatePetProfile(updatedPetId, petdata)
+    setIsSendingMessage(true)
   }
 
   return (
@@ -56,7 +57,9 @@ function PetProfile (props) {
             <label className='mt-2' htmlFor='dob'>Pets Date of Birth</label>
             <input className='rounded-md shadow-sm col-1 h-12 p-4 mt-2 mb-2' type='date' id='dob' name='dob' value={data.dob} placeholder='Enter Date Of Birth' onChange={handleChange}/>
           </form>
-          <button className='btn bg-black hover:bg-gray-900 text-white font-bold rounded-md items-center justify-center col-1 h-12 w-1/3 ml-20 mt-2 mb-2' onClick={handleSubmit} type="submit" name="next"> Submit Updates </button>
+
+          <button className='transform hover:scale-110 hover:text-green-500 btn bg-black hover:bg-gray-900 text-white font-bold rounded-md items-center justify-center col-1 h-12 w-1/3 ml-20 mt-2 mb-2' onClick={handleSubmit} type="submit" name="next"> Submit Updates </button>
+  {isSendingMessage && <p className='mx-auto text-s flex justify-center items-center -mt-12 mb-20 text-white text-bold'>Your pets info is now up to date, easy! </p>}
         </div>
       </div>
     </>
