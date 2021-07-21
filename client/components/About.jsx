@@ -57,10 +57,8 @@ function About () {
       <div className='container grid grid-cols-2 mb-12'>
         <div>
           <p className='text-6xl flex text-left font-bold mt-36 mb-4 ml-36'>4. Add your pets details and start using their personalised calendar.</p>
-          <p className='text-3xl col-2 flex text-left ml-36 mb-12'><Link to='/calendar'><span onClick={topFunction} className="">Click here to view your calendar</span></Link></p>
           <p className='text-3xl col-2 flex text-left ml-36 mb-12'>With EasyPet, you can start keeping track of important appointments, treatments and other
           events in your pets life. We will keep them safe with your EasyPet profile, and any time you log in you can view your upcoming events.</p>
-          <p className='text-3xl col-2 flex text-left ml-36 mb-12 underline'><Link to='/calendar'><span onClick={topFunction} className="">Click here to view your calendar.</span></Link></p>
         </div>
         <div>
           <img src={img4}/>
