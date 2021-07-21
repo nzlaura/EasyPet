@@ -1,11 +1,26 @@
 import React, { useState, useEffect } from 'react'
-import { connect } from 'react-redux'
 import AddPetBackground from '../../server/public/ImageAssets/AnimationTwo/GroupTwo.png'
+import { getUser } from '../apis/apiPassport'
+
+import {createNewPetProfile} from '../apis/apiClient'
 
 function AddPet (props) {
-  const initialState = { name: '', dob: '', type: '', breed: '', gender: '' }
+  const initialState = { name: '', dob: '', type: '', breed: '', gender: '', user_name: '' }
   const [data, setData] = useState(initialState)
   const [currentUser, setCurrentUser] = useState('')
+
+  useEffect(() => {
+    getUser()
+      .then(result => {
+        let username = result.username
+        setCurrentUser(username)
+        return null
+        })
+      .catch(err => {
+        console.log(err.message)
+        return null
+      })
+  }, [])
 
   function handleChange (evt) {
     const { name, value } = evt.target
@@ -17,8 +32,8 @@ function AddPet (props) {
 
   function handleSubmit (e) {
     e.preventDefault()
-    const petdata = data
-    props.dispatch(addPet(petdata))
+    const petdata = {...data, user_name: currentUser}
+    createNewPetProfile(petdata)
   }
 
   return (
@@ -45,10 +60,4 @@ function AddPet (props) {
   )
 }
 
-function mapStateToProps (state) {
-  return {
-    user: state.user
-  }
-}
-
-export default connect(mapStateToProps)(AddPet)
+export default AddPet

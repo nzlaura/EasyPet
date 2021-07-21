@@ -2,7 +2,7 @@ const express = require('express')
 
 const router = express.Router()
 
-const { updateUserProfile, getUserByUsername, getUsersPets } = require('../db/db')
+const { updateUserProfile, getUserByUsername, getUsersPets, updatePetProfile, createNewPetProfile } = require('../db/db')
 
 router.get('/pets/:username', (req, res) => {
   const username = req.params.username
@@ -30,9 +30,9 @@ router.get('/pets/pet/:username', (req, res) => {
     })
 })
 
-router.post('/pets/addpet/:username', (req, res) => {
-  const username = req.params.username
-  updateUserProfile(username, req.body)
+router.post('/pets/addpet', (req, res) => {
+  const data = req.body
+  createNewPetProfile(data)
     .then(results => {
       res.json(results)
       return null
@@ -43,7 +43,7 @@ router.post('/pets/addpet/:username', (req, res) => {
     })
 })
 
-router.patch('//pets/editpet', (req, res) => {
+router.patch('/pets/editpet', (req, res) => {
   const username = req.params.username
   updateUserProfile(username, req.body)
     .then(results => {

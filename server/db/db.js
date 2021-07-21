@@ -86,6 +86,11 @@ function getUsersPets (username, db = connection) {
     .where('pet_profile.user_name', username)
 }
 
+function createNewPetProfile (data, db = connection) {
+  return db('pet_profile')
+  .insert(data)
+}
+
 
 module.exports = {
   userExists,
@@ -98,5 +103,6 @@ module.exports = {
   getFaqBySearchString,
   getAllEvents,
   addNewEvent,
-  getUsersPets
+  getUsersPets,
+  createNewPetProfile
 }
