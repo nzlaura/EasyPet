@@ -10,6 +10,7 @@ function UserProfile (props) {
   const initialState = { username: '', email: '', phone: '', firstname: '', lastname: '', dob: '', address: '' }
   const [data, setData] = useState(initialState)
   const [currentUser, setCurrentUser] = useState('')
+  const [isSendingMessage, setIsSendingMessage] = useState(false)
 
   useEffect(() => {
     getUser()
@@ -44,6 +45,7 @@ function UserProfile (props) {
     props.dispatch(sendUserUpdates(username, userdata))
     props.history.push('user')
     window.location.reload()
+    setIsSendingMessage(true)
   }
 
   return (
@@ -69,6 +71,7 @@ function UserProfile (props) {
           </form>
           <AddressFinder/>
           <button className='btn bg-black hover:bg-gray-900 text-white font-bold rounded-md items-center justify-center col-1 h-12 w-1/3 ml-20 mt-2 mb-2' onClick={handleSubmit} type="submit" name="next"> Submit Updates </button>
+          {isSendingMessage && <p className='mx-auto text-s flex justify-center items-center -mt-12 mb-20 text-white text-bold'>Thanks for updating your info!</p>}
         </div>
       </div>
     </>
