@@ -84,7 +84,7 @@ function logError (err) {
 
 export function getPetsData (username) {
   return request
-    .get(rootUrl + `user/${username}/pets`)
+    .get(rootUrl + `user/pets/${username}`)
     .then(res => {
       return res.body
     })

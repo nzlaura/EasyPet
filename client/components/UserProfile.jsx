@@ -21,7 +21,6 @@ function UserProfile (props) {
         getUserData(username)
         .then(data => {
           setData(data)
-          console.log(data)
           return null
         })
         return null

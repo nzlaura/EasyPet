@@ -24,8 +24,8 @@ import AllPetProfiles from './AllPetProfiles'
 function App (props) {
   return (
     <>
-      <Route exact path="/">
-        <Redirect to="/home" />
+      <Route exact path='/'>
+        <Redirect to='/home'/>
       </Route>
       <Header/>
       <Navbar />
@@ -40,7 +40,7 @@ function App (props) {
       <Route exact path = '/user/pets/addpet' component={AddPet} />
       <Route exact path = '/user/pets/editpet' component={EditPetProfile} />
       <Route exact path = '/faq' component={FaqList} />
-      <Route exact path="/search/:searchString" component={SearchFAQ} />
+      <Route exact path='/search/:searchString' component={SearchFAQ} />
       <Route path = '/about' component={About} />
       <Route path = '/privacypolicy' component={PrivacyPolicy} />
       <Route path = '/termsofservice' component={TermsOfService} />
