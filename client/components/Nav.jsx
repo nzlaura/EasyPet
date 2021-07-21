@@ -28,22 +28,35 @@ function Navbar ({ fixed }) {
                     <span className="ml-2">Sign Up</span>
                   </a>
                 </li>
-
                 <li className="nav-item">
                   <a className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-black hover:opacity-75"
                     href="#/login">
                     <span className="ml-2">Login</span>
                   </a>
+                  </li>
+                  <li className="nav-item">
+                  <a
+                    className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-black hover:opacity-75"
+                    href="#/contact">
+                    <span className="ml-2">Contact</span>
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a
+                    className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-black hover:opacity-75"
+                    href="#/about">
+                    <span className="ml-2">About</span>
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-black hover:opacity-75"
+                    href="#/faq">
+                    <span className="ml-2">FAQ</span>
+                  </a>
                 </li>
               </IfNotAuthenticated>
               <IfAuthenticated>
-                <li className="nav-item">
-                  <a className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-black hover:opacity-75"
-                    href="#/calendar">
-                    <span className="ml-2">Calendar</span>
-                  </a>
-                </li>
-
+                
                 <li className="nav-item">
                   <a className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-black hover:opacity-75"
                     href="#/user">
@@ -58,27 +71,14 @@ function Navbar ({ fixed }) {
                   </a>
                 </li>
 
+                <li className="nav-item">
+                  <a className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-black hover:opacity-75"
+                    href="#/calendar">
+                    <span className="ml-2">Calendar</span>
+                  </a>
+                </li>
+
               </IfAuthenticated>
-              <li className="nav-item">
-                <a
-                  className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-black hover:opacity-75"
-                  href="#/contact">
-                  <span className="ml-2">Contact</span>
-                </a>
-              </li>
-              <li className="nav-item">
-                <a
-                  className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-black hover:opacity-75"
-                  href="#/about">
-                  <span className="ml-2">About</span>
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-black hover:opacity-75"
-                  href="#/faq">
-                  <span className="ml-2">FAQ</span>
-                </a>
-              </li>
               <IfAuthenticated>
                 <li className="nav-item">
                   <SignOff/>
