@@ -46,7 +46,7 @@ function Contact (props) {
               value={contactForm.subject} onChange={handleChange}/>
             <textarea className='rounded-md shadow-sm col-1 mt-8 h-12 resize-none' type='text' id='message' name='message' placeholder='  Message'
               required value={contactForm.message} onChange={handleChange}/>
-            <button className='bg-black hover:bg-gray-900 text-white font-bold rounded-md flex items-center justify-center col-1 h-12 mt-8 mb-20' type='submit' onClick={handleClick}>Submit</button>
+            <button className='bg-black hover:bg-gray-900 text-white font-bold rounded-md flex items-center justify-center col-1 h-12 mt-8 mb-20 transform hover:scale-110 hover:text-green-500' type='submit' onClick={handleClick}>Submit</button>
           </form>
           {isSendingMessage && <p className='mx-auto text-s flex justify-center items-center -mt-12 mb-20 text-white text-bold'>Your message has been sent! We will be in touch shortly.</p>}
         </div>
