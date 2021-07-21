@@ -17,7 +17,7 @@ const userRoute = require('./routes/user')
 const server = express()
 server.use(express.static(path.join(__dirname, 'public')))
 const cookieParser = require('cookie-parser')
-server.use(cookieParser('secretcode'))
+server.use(cookieParser(process.env.SESSION_SECRET))
 server.use(express.urlencoded({ extended: true }))
 server.use(
   session({
