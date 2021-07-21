@@ -27,7 +27,7 @@ function About () {
           <p className='text-6xl flex text-left font-bold mt-36 mb-4 ml-36'>1. Sign up for an account</p>
           <p className='text-3xl flex text-left mb-12 ml-36'>Signing up for an account is simple - visit our signup page.</p>
           <p className='text-3xl flex text-left mb-12 ml-36'>Choose a username and password, hit the register button, and you are in!</p>
-          <p className='text-3xl flex text-left mb-12 ml-36 underline'><Link to='/register'><span onClick={topFunction} className="">Click here to visit the registration page.</Link></p>
+          <p className='text-3xl flex text-left mb-12 ml-36 underline'><Link to='/register'><span onClick={topFunction} className="">Click here to visit the registration page.</span></Link></p>
         </div>
       </div>
 
@@ -36,7 +36,7 @@ function About () {
           <p className='text-6xl flex text-left font-bold mt-36 mb-4 ml-36'>2. Log in to your EasyPet account</p>
           <p className='text-3xl col-2 flex text-left ml-36 mb-12'>Enter the username and password you chose when you signed up for EasyPet on the login page.
           Once you have logged in, you can see and edit your pets, calendar and user profile.</p>
-          <p className='text-3xl flex text-left mb-12 ml-36 underline'><Link to='/login'><span onClick={topFunction} className="">Click here to visit the login page.</Link></p>
+          <p className='text-3xl flex text-left mb-12 ml-36 underline'><Link to='/login'><span onClick={topFunction} className="">Click here to visit the login page.</span></Link></p>
         </div>
         <div>
           <img src={img2}/>
@@ -60,7 +60,7 @@ function About () {
           <p className='text-3xl col-2 flex text-left ml-36 mb-12'><Link to='/calendar'><span onClick={topFunction} className="">Click here to view your calendar</span></Link></p>
           <p className='text-3xl col-2 flex text-left ml-36 mb-12'>With EasyPet, you can start keeping track of important appointments, treatments and other
           events in your pets life. We will keep them safe with your EasyPet profile, and any time you log in you can view your upcoming events.</p>
-          <p className='text-3xl col-2 flex text-left ml-36 mb-12 underline'><Link to='/calendar'><span onClick={topFunction} className="">Click here to view your calendar.</Link></p>
+          <p className='text-3xl col-2 flex text-left ml-36 mb-12 underline'><Link to='/calendar'><span onClick={topFunction} className="">Click here to view your calendar.</span></Link></p>
         </div>
         <div>
           <img src={img4}/>
