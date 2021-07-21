@@ -4,9 +4,7 @@ function PrivacyPolicy () {
   return (
     <>
       <div className='container'>
-        <p className='text-5xl flex text-left font-bold mt-36 mb-4 ml-36'>EasyPet Privacy Policy
-          <br></br>___________________
-        </p>
+        <p className='text-5xl flex text-left font-bold mt-36 mb-4 ml-36'>EasyPet Privacy Policy</p>
       </div>
 
       <div className='container mt-8 mb-32 ml-36 w-8/12'>

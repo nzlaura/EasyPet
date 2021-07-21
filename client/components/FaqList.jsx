@@ -4,7 +4,6 @@ import FaqListItem from './FaqListItem'
 
 import { getFaqs } from '../apis/apiClient'
 
-import faqImage from '../../server/public/ImageAssets/AnimationOne/HomeGroup.png'
 import img1 from '../../server/public/ImageAssets/AnimationTwo/DogOne.png'
 import img2 from '../../server/public/ImageAssets/AnimationTwo/CatOne.png'
 
@@ -24,7 +23,6 @@ function FaqList () {
       <div className='container'>
         <p className='text-8xl flex text-left font-bold mt-36 mb-4 ml-36'>Frequently Asked Questions</p>
         <p className='text-4xl flex text-left mb-32 ml-36'>Everything you need to know about EasyPet
-          <br></br>________________________________________
         </p>
       </div>
 

@@ -16,12 +16,11 @@ function PetProfile (props) {
         setData(pet)
         return null
       })
-    .catch(err => {
-      console.log(err.message)
-      return null
+      .catch(err => {
+        console.log(err.message)
+        return null
       })
   }, [petId])
-
 
   function handleChange (evt) {
     const { name, value } = evt.target
@@ -46,15 +45,15 @@ function PetProfile (props) {
           <form className='flex items-center grid grid-cols-1 w-4/12 ml-20' id='profile-form'>
             <p className='text-2xl items-left font-bold text-white'>Pets Details</p>
             <label className='mt-2' htmlFor='username'>Pets Name</label>
-            <input className='rounded-md shadow-sm col-1 h-12 p-4 mt-2 mb-2' type='text' id='name' name='name' value={data.name} placeholder='Enter Name' onChange={handleChange}/>
+            <input className='rounded-md shadow-sm col-1 h-12 p-4 mt-2 mb-2' type='text' id='name' name='name' required value={data.name} placeholder='Enter Name' onChange={handleChange}/>
             <label className='mt-2' htmlFor='phone'>Pets Type</label>
-            <input className='rounded-md shadow-sm col-1 h-12 p-4 mt-2 mb-2' type='text' id='type' name='type' value={data.type} placeholder='Enter Type' onChange={handleChange}/>
+            <input className='rounded-md shadow-sm col-1 h-12 p-4 mt-2 mb-2' type='text' id='type' name='type' required value={data.type} placeholder='Enter Type' onChange={handleChange}/>
             <label className='mt-2' htmlFor='firstname'>Pets Breed</label>
-            <input className='rounded-md shadow-sm col-1 h-12 p-4 mt-2 mb-2' type='text' id='breed' name='breed' value={data.breed} placeholder='Enter Breed' onChange={handleChange}/>
+            <input className='rounded-md shadow-sm col-1 h-12 p-4 mt-2 mb-2' type='text' id='breed' name='breed' required value={data.breed} placeholder='Enter Breed' onChange={handleChange}/>
             <label className='mt-2' htmlFor='lastname'>Pets Gender</label>
-            <input className='rounded-md shadow-sm col-1 h-12 p-4 mt-2 mb-2' type='text' id='gender' name='gender' value={data.gender} placeholder='Enter Gender' onChange={handleChange}/>
+            <input className='rounded-md shadow-sm col-1 h-12 p-4 mt-2 mb-2' type='text' id='gender' name='gender' required value={data.gender} placeholder='Enter Gender' onChange={handleChange}/>
             <label className='mt-2' htmlFor='dob'>Pets Date of Birth</label>
-            <input className='rounded-md shadow-sm col-1 h-12 p-4 mt-2 mb-2' type='date' id='dob' name='dob' value={data.dob} placeholder='Enter Date Of Birth' onChange={handleChange}/>
+            <input className='rounded-md shadow-sm col-1 h-12 p-4 mt-2 mb-2' type='date' id='dob' name='dob' required value={data.dob} placeholder='Enter Date Of Birth' onChange={handleChange}/>
           </form>
           <button className='btn bg-black hover:bg-gray-900 text-white font-bold rounded-md items-center justify-center col-1 h-12 w-1/3 ml-20 mt-2 mb-2' onClick={handleSubmit} type="submit" name="next"> Submit Updates </button>
         </div>
