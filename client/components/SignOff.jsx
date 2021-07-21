@@ -5,6 +5,13 @@ function SignOff (props) {
   function handleClick (e) {
     e.preventDefault()
     signOff()
+      .then(() => {
+        window.location.replace('/')
+        return null
+      })
+      .catch(err => {
+        console.log(new Error(err))
+      })
   }
 
   return (

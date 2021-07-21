@@ -6,7 +6,7 @@ import signInImage from '../../server/public/ImageAssets/AnimationOne/FAQVet.png
 function SignIn (props) {
   const [loginUsername, setLoginUsername] = useState('')
   const [loginPassword, setLoginPassword] = useState('')
-  const [data, setData] = useState('')
+  const [wrongAuth, setWrongAuth] = useState(false)
 
   function showPassword () {
     var x = document.getElementById('passwordinput')
@@ -20,8 +20,12 @@ function SignIn (props) {
   function handleClick (e) {
     e.preventDefault()
     login(loginUsername, loginPassword)
-      .then(() => {
-        window.location.reload()
+      .then((res) => {
+        console.log('res', res)
+        if (res === `Successfully Authenticated User:${loginUsername}`) {
+          props.history.push('user')
+          window.location.reload()
+        } else setWrongAuth(true)
         return null
       })
       .catch(err => {
@@ -41,17 +45,9 @@ function SignIn (props) {
             <button className='bg-black hover:bg-gray-900 text-white font-bold rounded-md flex items-center justify-center col-1 h-12 mt-64 w-40 ml-20' type='submit' onClick={handleClick}>Submit</button>
             <p className="col-1 mt-80 ml-20 mb-10 h-12 text-white text-sm font-bold">Need an account? <a href="#/register"> Sign up</a></p>
           </div>
+          {wrongAuth && <p className='mx-auto text-m flex justify-center items-center -mt-12 mb-20 text-black text-bold bg-green-400 max-w-sm rounded-lg'>Wrong password or username! Please try again.</p>}
         </div>
       </div>
-
-      {/* <p className="text-4xl flex items-center justify-center mb-4">Get User</p>
-
-      <button className='bg-black hover:bg-gray-900 text-white font-bold py-2 px-4 rounded mx-auto flex items-center w-2/12 h-auto' type='submit' onClick={getUser}>Submit</button>
-
-      <div className='text-s flex items-center justify-center mb-4'>
-        {data.username ? <h1>Welcome Back {data.username}</h1> : null}
-      </div> */}
-
     </>
   )
 }

@@ -12,11 +12,12 @@ const authRoutes = require('./routes/auth')
 const contactRoute = require('./routes/contact')
 const faqRoute = require('./routes/faq')
 const eventsRoute = require('./routes/events')
+const userRoute = require('./routes/user')
 
 const server = express()
 server.use(express.static(path.join(__dirname, 'public')))
 const cookieParser = require('cookie-parser')
-server.use(cookieParser('secretcode'))
+server.use(cookieParser(process.env.SESSION_SECRET))
 server.use(express.urlencoded({ extended: true }))
 server.use(
   session({
@@ -38,5 +39,6 @@ server.use('/api/v1/auth', authRoutes)
 server.use('/api/v1/contact', contactRoute)
 server.use('/api/v1/faq', faqRoute)
 server.use('/api/v1/events', eventsRoute)
+server.use('/api/v1/user', userRoute)
 
 module.exports = server
