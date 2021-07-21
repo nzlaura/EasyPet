@@ -56,7 +56,7 @@ router.patch('/pets/pet/:username', (req, res) => {
     })
 })
 
-//------user routes below------//
+// ------user routes below------//
 
 router.get('/:username', (req, res) => {
   const username = req.params.username
