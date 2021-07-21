@@ -19,6 +19,7 @@ import About from './About'
 // import AddToCalendar from './AddToCalendar'
 import PrivacyPolicy from './PrivacyPolicy'
 import TermsOfService from './TermsOfService'
+import { IfAuthenticated, IfNotAuthenticated } from './authenticated'
 
 function App (props) {
   return (
@@ -30,12 +31,16 @@ function App (props) {
       <Navbar />
       <Route exact path = '/home' component={Home} />
       <Route exact path = '/contact' component={Contact} />
-      <Route exact path = '/calendar' component={MyMonthlyCalendar} />
       {/* <Route exact path = '/calendar' component={AddToCalendar} /> */}
-      <Route exact path = '/register' component={Register} />
-      <Route exact path = '/login' component={SignIn} />
-      <Route exact path = '/user' component={UserProfile} />
-      <Route exact path = '/user/pets' component={PetProfile} />
+      <IfNotAuthenticated>
+        <Route exact path = '/register' component={Register} />
+        <Route exact path = '/login' component={SignIn} />
+      </IfNotAuthenticated>
+      <IfAuthenticated>
+        <Route exact path = '/calendar' component={MyMonthlyCalendar} />
+        <Route exact path = '/user' component={UserProfile} />
+        <Route exact path = '/user/pets' component={PetProfile} />
+      </IfAuthenticated>
       <Route exact path = '/user/pets/addpet' component={AddPet} />
       <Route exact path = '/faq' component={FaqList} />
       <Route exact path="/search/:searchString" component={SearchFAQ} />
