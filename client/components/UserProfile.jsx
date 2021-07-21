@@ -43,9 +43,8 @@ function UserProfile (props) {
     const userdata = data
     const username = userdata.username
     props.dispatch(sendUserUpdates(username, userdata))
-    props.history.push('user')
-    window.location.reload()
     setIsSendingMessage(true)
+    setTimeout(() => window.location.reload(), 1000 )
   }
 
   return (
