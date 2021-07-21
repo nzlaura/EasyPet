@@ -7,6 +7,7 @@ function SignIn (props) {
   const [loginUsername, setLoginUsername] = useState('')
   const [loginPassword, setLoginPassword] = useState('')
   const [wrongAuth, setWrongAuth] = useState(false)
+
   function showPassword () {
     var x = document.getElementById('passwordinput')
     if (x.type === 'password') {
@@ -19,16 +20,17 @@ function SignIn (props) {
   function handleClick (e) {
     e.preventDefault()
     login(loginUsername, loginPassword)
-      .then((result) => {
-        console.log('result', result)
-        if (!result) props.history.push('login')
-        else props.history.push('user')
+      .then((res) => {
+        console.log('res', res)
+        if (res === `Successfully Authenticated User:${loginUsername}`) {
+          props.history.push('user')
+          window.location.reload()
+        } else setWrongAuth(true)
         return null
       })
       .catch(err => {
         console.log(new Error(err))
       })
-    setWrongAuth(true)
   }
 
   return (

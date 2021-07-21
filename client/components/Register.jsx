@@ -6,13 +6,16 @@ import signInImage from '../../server/public/ImageAssets/AnimationOne/SignUpWalk
 function Register (props) {
   const [registerUsername, setRegisterUsername] = useState('')
   const [registerPassword, setRegisterPassword] = useState('')
+  const [wrongAuth, setWrongAuth] = useState(false)
 
   function handleClick (e) {
     e.preventDefault()
     return register(registerUsername, registerPassword)
-      .then(() => {
-        if (!register) window.location.reload()
-        else props.history.push('login')
+      .then((res) => {
+        console.log('register', res)
+        if (res === 'User already taken') {
+          setWrongAuth(true)
+        } else props.history.push('login')
         return null
       })
       .catch(err => {
@@ -41,6 +44,7 @@ function Register (props) {
             <button className='bg-black hover:bg-gray-900 text-white font-bold rounded-md flex items-center justify-center col-1 h-12 mt-64 w-40 ml-20' type='submit'>Submit</button>
             <p className="col-1 mt-80 ml-20 mb-10 h-12 text-white text-sm font-bold">Already have an account? <a href="#/login"> Sign in</a></p>
           </form>
+          {wrongAuth && <p className='mx-auto text-xl flex justify-center items-center -mt-12 mb-20 text-black text-bold bg-green-400 max-w-sm rounded-lg'>User already taken, make a better choice.</p>}
         </div>
       </div>
     </>
