@@ -31,7 +31,7 @@ function AllPetProfiles (props) {
     <>
       {data.map((data, i) => {
         return (
-          <AllPetProfilesItem key={i} name={data.name} type={data.type} breed={data.breed} gender={data.gender} dob={data.dob} id={data.id}/>
+          <AllPetProfilesItem className='flex flex-row' key={i} name={data.name} type={data.type} breed={data.breed} gender={data.gender} dob={data.dob} id={data.id}/>
         )
       })}
 
