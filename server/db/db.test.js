@@ -41,9 +41,12 @@ test('getAllEvents returns all events', () => {
 })
 
 test('add new events adds an event to the event db', () => {
-  return db.addNewEvent('2021-07-15T20:58:02.360Z', 'appointment', 'vet', testDb)
+  expect.assertions(2)
+  const eventTest = { date: '2021-07-15T20:58:02.360Z', title: 'appointment', type: 'vet' }
+  return db.addNewEvent(eventTest, testDb)
     .then((events) => {
-      expect(events).toHaveLength(4)
+      expect(events).toContain(4)
+      expect(events).toHaveLength(1)
       return null
     })
     .catch(err => console.log(err))
