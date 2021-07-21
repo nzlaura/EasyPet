@@ -6,7 +6,7 @@ exports.seed = function (knex) {
       bcrypt.hash('crackerpassword', 10),
       bcrypt.hash('otterqueen', 10)
     ]))
-    .then(function (crackerHash, otterqueen) {
+    .then(function (crackerHash, otterHash) {
       return knex('users').insert([
         {
           id: 1,
@@ -30,7 +30,7 @@ exports.seed = function (knex) {
           email: 'sarahlovesotters@gmail.com',
           address: '42 otter Way',
           city: 'Singapore',
-          password: otterqueen
+          password: otterHash
         }
       ])
     })
