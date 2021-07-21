@@ -29,8 +29,8 @@ function AllPetProfiles (props) {
 
   return (
     <>
-       <div className='bg-contain bg-center bg-no-repeat bg-scroll height-auto' style={{ backgroundImage: `url(${backgroundImage})` }}>
-       <div className='container h-screen inline'>
+       <div className='bg-contain bg-center bg-no-repeat bg-scroll height-100%' style={{ backgroundImage: `url(${backgroundImage})` }}>
+       <div className='container h-screen inline mt-12'>
           <p className='text-5xl items-left font-bold mb-5 mt-12 ml-20 text-black'>Pet Profile</p>
       {data.map((data, i) => {
         return (
