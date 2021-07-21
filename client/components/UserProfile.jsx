@@ -11,17 +11,16 @@ function UserProfile (props) {
   const [data, setData] = useState(initialState)
   const [currentUser, setCurrentUser] = useState('')
 
-
   useEffect(() => {
     getUser()
       .then(result => {
-        let username = result.username
+        const username = result.username
         setCurrentUser(username)
         getUserData(username)
-        .then(data => {
-          setData(data)
-          return null
-        })
+          .then(data => {
+            setData(data)
+            return null
+          })
         return null
       })
       .catch(err => {
@@ -43,7 +42,7 @@ function UserProfile (props) {
     const userdata = data
     const username = userdata.username
     props.dispatch(sendUserUpdates(username, userdata))
-     props.history.push('user')
+    props.history.push('user')
     window.location.reload()
   }
 

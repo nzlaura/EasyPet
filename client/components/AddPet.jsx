@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import AddPetBackground from '../../server/public/ImageAssets/AnimationTwo/GroupTwo.png'
 import { getUser } from '../apis/apiPassport'
 
-import {createNewPetProfile} from '../apis/apiClient'
+import { createNewPetProfile } from '../apis/apiClient'
 
 function AddPet (props) {
   const initialState = { name: '', dob: '', type: '', breed: '', gender: '', user_name: '' }
@@ -12,10 +12,10 @@ function AddPet (props) {
   useEffect(() => {
     getUser()
       .then(result => {
-        let username = result.username
+        const username = result.username
         setCurrentUser(username)
         return null
-        })
+      })
       .catch(err => {
         console.log(err.message)
         return null
@@ -32,7 +32,7 @@ function AddPet (props) {
 
   function handleSubmit (e) {
     e.preventDefault()
-    const petdata = {...data, user_name: currentUser}
+    const petdata = { ...data, user_name: currentUser }
     createNewPetProfile(petdata)
     // props.history.push('user/pets/:username')
     // window.location.reload()

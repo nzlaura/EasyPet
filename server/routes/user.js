@@ -43,7 +43,7 @@ router.post('/pets/addpet', (req, res) => {
     })
 })
 
-router.patch('/pets/editpet', (req, res) => {
+router.patch('/pets/pet/:username', (req, res) => {
   const username = req.params.username
   updateUserProfile(username, req.body)
     .then(results => {
@@ -56,7 +56,7 @@ router.patch('/pets/editpet', (req, res) => {
     })
 })
 
-//------user routes below------//
+// ------user routes below------//
 
 router.get('/:username', (req, res) => {
   const username = req.params.username
