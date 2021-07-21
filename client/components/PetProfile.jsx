@@ -37,6 +37,7 @@ function PetProfile (props) {
     const updatedPetId = petId
     updatePetProfile(updatedPetId, petdata)
     setIsSendingMessage(true)
+    setTimeout(() => window.location.reload(), 1000 )
   }
 
   return (
@@ -59,7 +60,7 @@ function PetProfile (props) {
           </form>
 
           <button className='transform hover:scale-110 hover:text-green-500 btn bg-black hover:bg-gray-900 text-white font-bold rounded-md items-center justify-center col-1 h-12 w-1/3 ml-20 mt-2 mb-2' onClick={handleSubmit} type="submit" name="next"> Submit Updates </button>
-  {isSendingMessage && <p className='mx-auto text-s flex justify-center items-center -mt-12 mb-20 text-white text-bold'>Your pets info is now up to date, easy! </p>}
+          {isSendingMessage && <p className='mx-auto text-s flex justify-center items-center -mt-12 mb-20 text-white text-bold'>Your pets info is now up to date, easy! </p>}
         </div>
       </div>
     </>

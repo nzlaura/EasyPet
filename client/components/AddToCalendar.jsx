@@ -40,7 +40,7 @@ function AddToCalendar (props) {
         <input className='rounded-md shadow-sm col-1 h-12 p-4 ml-2 mr-2' onChange={handleChange} type='date' id='date' name='date' value={eventItems.date} placeholder='Date'/>
         <input className='rounded-md shadow-sm col-1 h-12 p-4 ml-2 mr-2' onChange={handleChange} type='time' id='time' name='time' value={eventItems.time} placeholder='Time'/>
         <button className='bg-black hover:bg-gray-900 text-white font-bold rounded-md col-1 h-12 w-36 ml-2 mr-2' type='submit'>Submit</button>
-        {isSendingMessage && <p className='mx-auto text-s mt-12 text-white text-bold'>Event added to your calendar!</p>}
+        {isSendingMessage && <p className='mx-auto text-s mt-12 ml-20 text-white text-bold'>Event added to your calendar!</p>}
       </form>
     </>
   )
