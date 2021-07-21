@@ -34,6 +34,8 @@ function AddPet (props) {
     e.preventDefault()
     const petdata = {...data, user_name: currentUser}
     createNewPetProfile(petdata)
+    // props.history.push('user/pets/:username')
+    // window.location.reload()
   }
 
   return (
