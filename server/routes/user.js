@@ -2,7 +2,7 @@ const express = require('express')
 
 const router = express.Router()
 
-const { updateUserProfile, getUserByUsername, getUsersPets, updatePetProfile, createNewPetProfile, updateUserByUsername } = require('../db/db')
+const { updateUserProfile, getUserByUsername, getUsersPets, updatePetProfile, createNewPetProfile, updateUserByUsername, getPetById} = require('../db/db')
 
 router.get('/pets/:username', (req, res) => {
   const username = req.params.username

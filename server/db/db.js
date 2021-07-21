@@ -85,7 +85,7 @@ function addNewEvent (event, db = connection) {
 function getUsersPets (username, db = connection) {
   return db('pet_profile')
     .join('users', 'pet_profile.user_name', 'users.username')
-    .select('pet_profile.user_name as petUserName', 'users.username as username', 'pet_profile.name', 'pet_profile.dob', 'pet_profile.type', 'pet_profile.breed', 'pet_profile.gender')
+    .select('pet_profile.user_name as petUserName', 'users.username as username', 'pet_profile.name', 'pet_profile.dob', 'pet_profile.type', 'pet_profile.breed', 'pet_profile.gender', 'pet_profile.id')
     .where('pet_profile.user_name', username)
 }
 

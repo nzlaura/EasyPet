@@ -41,7 +41,7 @@ function App (props) {
         <Route exact path = '/calendar' component={MyMonthlyCalendar} />
         <Route exact path = '/user/pets' component={AllPetProfiles} />
         <Route exact path = '/user' component={UserProfile} />
-        <Route exact path = '/user/pets/pet' component={PetProfile} />
+        <Route exact path = '/user/pets/pet/:id' component={PetProfile} />
         <Route exact path = '/user/pets/addpet' component={AddPet} />
       </IfAuthenticated>
 
