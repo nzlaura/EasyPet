@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux'
 import { format, startOfMonth } from 'date-fns'
 import '@zach.codes/react-calendar/dist/calendar-tailwind.css'
-
+import backgroundImage from '../../server/public/ImageAssets/AnimationOne/HomeGroup.png'
 import { getEvents } from '../apis/apiClient'
 import { setEvents } from '../actions/index.js'
 
@@ -33,12 +33,12 @@ function MyMonthlyCalendar (props) {
 
   return (
     <>
-      <p className='text-5xl items-left font-bold mt-20 ml-32 -mb-96 text-black z-50'>Pet Diary</p>
-      <div className="container ml-32 grid grid-cols-2 z-50">
-        <div></div>
-        <AddToCalendar></AddToCalendar>
+    <div className='h-auto bg-cover mb-20' style={{ backgroundImage: `url(${backgroundImage})` }}>
+      <p className='text-5xl items-left font-bold pt-12 ml-20 text-black z-50'>My Pet Diary</p>
+      <div className="mt-12">
+      <AddToCalendar></AddToCalendar>
       </div>
-      <div className="container ml-20 mb-20 -mt-96 w-3/6 h-auto">
+      <div className="container rounded-md ml-20 h-auto">
         <MonthlyCalendar
           currentMonth={currentMonth}
           onCurrentMonthChange={date => setCurrentMonth(date)}
@@ -64,6 +64,7 @@ function MyMonthlyCalendar (props) {
           </MonthlyBody>
         </MonthlyCalendar>
       </div>
+    </div>
     </>
   )
 }

@@ -48,10 +48,12 @@ function Navbar ({ fixed }) {
                 </li>
               </IfNotAuthenticated>
               <IfAuthenticated>
-                <li className="nav-item">
+
+                
+              <li className="nav-item">
                   <a className="hover:text-white px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-black hover:opacity-75"
-                    href="#/user">
-                    <span className="ml-2">User Profile</span>
+                    href="#/calendar">
+                    <span className="ml-2">Calendar</span>
                   </a>
                 </li>
 
@@ -62,10 +64,11 @@ function Navbar ({ fixed }) {
                   </a>
                 </li>
 
+                
                 <li className="nav-item">
                   <a className="hover:text-white px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-black hover:opacity-75"
-                    href="#/calendar">
-                    <span className="ml-2">Calendar</span>
+                    href="#/user">
+                    <span className="ml-2">User Profile</span>
                   </a>
                 </li>
 
@@ -80,7 +83,7 @@ function Navbar ({ fixed }) {
               </li>
 
               <IfAuthenticated>
-                <li className="nav-item">
+                <li className="nav-item pl-2">
                   <SignOff/>
                 </li>
               </IfAuthenticated>

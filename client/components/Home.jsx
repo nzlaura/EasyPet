@@ -21,7 +21,6 @@ function Home () {
       <div className='mx-auto flex items-center justify-center'>
         <img src={faqImage}/>
       </div>
-
       <div className='container grid grid-cols-2'>
         <div>
           <p className='text-8xl cols-span-2 flex text-left font-bold mt-36 mb-10 ml-36'>A Digital Diary For Your Pet</p>
