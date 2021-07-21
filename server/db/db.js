@@ -61,9 +61,6 @@ function getAllEvents (db = connection) {
 function addNewEvent (event, db = connection) {
   return db('events')
     .insert({ title: event.title, type: event.type, date: event.date })
-    // .then(id => {
-    //   return db('events')
-    // })
 }
 
 // function updateUserProfile {username, db = connection}

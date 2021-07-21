@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1626827936832" clover="3.2.0">
-  <project timestamp="1626827936833" name="All files">
-    <metrics statements="144" coveredstatements="123" conditionals="13" coveredconditionals="1" methods="58" coveredmethods="39" elements="215" coveredelements="163" complexity="0" loc="144" ncloc="144" packages="3" files="21" classes="21"/>
+<coverage generated="1626837028544" clover="3.2.0">
+  <project timestamp="1626837028545" name="All files">
+    <metrics statements="144" coveredstatements="125" conditionals="13" coveredconditionals="2" methods="58" coveredmethods="41" elements="215" coveredelements="168" complexity="0" loc="144" ncloc="144" packages="3" files="21" classes="21"/>
     <package name="db">
-      <metrics statements="24" coveredstatements="12" conditionals="13" coveredconditionals="1" methods="12" coveredmethods="2"/>
+      <metrics statements="24" coveredstatements="14" conditionals="13" coveredconditionals="2" methods="12" coveredmethods="4"/>
       <file name="connection.js" path="/Users/laura/workspace/EasyPet/server/db/connection.js">
         <metrics statements="5" coveredstatements="5" conditionals="2" coveredconditionals="1" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
@@ -13,10 +13,10 @@
         <line num="6" count="1" type="stmt"/>
       </file>
       <file name="db.js" path="/Users/laura/workspace/EasyPet/server/db/db.js">
-        <metrics statements="17" coveredstatements="5" conditionals="11" coveredconditionals="0" methods="12" coveredmethods="2"/>
+        <metrics statements="17" coveredstatements="7" conditionals="11" coveredconditionals="1" methods="12" coveredmethods="4"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
-        <line num="5" count="0" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
         <line num="10" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="11" count="0" type="stmt"/>
         <line num="13" count="0" type="stmt"/>
@@ -29,8 +29,8 @@
         <line num="46" count="1" type="stmt"/>
         <line num="50" count="0" type="stmt"/>
         <line num="56" count="1" type="stmt"/>
-        <line num="62" count="0" type="stmt"/>
-        <line num="71" count="1" type="stmt"/>
+        <line num="62" count="1" type="stmt"/>
+        <line num="68" count="1" type="stmt"/>
       </file>
       <file name="knexfile.js" path="/Users/laura/workspace/EasyPet/server/db/knexfile.js">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
@@ -164,58 +164,58 @@
       <file name="events.js" path="/Users/laura/workspace/EasyPet/server/db/seeds/events.js">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
-        <line num="2" count="2" type="stmt"/>
-        <line num="4" count="2" type="stmt"/>
+        <line num="2" count="4" type="stmt"/>
+        <line num="4" count="4" type="stmt"/>
       </file>
       <file name="faq.js" path="/Users/laura/workspace/EasyPet/server/db/seeds/faq.js">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
-        <line num="2" count="2" type="stmt"/>
-        <line num="4" count="2" type="stmt"/>
+        <line num="2" count="4" type="stmt"/>
+        <line num="4" count="4" type="stmt"/>
       </file>
       <file name="pet_characteristics.js" path="/Users/laura/workspace/EasyPet/server/db/seeds/pet_characteristics.js">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
-        <line num="2" count="2" type="stmt"/>
-        <line num="4" count="2" type="stmt"/>
+        <line num="2" count="4" type="stmt"/>
+        <line num="4" count="4" type="stmt"/>
       </file>
       <file name="pet_diet.js" path="/Users/laura/workspace/EasyPet/server/db/seeds/pet_diet.js">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
-        <line num="2" count="2" type="stmt"/>
-        <line num="4" count="2" type="stmt"/>
+        <line num="2" count="4" type="stmt"/>
+        <line num="4" count="4" type="stmt"/>
       </file>
       <file name="pet_images.js" path="/Users/laura/workspace/EasyPet/server/db/seeds/pet_images.js">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
-        <line num="2" count="2" type="stmt"/>
-        <line num="4" count="2" type="stmt"/>
+        <line num="2" count="4" type="stmt"/>
+        <line num="4" count="4" type="stmt"/>
       </file>
       <file name="pet_medical_history.js" path="/Users/laura/workspace/EasyPet/server/db/seeds/pet_medical_history.js">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
-        <line num="2" count="2" type="stmt"/>
-        <line num="4" count="2" type="stmt"/>
+        <line num="2" count="4" type="stmt"/>
+        <line num="4" count="4" type="stmt"/>
       </file>
       <file name="pet_profile.js" path="/Users/laura/workspace/EasyPet/server/db/seeds/pet_profile.js">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
-        <line num="2" count="2" type="stmt"/>
-        <line num="4" count="2" type="stmt"/>
+        <line num="2" count="4" type="stmt"/>
+        <line num="4" count="4" type="stmt"/>
       </file>
       <file name="treatments.js" path="/Users/laura/workspace/EasyPet/server/db/seeds/treatments.js">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
-        <line num="2" count="2" type="stmt"/>
-        <line num="4" count="2" type="stmt"/>
+        <line num="2" count="4" type="stmt"/>
+        <line num="4" count="4" type="stmt"/>
       </file>
       <file name="users.js" path="/Users/laura/workspace/EasyPet/server/db/seeds/users.js">
         <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
         <line num="1" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
-        <line num="4" count="2" type="stmt"/>
-        <line num="5" count="2" type="stmt"/>
-        <line num="9" count="2" type="stmt"/>
+        <line num="4" count="4" type="stmt"/>
+        <line num="5" count="4" type="stmt"/>
+        <line num="9" count="4" type="stmt"/>
       </file>
     </package>
   </project>
