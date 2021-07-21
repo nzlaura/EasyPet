@@ -1,30 +1,26 @@
 import React, { useState, useEffect } from 'react'
-// import Axios from 'axios'
 import { connect } from 'react-redux'
-import AddressFinder from './AddressFinder'
 import profileImage from '../../server/public/ImageAssets/AnimationOne/userprofile.png'
-import { sendUserUpdates } from '../actions/index'
+
+// import { sendUserUpdates } from '../actions/index'
 import { getUser } from '../apis/apiPassport'
-import { getUserData } from '../apis/apiClient'
+import { getPetData, updatePetProfile } from '../apis/apiClient'
 
 function PetProfile (props) {
-  const initialState = { username: '', email: '', phone: '', firstname: '', lastname: '', dob: '', address: '' }
+  const initialState = [{ name: '', dob: '', type: '', breed: '', gender: '', user_name: '' }]
   const [data, setData] = useState(initialState)
-  const [currentUser, setCurrentUser] = useState('')
 
-  console.log(currentUser)
+  // console.log(currentUser)
 
   useEffect(() => {
     getUser()
       .then(result => {
-        let username = result.username
-        setCurrentUser(username)
-        getUserData()
-        .then(data => {
-          setData(data)
-          console.log(data)
-          return null
-        })
+        const username = result.username
+        getPetData(username)
+          .then(data => {
+            setData(data)
+            return null
+          })
         return null
       })
       .catch(err => {
@@ -32,18 +28,6 @@ function PetProfile (props) {
         return null
       })
   }, [])
-
-  // useEffect(() =>{
-  //   getUserData(currentUser)
-  //     .then(details => {
-  //       setData(details)
-  //       return null
-  //     })
-  //     .catch(err => {
-  //       console.log(err.message)
-  //       return null
-  //     })
-  // }, [])
 
   function handleChange (evt) {
     const { name, value } = evt.target
@@ -57,7 +41,7 @@ function PetProfile (props) {
     e.preventDefault()
     const userdata = data
     const username = userdata.username
-    props.dispatch(sendUserUpdates(username, userdata))
+    updatePetProfile(username, userdata)
   }
 
   return (
@@ -66,22 +50,18 @@ function PetProfile (props) {
         <div className='container h-screen inline'>
           <p className='text-5xl items-left font-bold mb-5 mt-12 ml-20 text-black'>User Profile</p>
           <form className='flex items-center grid grid-cols-1 w-4/12 ml-20' id='profile-form'>
-            <p className='text-2xl items-left font-bold text-white'>Account Details:</p>
-            <label className='mt-2' htmlFor='username'>Username</label>
-            <input className='rounded-md shadow-sm col-1 h-12 p-4 mt-2 mb-2' type='text' id='username' name='username' placeholder='Enter Username' onChange={handleChange}/>
-            <label className='mt-2' htmlFor='email'>Email</label>
-            <input className='rounded-md shadow-sm col-1 h-12 p-4 mt-2 mb-2' type='text' id='email' name='email' placeholder='Enter Email Address' onChange={handleChange}/>
-            <label className='mt-2' htmlFor='phone'>Phone Number</label>
-            <input className='rounded-md shadow-sm col-1 h-12 p-4 mt-2 mb-2' type='int' id='phone' name='phone' placeholder='Enter Phone Number' onChange={handleChange}/>
-            <p className='text-2xl items-left font-bold text-white mt-4'>Personal Details:</p>
-            <label className='mt-2' htmlFor='firstname'>First Name</label>
-            <input className='rounded-md shadow-sm col-1 h-12 p-4 mt-2 mb-2' type='text' id='firstName' name='firstname' placeholder='Enter First Name' onChange={handleChange}/>
-            <label className='mt-2' htmlFor='lastname'>Last Name</label>
-            <input className='rounded-md shadow-sm col-1 h-12 p-4 mt-2 mb-2' type='text' id='lastName' name='lastname' placeholder='Enter Last Name' onChange={handleChange}/>
-            <label className='mt-2' htmlFor='dob'>Date of Birth</label>
-            <input className='rounded-md shadow-sm col-1 h-12 p-4 mt-2 mb-2' type='date' id='dob' name='dob' placeholder='Enter DOB' onChange={handleChange}/>
+            <p className='text-2xl items-left font-bold text-white'>Pets Details</p>
+            <label className='mt-2' htmlFor='username'>Pets Name</label>
+            <input className='rounded-md shadow-sm col-1 h-12 p-4 mt-2 mb-2' type='text' id='name' name='name' placeholder='Enter Name' onChange={handleChange}/>
+            <label className='mt-2' htmlFor='phone'>Pets Type</label>
+            <input className='rounded-md shadow-sm col-1 h-12 p-4 mt-2 mb-2' type='text' id='type' name='type' placeholder='Enter Type' onChange={handleChange}/>
+            <label className='mt-2' htmlFor='firstname'>Pets Breed</label>
+            <input className='rounded-md shadow-sm col-1 h-12 p-4 mt-2 mb-2' type='text' id='breed' name='breed' placeholder='Enter Breed' onChange={handleChange}/>
+            <label className='mt-2' htmlFor='lastname'>Pets Gender</label>
+            <input className='rounded-md shadow-sm col-1 h-12 p-4 mt-2 mb-2' type='text' id='gender' name='gender' placeholder='Enter Gender' onChange={handleChange}/>
+            <label className='mt-2' htmlFor='dob'>Pets Date of Birth</label>
+            <input className='rounded-md shadow-sm col-1 h-12 p-4 mt-2 mb-2' type='date' id='dob' name='dob' placeholder='Enter Date Of Birth' onChange={handleChange}/>
           </form>
-          <AddressFinder/>
           <button className='btn bg-black hover:bg-gray-900 text-white font-bold rounded-md items-center justify-center col-1 h-12 w-1/3 ml-20 mt-2 mb-2' onClick={handleSubmit} type="submit" name="next"> Submit Updates </button>
         </div>
       </div>

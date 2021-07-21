@@ -36,7 +36,7 @@ export function updateUserProfile (username, updates) {
       return res.body
     })
     .catch(e => console.log(e))
-  }
+}
 
 export function getUserData (username) {
   return request
@@ -99,4 +99,23 @@ export function createNewPetProfile (data) {
       return res.body
     })
     .catch(e => console.log(e))
-  }
+}
+
+export function getPetData (username) {
+  return request
+    .get(rootUrl + `user/pets/pet/${username}`)
+    .then(res => {
+      return res.body
+    })
+    .catch(e => console.log(e))
+}
+
+export function updatePetProfile (username, updates) {
+  return request
+    .patch(rootUrl + `user/pets/pet/${username}`)
+    .send(updates)
+    .then(res => {
+      return res.body
+    })
+    .catch(e => console.log(e))
+}
