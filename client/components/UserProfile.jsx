@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-// import Axios from 'axios'
 import { connect } from 'react-redux'
 import AddressFinder from './AddressFinder'
 import profileImage from '../../server/public/ImageAssets/AnimationOne/userprofile.png'

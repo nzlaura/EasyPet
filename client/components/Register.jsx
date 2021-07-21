@@ -9,7 +9,15 @@ function Register (props) {
 
   function handleClick (e) {
     e.preventDefault()
-    return register(registerUsername, registerPassword) && props.history.push('login')
+    return register(registerUsername, registerPassword)
+      .then(() => {
+        if (!register) window.location.reload()
+        else props.history.push('login')
+        return null
+      })
+      .catch(err => {
+        console.log(new Error(err))
+      })
   }
 
   function showPassword () {

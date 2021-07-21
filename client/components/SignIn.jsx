@@ -6,7 +6,7 @@ import signInImage from '../../server/public/ImageAssets/AnimationOne/FAQVet.png
 function SignIn (props) {
   const [loginUsername, setLoginUsername] = useState('')
   const [loginPassword, setLoginPassword] = useState('')
-
+  const [wrongAuth, setWrongAuth] = useState(false)
   function showPassword () {
     var x = document.getElementById('passwordinput')
     if (x.type === 'password') {
@@ -19,14 +19,16 @@ function SignIn (props) {
   function handleClick (e) {
     e.preventDefault()
     login(loginUsername, loginPassword)
-      .then(() => {
-        window.location.reload()
-        props.history.push('user')
+      .then((result) => {
+        console.log('result', result)
+        if (!result) props.history.push('login')
+        else props.history.push('user')
         return null
       })
       .catch(err => {
         console.log(new Error(err))
       })
+    setWrongAuth(true)
   }
 
   return (
@@ -41,6 +43,7 @@ function SignIn (props) {
             <button className='bg-black hover:bg-gray-900 text-white font-bold rounded-md flex items-center justify-center col-1 h-12 mt-64 w-40 ml-20' type='submit' onClick={handleClick}>Submit</button>
             <p className="col-1 mt-80 ml-20 mb-10 h-12 text-white text-sm font-bold">Need an account? <a href="#/register"> Sign up</a></p>
           </div>
+          {wrongAuth && <p className='mx-auto text-m flex justify-center items-center -mt-12 mb-20 text-black text-bold bg-green-400 max-w-sm rounded-lg'>Wrong password or username! Please try again.</p>}
         </div>
       </div>
     </>
