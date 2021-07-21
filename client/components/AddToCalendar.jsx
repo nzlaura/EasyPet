@@ -34,7 +34,7 @@ function AddToCalendar (props) {
   return (
     <>
       <form className='mt-10 ml-20' onSubmit={handleSubmit}>
-        <h1 className='ml-2 mb-2 font-bold'>Add Calendar Item:</h1>
+        <h1 className='ml-2 mb-2 font-bold'>Add Calendar Item</h1>
         <input className='rounded-md shadow-sm col-1 h-12 p-4 ml-2 mr-2' onChange={handleChange} type='text' id='title' name='title' value={eventItems.title} placeholder="Enter Event" />
         <input className='rounded-md shadow-sm col-1 h-12 p-4 ml-2 mr-2' onChange={handleChange} type='text' id='type' name='type' value={eventItems.type} placeholder='Enter Event Type' />
         <input className='rounded-md shadow-sm col-1 h-12 p-4 ml-2 mr-2' onChange={handleChange} type='date' id='date' name='date' value={eventItems.date} placeholder='Date'/>
