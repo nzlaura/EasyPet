@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import AddPetBackground from '../../server/public/ImageAssets/AnimationTwo/GroupTwo.png'
+import AddPetBackground from '../../server/public/ImageAssets/AnimationTwo/addpetgroup.png'
 import { getUser } from '../apis/apiPassport'
-
 import { createNewPetProfile } from '../apis/apiClient'
 
 function AddPet (props) {
