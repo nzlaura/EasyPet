@@ -34,7 +34,7 @@ function Contact (props) {
   return (
     <>
       <div className='bg-contain bg-center bg-no-repeat bg-scroll' style={{ backgroundImage: `url(${contactImage})` }}>
-        <div className='container mx-auto'>
+        <div className='container mx-auto mb-40'>
           <form className='mx-auto flex items-center justify-center grid grid-cols-1 grid-rows-7 w-5/12' id='contact-form'>
             <p className='text-5xl flex justify-center items-center font-bold mt-12'>Contact Us</p>
             <p className='mx-auto text-s flex justify-center items-center my-4 text-white text-bold'>Send us a message! We would love to hear from you.</p>
