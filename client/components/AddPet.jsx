@@ -54,7 +54,7 @@ function AddPet (props) {
             <label className='mt-2' htmlFor='dob'>Date of Birth</label>
             <input className='rounded-md shadow-sm col-1 h-12 p-4 mt-2 mb-2' type='date' id='dob' name='dob' placeholder='Enter DOB' onChange={handleChange}/>
           </form>
-          <button className='btn bg-black hover:bg-gray-900 text-white font-bold rounded-md items-center justify-center col-1 h-12 w-3/12 ml-20 mt-2 mb-2' onClick={handleSubmit} type="submit" name="next"> Submit Updates </button>
+          <button className='transform hover:scale-110 hover:text-green-500 btn bg-black hover:bg-gray-900 text-white font-bold rounded-md items-center justify-center col-1 h-12 w-3/12 ml-20 mt-2 mb-2' onClick={handleSubmit} type="submit" name="next"> Submit Updates </button>
         </div>
       </div>
     </>

@@ -12,7 +12,7 @@ function Navbar ({ fixed }) {
 
           <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
             <button
-              className="text-black cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
+              className="hover:text-green-500 text-black cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
               type="button"
               onClick={() => setNavbarOpen(!navbarOpen)}>
             </button>
@@ -23,20 +23,40 @@ function Navbar ({ fixed }) {
             <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
               <IfNotAuthenticated>
                 <li className="nav-item">
-                  <a className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-black hover:opacity-75"
+                  <a className="hover:text-white px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-black hover:opacity-75"
                     href="#/register">
                     <span className="ml-2">Sign Up</span>
                   </a>
                 </li>
-
                 <li className="nav-item">
-                  <a className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-black hover:opacity-75"
+                  <a className="hover:text-white px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-black hover:opacity-75"
                     href="#/login">
                     <span className="ml-2">Login</span>
+                  </a>
+                  </li>
+                <li className="nav-item">
+
+                  <a className="hover:text-white px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-black hover:opacity-75"
+                    href="#/faq">
+                    <span className="ml-2">FAQ</span>
                   </a>
                 </li>
               </IfNotAuthenticated>
               <IfAuthenticated>
+                <li className="nav-item">
+                  <a className="hover:text-white px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-black hover:opacity-75"
+                    href="#/user">
+                    <span className="ml-2">User Profile</span>
+                  </a>
+                </li>
+
+                <li className="nav-item">
+                  <a className="hover:text-white px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-black hover:opacity-75"
+                    href="#/user/pets">
+                    <span className="ml-2">My Pets</span>
+                  </a>
+                </li>
+
                 <li className="nav-item">
                   <a className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-black hover:opacity-75"
                     href="#/calendar">
@@ -44,41 +64,23 @@ function Navbar ({ fixed }) {
                   </a>
                 </li>
 
-                <li className="nav-item">
-                  <a className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-black hover:opacity-75"
-                    href="#/user">
-                    <span className="ml-2">User Profile</span>
-                  </a>
-                </li>
-
-                <li className="nav-item">
-                  <a className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-black hover:opacity-75"
-                    href="#/user/pets">
-                    <span className="ml-2">My Pets</span>
-                  </a>
-                </li>
-
               </IfAuthenticated>
               <li className="nav-item">
-                <a
-                  className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-black hover:opacity-75"
-                  href="#/contact">
-                  <span className="ml-2">Contact</span>
-                </a>
-              </li>
+
+                  <a
+                    className="hover:text-white px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-black hover:opacity-75"
+                    href="#/about">
+                    <span className="ml-2">About</span>
+                  </a>
+                </li>
               <li className="nav-item">
-                <a
-                  className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-black hover:opacity-75"
-                  href="#/about">
-                  <span className="ml-2">About</span>
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-black hover:opacity-75"
-                  href="#/faq">
-                  <span className="ml-2">FAQ</span>
-                </a>
-              </li>
+                  <a
+                    className="hover:text-white px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-black hover:opacity-75"
+                    href="#/contact">
+                    <span className="ml-2">Contact</span>
+                  </a>
+                </li>
+
               <IfAuthenticated>
                 <li className="nav-item">
                   <SignOff/>
