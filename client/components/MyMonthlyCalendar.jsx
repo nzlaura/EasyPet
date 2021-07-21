@@ -64,16 +64,11 @@ function MyMonthlyCalendar (props) {
           </MonthlyBody>
         </MonthlyCalendar>
       </div>
-      {/* <div className="container mx-auto -mt-96 grid grid-cols-2">
-        <div></div>
-        <div className="ml-12"><img src={img1}/></div>
-      </div> */}
     </>
   )
 }
 
 function mapStateToProps (state) {
-  console.log(state)
   return { events: state.events }
 }
 
