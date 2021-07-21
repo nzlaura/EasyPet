@@ -18,7 +18,6 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res) => {
   const event = req.body
-  console.log('event route', event)
   addNewEvent(event)
     .then(ids => {
       res.status(201).json(ids[0])

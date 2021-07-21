@@ -34,7 +34,6 @@ function AddToCalendar (props) {
 
   return (
     <>
-
       <form className='grid grid-cols-1 grid-rows-6 w-5/12 ml-52 mt-96 flex' onSubmit={handleSubmit}>
         <label className='my-4' htmlFor='event'>Event Name</label>
         <input className='rounded-md shadow-sm col-1 h-12 p-4' onChange={handleChange} type='text' id='title' name='title' value={eventItems.title} placeholder="Enter Event" />
@@ -48,6 +47,7 @@ function AddToCalendar (props) {
       </form>
       {isSendingMessage && <p className='mx-auto text-s flex justify-center items-center -mt-12 mb-20 text-white text-bold'>Event added to your calendar!</p>}
     </>
+
 
   )
 }

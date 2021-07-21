@@ -44,9 +44,7 @@ export function addEvent (event, id) {
 }
 
 export function setEvents (events, id) {
-  console.log(events)
   const newEvent = parseDate(events[0])
-  console.log(newEvent)
   return {
     type: 'SET_EVENTS',
     id,
