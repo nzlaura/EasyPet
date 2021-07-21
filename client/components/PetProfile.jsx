@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import profileImage from '../../server/public/ImageAssets/AnimationOne/userprofile.png'
+import profileImage from '../../server/public/ImageAssets/AnimationTwo/petprofile.png'
 
 // import { sendUserUpdates } from '../actions/index'
 // import { getUser } from '../apis/apiPassport'
