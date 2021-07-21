@@ -85,7 +85,7 @@ function addNewEvent (event, db = connection) {
 function getUsersPets (username, db = connection) {
   return db('pet_profile')
     .join('users', 'pet_profile.user_name', 'users.username')
-    .select('pet_profile.user_name as petUserName', 'users.username as username', 'pet_profile.name', 'pet_profile.dob', 'pet_profile.type', 'pet_profile.breed', 'pet_profile.gender')
+    .select('pet_profile.user_name as petUserName', 'users.username as username', 'pet_profile.name', 'pet_profile.dob', 'pet_profile.type', 'pet_profile.breed', 'pet_profile.gender', 'pet_profile.id')
     .where('pet_profile.user_name', username)
 }
 
@@ -94,11 +94,17 @@ function createNewPetProfile (data, db = connection) {
     .insert(data)
 }
 
-function updatePetProfile (username, updates, db = connection) {
+function getPetById (id, db = connection) {
+  return db('pet_profile').select()
+  .where('pet_profile.id', id)
+  .first()
+}
+
+function updatePetProfile (id, updates, db = connection) {
   return db('pet_profile')
-  .where({ username: username})
+  .where({ id: id})
   .update(updates)
-  .then(() => getUserByUsername(username, db))
+  .then(() => getPetById(id, db))
 }
 
 module.exports = {
@@ -115,5 +121,6 @@ module.exports = {
   getUsersPets,
   createNewPetProfile,
   updateUserByUsername,
-  updatePetProfile
+  updatePetProfile,
+  getPetById
 }

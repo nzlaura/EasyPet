@@ -6,7 +6,7 @@ import { getPetsData } from '../apis/apiClient'
 import AllPetProfilesItem from './AllPetProfilesItem'
 
 function AllPetProfiles (props) {
-  const initialState = [{ name: '', dob: '', type: '', breed: '', gender: '', user_name: '' }]
+  const initialState = [{ name: '', dob: '', type: '', breed: '', gender: '', user_name: '', id: '' }]
   const [data, setData] = useState(initialState)
 
   useEffect(() => {
@@ -16,6 +16,7 @@ function AllPetProfiles (props) {
         getPetsData(username)
           .then(data => {
             setData(data)
+            console.log(data)
             return null
           })
         return null
@@ -30,7 +31,7 @@ function AllPetProfiles (props) {
     <>
       {data.map((data, i) => {
         return (
-          <AllPetProfilesItem key={i} name={data.name} type={data.type} breed={data.breed} gender={data.gender} dob={data.dob} />
+          <AllPetProfilesItem key={i} name={data.name} type={data.type} breed={data.breed} gender={data.gender} dob={data.dob} id={data.id}/>
         )
       })}
 

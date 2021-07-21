@@ -101,18 +101,18 @@ export function createNewPetProfile (data) {
     .catch(e => console.log(e))
 }
 
-export function getPetData (username) {
+export function getPetData (id) {
   return request
-    .get(rootUrl + `user/pets/pet/${username}`)
+    .get(rootUrl + `user/pets/pet/${id}`)
     .then(res => {
       return res.body
     })
     .catch(e => console.log(e))
 }
 
-export function updatePetProfile (username, updates) {
+export function updatePetProfile (id, updates) {
   return request
-    .patch(rootUrl + `user/pets/pet/${username}`)
+    .patch(rootUrl + `user/pets/pet/${id}`)
     .send(updates)
     .then(res => {
       return res.body
