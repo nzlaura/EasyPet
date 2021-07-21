@@ -1,6 +1,8 @@
 const connection = require('./connection')
 const bcrypt = require('bcryptjs')
 
+//-----faq functions below -----//
+
 function userExists (username, db = connection) {
   return db('users').select()
     .where('username', username)
@@ -47,6 +49,8 @@ function updateUserProfile (username, updates, db = connection) {
     .then(() => getUserByUsername(username, db))
 }
 
+//-----faq functions below -----//
+
 function getFaqs (db = connection) {
   return db('faq').select()
 }
@@ -56,6 +60,8 @@ function getFaqBySearchString (searchString, db = connection) {
     .where('question', 'LIKE', `%${searchString}%`)
     .orWhere('answer', 'LIKE', `%${searchString}%`)
 }
+
+//-----calendar functions below -----//
 
 function getAllEvents (db = connection) {
   return db('events')
@@ -71,6 +77,21 @@ function addNewEvent (event, db = connection) {
     // })
 }
 
+//-----petfunctions below -----//
+
+function getUsersPets (username, db = connection) {
+  return db('pet_profile')
+    .join('users', 'pet_profile.user_name', 'users.username')
+    .select('pet_profile.user_name as petUserName', 'users.username as username', 'pet_profile.name', 'pet_profile.dob', 'pet_profile.type', 'pet_profile.breed', 'pet_profile.gender')
+    .where('pet_profile.user_name', username)
+}
+
+function createNewPetProfile (data, db = connection) {
+  return db('pet_profile')
+  .insert(data)
+}
+
+
 module.exports = {
   userExists,
   getUserByUsername,
@@ -81,5 +102,7 @@ module.exports = {
   getFaqs,
   getFaqBySearchString,
   getAllEvents,
-  addNewEvent
+  addNewEvent,
+  getUsersPets,
+  createNewPetProfile
 }

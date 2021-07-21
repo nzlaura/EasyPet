@@ -6,7 +6,7 @@ exports.up = function (knex) {
     t.string('type')
     t.string('breed')
     t.string('gender')
-    t.integer('user_id')
+    t.string('user_name')
   })
 }
 
