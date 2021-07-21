@@ -32,6 +32,12 @@ function getUserByUsername (username, db = connection) {
     .first()
 }
 
+function updateUserByUsername (username, db = connection) {
+  return db('users').select('username', 'email', 'phone', 'firstname', 'lastname', 'dob', 'address')
+    .where('username', username)
+    .first()
+}
+
 function users (username, db = connection) {
   return db('users').select()
 }
@@ -89,10 +95,10 @@ function createNewPetProfile (data, db = connection) {
 }
 
 function updatePetProfile (username, updates, db = connection) {
-  return db('users')
-    .where({ username: username })
-    .update(updates)
-    .then(() => getUserByUsername(username, db))
+  return db('pet_profile')
+  .where({ username: username})
+  .update(updates)
+  .then(() => getUserByUsername(username, db))
 }
 
 module.exports = {
@@ -108,5 +114,6 @@ module.exports = {
   addNewEvent,
   getUsersPets,
   createNewPetProfile,
+  updateUserByUsername,
   updatePetProfile
 }

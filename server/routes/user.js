@@ -2,7 +2,7 @@ const express = require('express')
 
 const router = express.Router()
 
-const { updateUserProfile, getUserByUsername, getUsersPets, updatePetProfile, createNewPetProfile } = require('../db/db')
+const { updateUserProfile, getUserByUsername, getUsersPets, updatePetProfile, createNewPetProfile, updateUserByUsername } = require('../db/db')
 
 router.get('/pets/:username', (req, res) => {
   const username = req.params.username
@@ -17,9 +17,9 @@ router.get('/pets/:username', (req, res) => {
     })
 })
 
-router.get('/pets/pet/:username', (req, res) => {
-  const username = req.params.username
-  getUserByUsername(username)
+router.post('/pets/addpet', (req, res) => {
+  const data = req.body
+  createNewPetProfile(data)
     .then(results => {
       res.json(results)
       return null
@@ -30,9 +30,9 @@ router.get('/pets/pet/:username', (req, res) => {
     })
 })
 
-router.post('/pets/addpet', (req, res) => {
-  const data = req.body
-  createNewPetProfile(data)
+router.get('/pets/pet/:username', (req, res) => {
+  const username = req.params.username
+  getUserByUsername(username)
     .then(results => {
       res.json(results)
       return null
@@ -60,9 +60,8 @@ router.patch('/pets/pet/:username', (req, res) => {
 
 router.get('/:username', (req, res) => {
   const username = req.params.username
-  getUserByUsername(username)
+  updateUserByUsername(username)
     .then(results => {
-      results.password = null
       res.json(results)
       return null
     })
