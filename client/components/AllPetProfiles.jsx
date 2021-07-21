@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react'
 import { getUser } from '../apis/apiPassport'
 import { getPetsData } from '../apis/apiClient'
 import AllPetProfilesItem from './AllPetProfilesItem'
-import backgroundImage from '../../server/public/ImageAssets/AnimationTwo/GroupOneContact.png'
+import backgroundImage from '../../server/public/ImageAssets/AnimationTwo/GroupOne.png'
 
 function AllPetProfiles (props) {
   const initialState = [{ name: '', dob: '', type: '', breed: '', gender: '', user_name: '', id: '' }]
