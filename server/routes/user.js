@@ -30,9 +30,9 @@ router.post('/pets/addpet', (req, res) => {
     })
 })
 
-router.get('/pets/pet/:username', (req, res) => {
-  const username = req.params.username
-  getUserByUsername(username)
+router.get('/pets/pet/:id', (req, res) => {
+  const petId = req.params.id
+  getPetById(petId)
     .then(results => {
       res.json(results)
       return null
@@ -43,9 +43,9 @@ router.get('/pets/pet/:username', (req, res) => {
     })
 })
 
-router.patch('/pets/pet/:username', (req, res) => {
-  const username = req.params.username
-  updateUserProfile(username, req.body)
+router.patch('/pets/pet/:id', (req, res) => {
+  const petId = req.params.id
+  updatePetProfile(petId, req.body)
     .then(results => {
       res.json(results)
       return null

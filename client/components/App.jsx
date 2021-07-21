@@ -8,7 +8,6 @@ import SignIn from './SignIn'
 import UserProfile from './UserProfile'
 import PetProfile from './PetProfile'
 import AddPet from './AddPet'
-// import EditPetProfile from './EditPetProfile'
 import MyMonthlyCalendar from './MyMonthlyCalendar'
 import Header from './Header'
 import Footer from './Footer'
@@ -44,7 +43,6 @@ function App (props) {
         <Route exact path = '/user' component={UserProfile} />
         <Route exact path = '/user/pets/pet' component={PetProfile} />
         <Route exact path = '/user/pets/addpet' component={AddPet} />
-        {/* <Route exact path = '/user/pets/editpet' component={EditPetProfile} /> */}
       </IfAuthenticated>
 
       <Route exact path = '/faq' component={FaqList} />
