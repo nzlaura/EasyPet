@@ -25,7 +25,6 @@ function SearchFAQ (props) {
       <div className='container'>
         <p className='text-8xl flex text-left font-bold mt-36 mb-4 ml-36'>Search</p>
         <p className='text-4xl flex text-left mb-20 ml-36'>You searched for '{searchString}'. Here is a FAQ related to '{searchString}'.
-          <br></br>________________________________________
         </p>
 
         {faqState.map(faq => {

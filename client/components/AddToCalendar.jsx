@@ -47,8 +47,6 @@ function AddToCalendar (props) {
       </form>
       {isSendingMessage && <p className='mx-auto text-s flex justify-center items-center -mt-12 mb-20 text-white text-bold'>Event added to your calendar!</p>}
     </>
-
-
   )
 }
 
