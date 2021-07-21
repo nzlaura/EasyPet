@@ -14,6 +14,8 @@ function SearchBar (props) {
 
   function handleSubmit (e) {
     e.preventDefault()
+    document.body.scrollTop = 0
+    document.documentElement.scrollTop = 0
     props.history.push('/search/' + search.searchString)
     setSearch({
       searchString: ''

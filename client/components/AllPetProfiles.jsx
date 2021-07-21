@@ -16,7 +16,6 @@ function AllPetProfiles (props) {
         getPetsData(username)
           .then(data => {
             setData(data)
-            console.log(data)
             return null
           })
         return null
