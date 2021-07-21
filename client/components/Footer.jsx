@@ -23,18 +23,18 @@ function Footer () {
                 <li className="nav-item">
                   <a className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
                     href="#/home">
-                    <span onClick={topFunction} className="ml-2">Home</span>
+                    <span onClick={topFunction} className="ml-2 transform hover:scale-110">Home</span>
                   </a>
                 </li>
                 <IfNotAuthenticated>
                   <li className="nav-item">
-                    <a className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
+                    <a className="transform hover:scale-110 px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
                       href="#/register">
                       <span onClick={topFunction} className="ml-2">Sign Up</span>
                     </a>
                   </li>
                   <li className="nav-item">
-                    <a className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
+                    <a className="transform hover:scale-110 px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
                       href="#/login">
                       <span onClick={topFunction} className="ml-2">Login</span>
                     </a>
@@ -42,20 +42,20 @@ function Footer () {
                 </IfNotAuthenticated>
                 <IfAuthenticated>
                   <li className="nav-item">
-                    <a className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
+                    <a className="transform hover:scale-110 hover:text-green-500 px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
                       href="#/calendar">
                       <span onClick={topFunction} className="ml-2">Calendar</span>
                     </a>
                   </li>
                   <li className="nav-item">
-                    <a className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
+                    <a className="transform hover:scale-110 hover:text-green-500 px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
                       href="#/petprofile">
                       <span onClick={topFunction} className="ml-2">Pet Profile</span>
                     </a>
                   </li>
 
                   <li className="nav-item">
-                    <a className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
+                    <a className="transform hover:scale-110 px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
                       href="#/user">
                       <span onClick={topFunction} className="ml-2">User Profile</span>
                     </a>
@@ -64,37 +64,37 @@ function Footer () {
                 </IfAuthenticated>
                 <li className="nav-item">
                   <a
-                    className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
+                    className="transform hover:scale-110 px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
                     href="#/contact">
                     <span onClick={topFunction} className="ml-2">Contact</span>
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
+                  <a className="transform hover:scale-110 px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
                     href="#/about">
                     <span onClick={topFunction} className="ml-2">About</span>
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
+                  <a className="transform hover:scale-110 px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
                     href="#/faq">
                     <span onClick={topFunction} className="ml-2">FAQ</span>
                   </a>
                 </li>
-                 <li className="nav-item">
-                  <a className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
+                <li className="nav-item">
+                  <a className="transform hover:scale-110 px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
                     href="#/privacypolicy">
                     <span onClick={topFunction} className="ml-2">Privacy Policy</span>
                   </a>
                 </li>
-                 <li className="nav-item">
-                  <a className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
+                <li className="nav-item">
+                  <a className="transform hover:scale-110 px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
                     href="#/termsofservice">
                     <span onClick={topFunction} className="ml-2">Terms of Service</span>
                   </a>
                 </li>
                 <li className="nav-item">
-                  <p className="ml-2 px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75">© 2021 EasyPet • Your digital pet diary</p>
+                  <p className="transform hover:scale-110 ml-2 px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75">© 2021 EasyPet • Your digital pet diary</p>
                 </li>
               </ul>
             </div>

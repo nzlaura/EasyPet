@@ -23,7 +23,7 @@ function SignIn (props) {
       .then((res) => {
         console.log('res', res)
         if (res === `Successfully Authenticated User:${loginUsername}`) {
-          props.history.push('user')
+          props.history.push('calendar')
           window.location.reload()
         } else setWrongAuth(true)
         return null

@@ -36,7 +36,7 @@ function AllPetProfiles (props) {
       })}
 
       <div>
-        <button className='bg-black hover:bg-gray-900 text-white font-bold rounded-md flex items-center justify-center mt-10 mb-10 ml-20 h-10 w-40' type='submit'>
+        <button className='transform hover:scale-110 hover:text-green-500 bg-black hover:bg-gray-900 text-white font-bold rounded-md flex items-center justify-center mt-10 mb-10 ml-20 h-10 w-40' type='submit'>
           <a href="#/user/pets/addpet">Add Pet</a>
         </button>
       </div>
