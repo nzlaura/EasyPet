@@ -16,7 +16,7 @@ function SignOff (props) {
 
   return (
 
-    <button className='transform hover:scale-110 btn cursor-pointer object-center bg-black hover:bg-gray-900 text-white font-bold rounded-md items-center justify-center col-1 h-10 px-2 m-2 hover:text-green-500' onClick={handleClick}> Log Out</button>
+    <button className='transform hover:scale-110 btn cursor-pointer object-center bg-black hover:bg-gray-900 text-white font-bold rounded-md items-center justify-center col-1 pt-1 pb-1 w-20 hover:text-green-500' onClick={handleClick}> Log Off</button>
     
   )
 }
